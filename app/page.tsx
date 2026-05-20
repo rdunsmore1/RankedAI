@@ -189,23 +189,58 @@ export default async function HomePage() {
 
       {/* CTA Banner */}
       <section className="max-w-[1200px] mx-auto px-4 sm:px-6 py-16">
-        <div
-          className="rounded-card p-8 sm:p-12 text-center relative overflow-hidden border border-[#00D4FF]/20"
-          style={{ background: "linear-gradient(135deg, #00D4FF08 0%, #A855F708 50%, #F59E0B08 100%)" }}
-        >
-          <h2 className="font-syne font-bold text-3xl text-[#F0F0F5] mb-3">
-            Help rank the world&apos;s AI tools
-          </h2>
-          <p className="text-[#8888A0] mb-6 max-w-md mx-auto text-sm">
-            Sign up for free to cast votes, write reviews, and help the community find the best AI for every task.
-          </p>
-          <Link
-            href="/login"
-            className="inline-flex px-8 py-3 bg-[#00D4FF] text-[#0A0A0F] font-syne font-bold text-sm rounded-lg hover:bg-[#00c4ef] transition-colors"
+        {user ? (
+          <div
+            className="rounded-card p-8 sm:p-12 relative overflow-hidden border border-[#22C55E]/20"
+            style={{ background: "linear-gradient(135deg, #22C55E08 0%, #00D4FF08 50%, #A855F708 100%)" }}
           >
-            Join the community →
-          </Link>
-        </div>
+            <div className="flex flex-col sm:flex-row items-center gap-8">
+              <div className="flex-1">
+                <div className="text-xs font-mono text-[#22C55E] uppercase tracking-widest mb-2">Your impact</div>
+                <h2 className="font-syne font-bold text-2xl sm:text-3xl text-[#F0F0F5] mb-3">
+                  Tried one of these tools?<br />Tell the community.
+                </h2>
+                <p className="text-[#8888A0] text-sm leading-relaxed max-w-md">
+                  Your reviews directly shape the community score — the more detail you share, the more accurate the rankings become for everyone.
+                </p>
+              </div>
+              <div className="shrink-0 flex flex-col gap-3 w-full sm:w-auto">
+                {[
+                  { name: "ElevenLabs", slug: "elevenlabs" },
+                  { name: "ChatGPT", slug: "chatgpt" },
+                  { name: "Midjourney", slug: "midjourney" },
+                ].map((tool) => (
+                  <Link
+                    key={tool.slug}
+                    href={`/tool/${tool.slug}`}
+                    className="flex items-center justify-between gap-4 px-4 py-3 bg-[#13131A] border border-[#1E1E2E] hover:border-[#22C55E]/40 rounded-lg transition-colors group"
+                  >
+                    <span className="text-sm font-semibold text-[#F0F0F5]">{tool.name}</span>
+                    <span className="text-xs text-[#22C55E] group-hover:translate-x-0.5 transition-transform">Review →</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div
+            className="rounded-card p-8 sm:p-12 text-center relative overflow-hidden border border-[#00D4FF]/20"
+            style={{ background: "linear-gradient(135deg, #00D4FF08 0%, #A855F708 50%, #F59E0B08 100%)" }}
+          >
+            <h2 className="font-syne font-bold text-3xl text-[#F0F0F5] mb-3">
+              Help rank the world&apos;s AI tools
+            </h2>
+            <p className="text-[#8888A0] mb-6 max-w-md mx-auto text-sm">
+              Sign up for free to cast votes, write reviews, and help the community find the best AI for every task.
+            </p>
+            <Link
+              href="/login"
+              className="inline-flex px-8 py-3 bg-[#00D4FF] text-[#0A0A0F] font-syne font-bold text-sm rounded-lg hover:bg-[#00c4ef] transition-colors"
+            >
+              Join the community →
+            </Link>
+          </div>
+        )}
       </section>
     </>
   );
