@@ -136,3 +136,4 @@ Sponsored tools appear **above** organic #1 with a clear amber "Sponsored" badge
 2. Import in [Vercel](https://vercel.com)
 3. Add environment variables
 4. Add `https://yourdomain.com/auth/callback` to Supabase redirect URLs
+# RankedAI
