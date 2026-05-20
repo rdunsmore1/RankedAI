@@ -217,17 +217,6 @@ export default function ToolDetailClient({
                   <span className="text-sm text-[#8888A0]">{tool.price_details}</span>
                 )}
               </div>
-              {ctaUrl !== "#" && (
-                <a
-                  href={ctaUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={handleCtaClick}
-                  className="inline-flex items-center gap-1 mt-3 text-xs text-[#8888A0] hover:text-[#00D4FF] transition-colors"
-                >
-                  View pricing page ↗
-                </a>
-              )}
             </div>
 
             {/* Vote in context */}
