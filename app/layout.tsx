@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
@@ -52,6 +53,7 @@ export default function RootLayout({
         <main className="relative z-10">{children}</main>
         <Footer />
         <CookieBanner />
+        <Analytics />
       </body>
     </html>
   );
