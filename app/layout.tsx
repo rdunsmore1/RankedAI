@@ -33,6 +33,9 @@ export const metadata: Metadata = {
     description: "Find the right AI for the job — ranked by benchmarks and community votes.",
     type: "website",
   },
+  other: {
+    "impact-site-verification": "5bd362c2-c2ee-4b68-89f7-6b55b768e154",
+  },
 };
 
 export default function RootLayout({
