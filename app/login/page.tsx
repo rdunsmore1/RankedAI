@@ -4,6 +4,7 @@ import { useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
+import Image from "next/image";
 
 function LoginForm() {
   const searchParams = useSearchParams();
@@ -52,7 +53,7 @@ function LoginForm() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 mb-6">
-            <img src="/logo.png" alt="RankedAI" className="h-10 w-10 rounded-lg object-cover" />
+            <Image src="/logo.png" alt="RankedAI" width={40} height={40} className="rounded-lg object-cover" />
           </Link>
           <h1 className="font-syne font-bold text-2xl text-[#F0F0F5] mb-1">
             {mode === "signin" ? "Welcome back" : "Join RankedAI™"}

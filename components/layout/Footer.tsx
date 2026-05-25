@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const CATEGORIES = [
   { label: "Coding", href: "/coding" },
@@ -17,7 +18,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-3">
-              <img src="/logo-icon.png" alt="RankedAI" className="h-7 w-7 rounded object-cover" />
+              <Image src="/logo-icon.png" alt="RankedAI" width={28} height={28} className="rounded object-cover" />
               <span className="font-syne font-bold text-[#F0F0F5]">RankedAI<sup className="text-[9px] text-[#8888A0] font-normal">™</sup></span>
             </Link>
             <p className="text-xs text-[#8888A0] leading-relaxed max-w-[200px]">

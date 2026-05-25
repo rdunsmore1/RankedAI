@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
 import AuthModal from "@/components/ui/AuthModal";
 import type { User } from "@supabase/supabase-js";
@@ -31,7 +32,7 @@ export default function Header() {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <img src="/logo-icon.png" alt="RankedAI" className="h-8 w-8 rounded-lg object-cover" />
+            <Image src="/logo-icon.png" alt="RankedAI" width={32} height={32} className="rounded-lg object-cover" />
             <span className="font-syne font-bold text-[#F0F0F5] text-lg hidden sm:block">
               RankedAI<sup className="text-[10px] text-[#8888A0] font-normal">™</sup>
             </span>
