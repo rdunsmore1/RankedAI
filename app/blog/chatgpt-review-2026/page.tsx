@@ -25,7 +25,7 @@ const pros = [
 const cons = [
   "Can be overconfident and hallucinate facts",
   "Context window smaller than Claude and Gemini",
-  "Pro tier at $200/mo is expensive for individuals",
+  "Pro tier at $100/mo is expensive for individuals",
   "Quality inconsistent across GPT-4o vs o3",
   "Free tier noticeably weaker than paid tiers",
   "Privacy concerns around training data usage",
@@ -53,7 +53,7 @@ const comparison = [
   },
   {
     feature: "Pro price",
-    chatgpt: "$20/mo Plus · $200/mo Pro",
+    chatgpt: "$20/mo Plus · $100/mo Pro",
     claude: "$20/month",
     gemini: "$20/month (Advanced)",
   },
@@ -263,7 +263,7 @@ export default function ChatGPTReview2026() {
               },
               {
                 tier: "Pro",
-                price: "$200",
+                price: "$100",
                 period: "/month",
                 color: "#EF4444",
                 features: ["Unlimited o3 Pro access", "Extended thinking / deep research", "Priority compute access", "For researchers & power users"],
@@ -297,7 +297,7 @@ export default function ChatGPTReview2026() {
             ))}
           </div>
           <p className="text-sm mt-2">
-            For most users, <strong className="text-[#F0F0F5]">ChatGPT Plus at $20/month</strong> is the right tier. The $200/month Pro plan is genuinely only worth it if you regularly run complex reasoning tasks with o3 at scale — it&apos;s priced for researchers and power users, not general professionals.
+            For most users, <strong className="text-[#F0F0F5]">ChatGPT Plus at $20/month</strong> is the right tier. The $100/month Pro plan is genuinely only worth it if you regularly run complex reasoning tasks with o3 at scale — it&apos;s priced for researchers and power users, not general professionals.
           </p>
         </div>
       </section>
