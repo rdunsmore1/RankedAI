@@ -12,7 +12,12 @@ const contactMethods = [
     href: "mailto:privacy@rankdai.com",
     desc: "Questions about your data, privacy policy, or account",
   },
-  // Add new contact methods below as they become available
+  {
+    label: "Legal",
+    value: "legal@rankdai.com",
+    href: "mailto:legal@rankdai.com",
+    desc: "Terms of service, intellectual property, and legal enquiries",
+  },
 ];
 
 export default function ContactPage() {
