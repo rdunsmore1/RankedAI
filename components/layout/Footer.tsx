@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-[#1E1E2E] mt-16 bg-[#0A0A0F]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-3">
@@ -47,6 +47,14 @@ export default function Footer() {
               <li><Link href="/" className="text-xs text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Home</Link></li>
               <li><Link href="/#how-it-works" className="text-xs text-[#8888A0] hover:text-[#F0F0F5] transition-colors">How It Works</Link></li>
               <li><Link href="/account" className="text-xs text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Account</Link></li>
+            </ul>
+          </div>
+
+          {/* Guides */}
+          <div>
+            <h4 className="text-xs font-syne font-semibold text-[#F0F0F5] mb-3 uppercase tracking-wider">Guides</h4>
+            <ul className="space-y-2">
+              <li><Link href="/blog/claude-ai-review-2026" className="text-xs text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Claude AI Review 2026</Link></li>
             </ul>
           </div>
 
