@@ -55,6 +55,7 @@ export default function Footer() {
             <h4 className="text-xs font-syne font-semibold text-[#F0F0F5] mb-3 uppercase tracking-wider">Guides</h4>
             <ul className="space-y-2">
               <li><Link href="/blog/claude-ai-review-2026" className="text-xs text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Claude AI Review 2026</Link></li>
+              <li><Link href="/blog/chatgpt-review-2026" className="text-xs text-[#8888A0] hover:text-[#F0F0F5] transition-colors">ChatGPT Review 2026</Link></li>
             </ul>
           </div>
 
