@@ -97,7 +97,7 @@ const comparison = [
 
 export default function ClaudeReview2026() {
   return (
-    <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-16">
+    <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-20">
 
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-[#8888A0] font-mono mb-8">
@@ -107,7 +107,7 @@ export default function ClaudeReview2026() {
       </div>
 
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex flex-wrap items-center gap-3 mb-5">
           <span className="font-mono text-[11px] font-semibold tracking-widest uppercase text-[#00D4FF]">Independent Review</span>
           <span className="w-1 h-1 rounded-full bg-[#1E1E2E]" />
@@ -116,7 +116,7 @@ export default function ClaudeReview2026() {
           <span className="font-mono text-[11px] text-[#8888A0]">RankedAI™ Editorial</span>
         </div>
 
-        <h1 className="font-syne font-black text-4xl sm:text-5xl leading-[1.1] tracking-tight text-[#F0F0F5] mb-6">
+        <h1 className="font-syne font-black text-5xl sm:text-6xl leading-[1.05] tracking-tight text-[#F0F0F5] mb-6">
           Claude AI Review 2026 —{" "}
           <span
             className="text-transparent bg-clip-text"
@@ -143,13 +143,13 @@ export default function ClaudeReview2026() {
       </section>
 
       {/* Divider */}
-      <div className="h-px bg-gradient-to-r from-[#00D4FF]/30 via-[#A855F7]/20 to-transparent mb-14" />
+      <div className="h-px bg-gradient-to-r from-[#00D4FF]/30 via-[#A855F7]/20 to-transparent mb-20" />
 
       {/* ── WHAT IS CLAUDE ───────────────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex items-baseline gap-3 mb-4">
           <span className="font-mono text-xs text-[#00D4FF]">01</span>
-          <h2 className="font-syne font-bold text-2xl text-[#F0F0F5]">What is Claude?</h2>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">What is Claude?</h2>
         </div>
         <div className="pl-6 border-l border-[#1E1E2E] space-y-4 text-[#8888A0] leading-relaxed">
           <p>
@@ -176,10 +176,10 @@ export default function ClaudeReview2026() {
       </section>
 
       {/* ── WHAT IS CLAUDE BEST AT ───────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex items-baseline gap-3 mb-4">
           <span className="font-mono text-xs text-[#00D4FF]">02</span>
-          <h2 className="font-syne font-bold text-2xl text-[#F0F0F5]">What is Claude best at?</h2>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">What is Claude best at?</h2>
         </div>
         <div className="pl-6 border-l border-[#1E1E2E] space-y-6 text-[#8888A0] leading-relaxed">
           <p>Claude excels across four use cases more than any other AI currently available.</p>
@@ -222,10 +222,10 @@ export default function ClaudeReview2026() {
       </section>
 
       {/* ── PRICING ──────────────────────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex items-baseline gap-3 mb-4">
           <span className="font-mono text-xs text-[#00D4FF]">03</span>
-          <h2 className="font-syne font-bold text-2xl text-[#F0F0F5]">Claude pricing</h2>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">Claude pricing</h2>
         </div>
         <div className="pl-6 border-l border-[#1E1E2E] space-y-4 text-[#8888A0] leading-relaxed">
           <p>Claude offers three tiers. The free tier is genuinely useful — not a crippled trial.</p>
@@ -257,10 +257,10 @@ export default function ClaudeReview2026() {
             ].map((plan) => (
               <div
                 key={plan.tier}
-                className={`rounded-card p-5 border ${plan.highlight ? "border-[#00D4FF]/40 bg-[#00D4FF]/5" : "border-[#1E1E2E] bg-[#13131A]"}`}
+                className={`rounded-card p-5 border overflow-hidden ${plan.highlight ? "border-[#00D4FF]/40 bg-[#00D4FF]/5" : "border-[#1E1E2E] bg-[#13131A]"}`}
               >
                 <div className="font-mono text-xs text-[#8888A0] mb-1">{plan.tier}</div>
-                <div className="flex items-baseline gap-1 mb-4">
+                <div className="flex items-baseline gap-1 mb-4 flex-wrap">
                   <span className="font-syne font-black text-3xl" style={{ color: plan.color }}>{plan.price}</span>
                   <span className="text-xs text-[#8888A0]">{plan.period}</span>
                 </div>
@@ -282,10 +282,10 @@ export default function ClaudeReview2026() {
       </section>
 
       {/* ── PROS & CONS ──────────────────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex items-baseline gap-3 mb-4">
           <span className="font-mono text-xs text-[#00D4FF]">04</span>
-          <h2 className="font-syne font-bold text-2xl text-[#F0F0F5]">Claude pros and cons</h2>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">Claude pros and cons</h2>
         </div>
         <div className="pl-6 border-l border-[#1E1E2E]">
           <div className="grid sm:grid-cols-2 gap-4">
@@ -316,10 +316,10 @@ export default function ClaudeReview2026() {
       </section>
 
       {/* ── HOW CLAUDE RANKS ─────────────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex items-baseline gap-3 mb-4">
           <span className="font-mono text-xs text-[#00D4FF]">05</span>
-          <h2 className="font-syne font-bold text-2xl text-[#F0F0F5]">How Claude ranks on RankedAI™</h2>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">How Claude ranks on RankedAI™</h2>
         </div>
         <div className="pl-6 border-l border-[#1E1E2E] space-y-4 text-[#8888A0] leading-relaxed">
           <p>
@@ -354,10 +354,10 @@ export default function ClaudeReview2026() {
       </section>
 
       {/* ── COMPARISON TABLE ─────────────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex items-baseline gap-3 mb-4">
           <span className="font-mono text-xs text-[#00D4FF]">06</span>
-          <h2 className="font-syne font-bold text-2xl text-[#F0F0F5]">Claude vs ChatGPT vs Gemini</h2>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">Claude vs ChatGPT vs Gemini</h2>
         </div>
         <div className="pl-6 border-l border-[#1E1E2E]">
           <p className="text-sm text-[#8888A0] leading-relaxed mb-5">
@@ -392,10 +392,10 @@ export default function ClaudeReview2026() {
       </section>
 
       {/* ── CONCLUSION ───────────────────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex items-baseline gap-3 mb-4">
           <span className="font-mono text-xs text-[#00D4FF]">07</span>
-          <h2 className="font-syne font-bold text-2xl text-[#F0F0F5]">Verdict</h2>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">Verdict</h2>
         </div>
         <div className="pl-6 border-l border-[#1E1E2E] space-y-4 text-[#8888A0] leading-relaxed">
           <p>
@@ -416,7 +416,7 @@ export default function ClaudeReview2026() {
         style={{ background: "linear-gradient(135deg, #00D4FF08 0%, #A855F708 50%, #F59E0B08 100%)" }}
       >
         <div className="font-mono text-xs text-[#00D4FF] mb-3 uppercase tracking-widest">See where Claude ranks</div>
-        <h3 className="font-syne font-bold text-2xl text-[#F0F0F5] mb-3">
+        <h3 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5] mb-3">
           Compare Claude against every AI tool
         </h3>
         <p className="text-sm text-[#8888A0] mb-6 max-w-md mx-auto">

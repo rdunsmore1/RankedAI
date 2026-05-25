@@ -103,7 +103,7 @@ const comparison = [
 
 export default function ChatGPTReview2026() {
   return (
-    <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-16">
+    <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-20">
 
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-[#8888A0] font-mono mb-8">
@@ -115,7 +115,7 @@ export default function ChatGPTReview2026() {
       </div>
 
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex flex-wrap items-center gap-3 mb-5">
           <span className="font-mono text-[11px] font-semibold tracking-widest uppercase text-[#F59E0B]">Independent Review</span>
           <span className="w-1 h-1 rounded-full bg-[#1E1E2E]" />
@@ -124,7 +124,7 @@ export default function ChatGPTReview2026() {
           <span className="font-mono text-[11px] text-[#8888A0]">RankedAI™ Editorial</span>
         </div>
 
-        <h1 className="font-syne font-black text-4xl sm:text-5xl leading-[1.1] tracking-tight text-[#F0F0F5] mb-6">
+        <h1 className="font-syne font-black text-5xl sm:text-6xl leading-[1.05] tracking-tight text-[#F0F0F5] mb-6">
           ChatGPT Review 2026 —{" "}
           <span
             className="text-transparent bg-clip-text"
@@ -151,13 +151,13 @@ export default function ChatGPTReview2026() {
       </section>
 
       {/* Divider */}
-      <div className="h-px bg-gradient-to-r from-[#F59E0B]/30 via-[#EF4444]/20 to-transparent mb-14" />
+      <div className="h-px bg-gradient-to-r from-[#F59E0B]/30 via-[#EF4444]/20 to-transparent mb-20" />
 
       {/* ── WHAT IS CHATGPT ──────────────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex items-baseline gap-3 mb-4">
           <span className="font-mono text-xs text-[#F59E0B]">01</span>
-          <h2 className="font-syne font-bold text-2xl text-[#F0F0F5]">What is ChatGPT?</h2>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">What is ChatGPT?</h2>
         </div>
         <div className="pl-6 border-l border-[#1E1E2E] space-y-4 text-[#8888A0] leading-relaxed">
           <p>
@@ -184,10 +184,10 @@ export default function ChatGPTReview2026() {
       </section>
 
       {/* ── WHAT IS CHATGPT BEST AT ──────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex items-baseline gap-3 mb-4">
           <span className="font-mono text-xs text-[#F59E0B]">02</span>
-          <h2 className="font-syne font-bold text-2xl text-[#F0F0F5]">What is ChatGPT best at?</h2>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">What is ChatGPT best at?</h2>
         </div>
         <div className="pl-6 border-l border-[#1E1E2E] space-y-6 text-[#8888A0] leading-relaxed">
           <p>ChatGPT&apos;s strength is versatility. No single AI does more different things at a high level.</p>
@@ -236,10 +236,10 @@ export default function ChatGPTReview2026() {
       </section>
 
       {/* ── PRICING ──────────────────────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex items-baseline gap-3 mb-4">
           <span className="font-mono text-xs text-[#F59E0B]">03</span>
-          <h2 className="font-syne font-bold text-2xl text-[#F0F0F5]">ChatGPT pricing</h2>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">ChatGPT pricing</h2>
         </div>
         <div className="pl-6 border-l border-[#1E1E2E] space-y-4 text-[#8888A0] leading-relaxed">
           <p>ChatGPT has the most tiered pricing structure of any AI assistant, from free to enterprise.</p>
@@ -251,14 +251,14 @@ export default function ChatGPTReview2026() {
                 price: "$0",
                 period: "forever",
                 color: "#8888A0",
-                features: ["GPT-4o (limited)", "Basic web browsing", "DALL-E image gen (limited)", "No credit card required"],
+                features: ["GPT-4o (limited messages)", "DALL-E image gen (limited)", "Basic web browsing", "No credit card required"],
               },
               {
                 tier: "Plus",
                 price: "$20",
                 period: "/month",
                 color: "#F59E0B",
-                features: ["GPT-4o full access", "o3 mini access", "Advanced Voice Mode", "Full web browsing"],
+                features: ["GPT-4o full access", "o3 & o4-mini access", "DALL-E 3 image generation", "Advanced Voice Mode"],
                 highlight: true,
               },
               {
@@ -266,22 +266,22 @@ export default function ChatGPTReview2026() {
                 price: "$200",
                 period: "/month",
                 color: "#EF4444",
-                features: ["Unlimited o3 access", "Extended thinking mode", "o3 with high compute", "For power researchers"],
+                features: ["Unlimited o3 Pro access", "Extended thinking / deep research", "Priority compute access", "For researchers & power users"],
               },
               {
                 tier: "API",
                 price: "Usage",
                 period: "based",
                 color: "#A855F7",
-                features: ["All models via API", "From $2.50 per 1M tokens", "Full programmatic access", "Enterprise options"],
+                features: ["All models via API", "GPT-4o from $2.50/1M tokens", "Full programmatic access", "Enterprise options available"],
               },
             ].map((plan) => (
               <div
                 key={plan.tier}
-                className={`rounded-card p-5 border ${plan.highlight ? "border-[#F59E0B]/40 bg-[#F59E0B]/5" : "border-[#1E1E2E] bg-[#13131A]"}`}
+                className={`rounded-card p-5 border overflow-hidden ${plan.highlight ? "border-[#F59E0B]/40 bg-[#F59E0B]/5" : "border-[#1E1E2E] bg-[#13131A]"}`}
               >
                 <div className="font-mono text-xs text-[#8888A0] mb-1">{plan.tier}</div>
-                <div className="flex items-baseline gap-1 mb-4">
+                <div className="flex items-baseline gap-1 mb-4 flex-wrap">
                   <span className="font-syne font-black text-3xl" style={{ color: plan.color }}>{plan.price}</span>
                   <span className="text-xs text-[#8888A0]">{plan.period}</span>
                 </div>
@@ -303,10 +303,10 @@ export default function ChatGPTReview2026() {
       </section>
 
       {/* ── PROS & CONS ──────────────────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex items-baseline gap-3 mb-4">
           <span className="font-mono text-xs text-[#F59E0B]">04</span>
-          <h2 className="font-syne font-bold text-2xl text-[#F0F0F5]">ChatGPT pros and cons</h2>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">ChatGPT pros and cons</h2>
         </div>
         <div className="pl-6 border-l border-[#1E1E2E]">
           <div className="grid sm:grid-cols-2 gap-4">
@@ -337,10 +337,10 @@ export default function ChatGPTReview2026() {
       </section>
 
       {/* ── HOW CHATGPT RANKS ────────────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex items-baseline gap-3 mb-4">
           <span className="font-mono text-xs text-[#F59E0B]">05</span>
-          <h2 className="font-syne font-bold text-2xl text-[#F0F0F5]">How ChatGPT ranks on RankedAI™</h2>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">How ChatGPT ranks on RankedAI™</h2>
         </div>
         <div className="pl-6 border-l border-[#1E1E2E] space-y-4 text-[#8888A0] leading-relaxed">
           <p>
@@ -375,10 +375,10 @@ export default function ChatGPTReview2026() {
       </section>
 
       {/* ── COMPARISON TABLE ─────────────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex items-baseline gap-3 mb-4">
           <span className="font-mono text-xs text-[#F59E0B]">06</span>
-          <h2 className="font-syne font-bold text-2xl text-[#F0F0F5]">ChatGPT vs Claude vs Gemini</h2>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">ChatGPT vs Claude vs Gemini</h2>
         </div>
         <div className="pl-6 border-l border-[#1E1E2E]">
           <p className="text-sm text-[#8888A0] leading-relaxed mb-5">
@@ -413,10 +413,10 @@ export default function ChatGPTReview2026() {
       </section>
 
       {/* ── VERDICT ──────────────────────────────────────── */}
-      <section className="mb-14">
+      <section className="mb-20">
         <div className="flex items-baseline gap-3 mb-4">
           <span className="font-mono text-xs text-[#F59E0B]">07</span>
-          <h2 className="font-syne font-bold text-2xl text-[#F0F0F5]">Verdict</h2>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">Verdict</h2>
         </div>
         <div className="pl-6 border-l border-[#1E1E2E] space-y-4 text-[#8888A0] leading-relaxed">
           <p>
@@ -437,7 +437,7 @@ export default function ChatGPTReview2026() {
         style={{ background: "linear-gradient(135deg, #F59E0B08 0%, #EF444408 50%, #A855F708 100%)" }}
       >
         <div className="font-mono text-xs text-[#F59E0B] mb-3 uppercase tracking-widest">See where ChatGPT ranks</div>
-        <h3 className="font-syne font-bold text-2xl text-[#F0F0F5] mb-3">
+        <h3 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5] mb-3">
           Compare ChatGPT against every AI tool
         </h3>
         <p className="text-sm text-[#8888A0] mb-6 max-w-md mx-auto">
