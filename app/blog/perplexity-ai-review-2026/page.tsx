@@ -25,7 +25,7 @@ const pros = [
 const cons = [
   "Not suited for creative writing, long-form content, or complex coding",
   "Reasoning depth trails Claude and ChatGPT on multi-step problems",
-  "Pro at $20/month is a lot if you only occasionally need cited answers",
+  "Pro at $17/month is a lot if you only occasionally need cited answers",
   "Dependent on live web — less useful for sensitive or private research topics",
   "Source quality varies — requires critical evaluation of cited pages",
   "Smaller company than Google or OpenAI — longer-term platform risk",
@@ -62,7 +62,7 @@ const comparison = [
   },
   {
     feature: "Pro pricing",
-    perplexity: "$20/month",
+    perplexity: "$17/mo Pro · $34/mo Ent.",
     google: "$19.99/mo (Google One AI)",
     chatgpt: "$20/month (Plus)",
   },
@@ -262,13 +262,14 @@ export default function PerplexityReview2026() {
         <div className="pl-6 border-l border-[#1E1E2E] space-y-4 text-[#8888A0] leading-relaxed">
           <p>Perplexity offers a genuinely capable free tier — more useful than most AI free plans — with paid options for power users who need unlimited access and model choice.</p>
 
-          <div className="grid sm:grid-cols-3 gap-4 mt-2">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-2">
             {[
               {
                 tier: "Free",
                 price: "$0",
                 period: "forever",
                 color: "#8888A0",
+                note: "",
                 features: [
                   "Unlimited standard searches",
                   "~5 Pro searches per day",
@@ -278,10 +279,10 @@ export default function PerplexityReview2026() {
               },
               {
                 tier: "Pro",
-                price: "$20",
+                price: "$17",
                 period: "/month",
                 color: "#14B8A6",
-                note: "or $200/year",
+                note: "per user",
                 features: [
                   "Unlimited Pro searches",
                   "GPT-4o, Claude & Sonar models",
@@ -291,15 +292,29 @@ export default function PerplexityReview2026() {
                 highlight: true,
               },
               {
-                tier: "Max",
-                price: "$200",
+                tier: "Enterprise Pro",
+                price: "$34",
                 period: "/month",
                 color: "#F59E0B",
+                note: "per seat",
                 features: [
                   "Everything in Pro",
-                  "Highest usage limits",
-                  "Priority compute access",
-                  "For high-volume power users",
+                  "Team management & SSO",
+                  "Centralised billing",
+                  "Advanced admin controls",
+                ],
+              },
+              {
+                tier: "Enterprise Max",
+                price: "$271",
+                period: "/month",
+                color: "#A855F7",
+                note: "per seat",
+                features: [
+                  "Everything in Enterprise Pro",
+                  "Maximum usage limits",
+                  "Dedicated priority support",
+                  "Advanced security & compliance",
                 ],
               },
             ].map((plan) => (
@@ -312,10 +327,7 @@ export default function PerplexityReview2026() {
                   <span className="font-syne font-black text-3xl" style={{ color: plan.color }}>{plan.price}</span>
                   <span className="text-xs text-[#8888A0]">{plan.period}</span>
                 </div>
-                {"note" in plan && plan.note && (
-                  <div className="font-mono text-[10px] text-[#14B8A6] mb-3">{plan.note}</div>
-                )}
-                {!("note" in plan) && <div className="mb-3" />}
+                <div className="font-mono text-[10px] text-[#8888A0] mb-3">{plan.note}</div>
                 <ul className="space-y-1.5">
                   {plan.features.map((f) => (
                     <li key={f} className="flex gap-2 text-xs">
@@ -328,7 +340,7 @@ export default function PerplexityReview2026() {
             ))}
           </div>
           <p className="text-sm mt-2">
-            For most users, <strong className="text-[#F0F0F5]">the free tier is worth trying first</strong> — five Pro searches per day is enough to evaluate whether Perplexity fits your workflow. The Pro plan at $20/month (or $200/year — two months free) is worth it if you research daily and want access to frontier models like GPT-4o and Claude inside the Perplexity interface. The Max plan is for organisations or individuals running very high research volumes.
+            For most users, <strong className="text-[#F0F0F5]">the free tier is worth trying first</strong> — five Pro searches per day is enough to evaluate whether Perplexity fits your workflow. The Pro plan at $17/month is worth it if you research daily and want access to frontier models like GPT-4o and Claude inside the Perplexity interface. Enterprise plans are designed for teams that need shared billing, SSO, and higher usage ceilings.
           </p>
         </div>
       </section>
@@ -485,7 +497,7 @@ export default function PerplexityReview2026() {
             Perplexity AI is the <strong className="text-[#F0F0F5]">best AI tool for research in 2026</strong> — a category it has created rather than competed in. It does not replace Claude for reasoning, ChatGPT for creative breadth, or Gemini for Google Workspace users. What it does — give you fast, cited, accurate answers to factual questions using live web data — it does better than anything else available.
           </p>
           <p>
-            The free tier is a genuine product, not a trial. Five Pro searches per day is enough to make Perplexity your default for research-type queries without spending a penny. The Pro plan at $20/month is worth it the moment your research needs outpace the daily limit — and the ability to run GPT-4o and Claude inside Perplexity&apos;s cited-answer interface makes it more valuable than either of those tools alone for research-heavy use cases.
+            The free tier is a genuine product, not a trial. Five Pro searches per day is enough to make Perplexity your default for research-type queries without spending a penny. The Pro plan at $17/month is worth it the moment your research needs outpace the daily limit — and the ability to run GPT-4o and Claude inside Perplexity&apos;s cited-answer interface makes it more valuable than either of those tools alone for research-heavy use cases.
           </p>
           <p>
             On RankedAI™, Perplexity holds the #1 position in Research &amp; Summarisation with a score of 91. Our answer to the headline question: not a Google killer in the broad sense — Google still wins for discovery, browsing, and general web navigation. But for the specific task of getting a reliable, sourced answer to a complex question? Perplexity wins, and it is not particularly close.
