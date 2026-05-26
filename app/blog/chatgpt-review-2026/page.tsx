@@ -101,9 +101,72 @@ const comparison = [
   },
 ];
 
+const faqItems = [
+  {
+    question: "What is ChatGPT?",
+    answer: "ChatGPT is a conversational AI assistant developed by OpenAI, launched in November 2022. It is powered by GPT-4o for general tasks and the o3 reasoning model for complex problems. With over 200 million weekly active users, it is the most widely used AI assistant in the world.",
+  },
+  {
+    question: "Is ChatGPT free?",
+    answer: "Yes. ChatGPT has a free tier with access to GPT-4o (usage-limited), basic web browsing, and limited DALL-E image generation. ChatGPT Plus costs $20/month and adds full GPT-4o access, o3 and o4-mini models, Advanced Voice Mode, and higher usage limits.",
+  },
+  {
+    question: "Can ChatGPT generate images?",
+    answer: "Yes. ChatGPT integrates DALL-E 3, available on the free tier with limited credits and without limits on Plus. DALL-E 3 is among the best AI image generators for prompt adherence and can generate images directly from conversation context without switching tools.",
+  },
+  {
+    question: "What is the difference between ChatGPT Plus and Pro?",
+    answer: "ChatGPT Plus at $20/month covers most professional needs — full GPT-4o, o3, DALL-E 3, and Advanced Voice Mode. ChatGPT Pro at $100/month adds unlimited o3 Pro access, extended thinking for deep research, and priority compute. Pro is designed for researchers and power users running intensive reasoning tasks.",
+  },
+  {
+    question: "How accurate is ChatGPT?",
+    answer: "ChatGPT can produce confident-sounding but factually incorrect responses — a known limitation called hallucination. It performs best within its training data and worse on very recent events or specific factual claims. For accuracy-critical work, pair it with a tool that provides live sourced answers like Perplexity AI.",
+  },
+  {
+    question: "Does ChatGPT have a memory feature?",
+    answer: "Yes. ChatGPT can remember information about you across conversations — your name, preferences, and working style. Memory is available on free and paid tiers and can be reviewed or cleared in Settings, making repeated use significantly more personalised over time.",
+  },
+  {
+    question: "What AI model does ChatGPT use?",
+    answer: "ChatGPT uses multiple OpenAI models: GPT-4o for general tasks, o3 for complex reasoning, and o4-mini for fast structured tasks. Free users access GPT-4o with daily limits; Plus users get full access to all models. The model lineup evolves regularly.",
+  },
+  {
+    question: "Is ChatGPT good for coding?",
+    answer: "ChatGPT is a strong coding assistant, ranking #3 in RankedAI™'s Coding category. Its Code Interpreter — which executes Python in a sandboxed environment — is particularly useful for data analysis and visualisation. Claude ranks #1 for pure code quality; ChatGPT leads on data science workflows.",
+  },
+];
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "ChatGPT Review 2026 — Still the King of AI?",
+      description: "An independent review of ChatGPT for 2026, covering pricing, use cases, models, and how it compares to Claude and Gemini.",
+      datePublished: "2026-05-25",
+      dateModified: "2026-05-25",
+      author: { "@type": "Organization", name: "RankedAI™" },
+      publisher: { "@type": "Organization", name: "RankedAI™" },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
+    },
+  ],
+};
+
 export default function ChatGPTReview2026() {
   return (
-    <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+      />
+      <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-20">
 
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-[#8888A0] font-mono mb-8">
@@ -431,6 +494,22 @@ export default function ChatGPTReview2026() {
         </div>
       </section>
 
+      {/* ── FAQ ──────────────────────────────────────────── */}
+      <section className="mb-20">
+        <div className="flex items-baseline gap-3 mb-4">
+          <span className="font-mono text-xs text-[#F59E0B]">08</span>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">Frequently asked questions</h2>
+        </div>
+        <div className="pl-6 border-l border-[#1E1E2E] space-y-4">
+          {faqItems.map((item) => (
+            <div key={item.question} className="bg-[#13131A] border border-[#1E1E2E] rounded-card p-5">
+              <h3 className="font-syne font-bold text-sm text-[#F0F0F5] mb-3">{item.question}</h3>
+              <p className="text-sm text-[#8888A0] leading-relaxed">{item.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <div
         className="rounded-card p-8 text-center relative overflow-hidden border border-[#F59E0B]/20 mb-12"
@@ -480,5 +559,6 @@ export default function ChatGPTReview2026() {
         <Link href="/tool/chatgpt" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">ChatGPT tool page</Link>
       </div>
     </div>
+    </>
   );
 }

@@ -92,9 +92,68 @@ const comparison = [
   },
 ];
 
+const faqItems = [
+  {
+    question: "What is Midjourney?",
+    answer: "Midjourney is an AI image generation service operated by an independent research lab founded by David Holz in 2021. It generates images from text prompts through a Discord bot and web interface, and is widely regarded as producing the highest-quality, most artistically coherent AI-generated images available.",
+  },
+  {
+    question: "Is Midjourney free?",
+    answer: "No. Midjourney does not currently offer a free tier — a paid subscription is required before generating any images. Plans start at $10/month (Basic). This is one of the most common friction points for new users, though the quality is considered worth the cost by most professionals who use it.",
+  },
+  {
+    question: "How do you use Midjourney?",
+    answer: "Join the Midjourney Discord server via midjourney.com, subscribe to a paid plan, then type /imagine followed by your text prompt in any Midjourney channel. Midjourney generates four image variations within about 60 seconds. Use U buttons to upscale results and V buttons to create variations.",
+  },
+  {
+    question: "What is Midjourney v6?",
+    answer: "Midjourney v6 (current: v6.1) is the latest model generation, offering significantly improved photorealism, better prompt adherence, and enhanced text rendering within images compared to earlier versions. It supports aspect ratio (--ar), style, and quality parameters for greater control.",
+  },
+  {
+    question: "Can Midjourney images be used commercially?",
+    answer: "Yes, on all paid plans. Midjourney subscribers own the images they generate and can use them for commercial purposes. On the Basic plan, generations are public by default. Pro and Mega plans include Stealth Mode to keep generations private.",
+  },
+  {
+    question: "How does Midjourney compare to DALL-E 3?",
+    answer: "Midjourney produces more artistically coherent and aesthetically polished outputs, particularly for stylised and cinematic images. DALL-E 3 (via ChatGPT) requires no Discord setup, has a free tier, and is stronger at rendering legible text within images. Midjourney leads on creative quality; DALL-E 3 leads on convenience and text accuracy.",
+  },
+  {
+    question: "What is the best Midjourney plan?",
+    answer: "For most users, Standard at $30/month offers the best value — 15 fast GPU hours plus unlimited relaxed (slower but unrestricted) generations. Basic at $10/month is a low-risk entry point. Pro at $60/month adds Stealth Mode and more concurrent jobs, useful for professional client work.",
+  },
+];
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "Midjourney Review 2026 — Still the Best AI Image Generator?",
+      description: "An independent review of Midjourney for 2026, covering pricing, use cases, image quality, and how it compares to DALL-E 3 and Stable Diffusion.",
+      datePublished: "2026-05-25",
+      dateModified: "2026-05-25",
+      author: { "@type": "Organization", name: "RankedAI™" },
+      publisher: { "@type": "Organization", name: "RankedAI™" },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
+    },
+  ],
+};
+
 export default function MidjourneyReview2026() {
   return (
-    <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+      />
+      <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-20">
 
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-[#8888A0] font-mono mb-8">
@@ -479,6 +538,22 @@ export default function MidjourneyReview2026() {
         </div>
       </section>
 
+      {/* ── FAQ ──────────────────────────────────────────── */}
+      <section className="mb-20">
+        <div className="flex items-baseline gap-3 mb-4">
+          <span className="font-mono text-xs text-[#EC4899]">09</span>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">Frequently asked questions</h2>
+        </div>
+        <div className="pl-6 border-l border-[#1E1E2E] space-y-4">
+          {faqItems.map((item) => (
+            <div key={item.question} className="bg-[#13131A] border border-[#1E1E2E] rounded-card p-5">
+              <h3 className="font-syne font-bold text-sm text-[#F0F0F5] mb-3">{item.question}</h3>
+              <p className="text-sm text-[#8888A0] leading-relaxed">{item.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <div
         className="rounded-card p-8 text-center relative overflow-hidden border border-[#EC4899]/20 mb-12"
@@ -535,5 +610,6 @@ export default function MidjourneyReview2026() {
         <Link href="/tool/midjourney" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Midjourney tool page</Link>
       </div>
     </div>
+    </>
   );
 }

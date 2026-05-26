@@ -95,9 +95,72 @@ const comparison = [
   },
 ];
 
+const faqItems = [
+  {
+    question: "What is Claude AI?",
+    answer: "Claude is a large language model developed by Anthropic, an AI safety company founded in 2021. It is available at claude.ai and via the Anthropic API. The model family includes Claude 3.5 Sonnet (the primary model for most users), Claude 3.5 Haiku (fast), and Claude 3 Opus (most capable for demanding tasks).",
+  },
+  {
+    question: "Is Claude better than ChatGPT?",
+    answer: "For coding, long-form writing, and long-context analysis, Claude scores higher than ChatGPT on RankedAI™ benchmarks. ChatGPT leads on ecosystem breadth — image generation, voice mode, and the GPT store. Claude is the better choice for quality-first output; ChatGPT for the widest feature set.",
+  },
+  {
+    question: "Is Claude free to use?",
+    answer: "Yes. Claude offers a free tier at claude.ai with access to Claude 3.5 Sonnet and a daily message limit — no credit card required. Claude Pro costs $20/month and provides five times more usage, priority access at peak times, and all models including Opus.",
+  },
+  {
+    question: "What is Claude best used for?",
+    answer: "Claude is best used for complex writing and editing, software development and code review, long-document analysis, and tasks requiring careful reasoning. It holds the #1 position in both Coding and Writing on RankedAI™.",
+  },
+  {
+    question: "What is Claude's context window?",
+    answer: "Claude supports up to 200,000 tokens — roughly 150,000 words — in a single context window. This is significantly larger than GPT-4o's 128K limit and makes Claude particularly effective for analysing full documents, large codebases, and multiple research papers in a single session.",
+  },
+  {
+    question: "Who made Claude?",
+    answer: "Claude is made by Anthropic, founded in 2021 by Dario Amodei, Daniela Amodei, and other former OpenAI researchers. Anthropic's research focus on AI safety — including its Constitutional AI training technique — directly shapes Claude's careful, accuracy-focused behaviour.",
+  },
+  {
+    question: "Does Claude have an API?",
+    answer: "Yes. The Anthropic API provides access to all Claude models on a usage-based pricing model, starting at $3 per million input tokens for Claude 3.5 Sonnet. New accounts receive trial credits to test the API before committing to paid usage.",
+  },
+  {
+    question: "Is Claude safe to use for professional work?",
+    answer: "Claude is designed to be more conservative than most AI models — it flags uncertainty, acknowledges the limits of its knowledge, and declines ethically questionable requests. This makes it more reliable for professional use cases where accuracy and appropriate caution matter more than always providing a confident answer.",
+  },
+];
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "Claude AI Review 2026 — Is It the Best AI Available?",
+      description: "An independent review of Claude AI for 2026, covering pricing, use cases, benchmark performance, and how it compares to ChatGPT and Gemini.",
+      datePublished: "2026-05-25",
+      dateModified: "2026-05-25",
+      author: { "@type": "Organization", name: "RankedAI™" },
+      publisher: { "@type": "Organization", name: "RankedAI™" },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
+    },
+  ],
+};
+
 export default function ClaudeReview2026() {
   return (
-    <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+      />
+      <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-20">
 
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-[#8888A0] font-mono mb-8">
@@ -410,6 +473,22 @@ export default function ClaudeReview2026() {
         </div>
       </section>
 
+      {/* ── FAQ ──────────────────────────────────────────── */}
+      <section className="mb-20">
+        <div className="flex items-baseline gap-3 mb-4">
+          <span className="font-mono text-xs text-[#00D4FF]">08</span>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">Frequently asked questions</h2>
+        </div>
+        <div className="pl-6 border-l border-[#1E1E2E] space-y-4">
+          {faqItems.map((item) => (
+            <div key={item.question} className="bg-[#13131A] border border-[#1E1E2E] rounded-card p-5">
+              <h3 className="font-syne font-bold text-sm text-[#F0F0F5] mb-3">{item.question}</h3>
+              <p className="text-sm text-[#8888A0] leading-relaxed">{item.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <div
         className="rounded-card p-8 text-center relative overflow-hidden border border-[#00D4FF]/20 mb-12"
@@ -447,5 +526,6 @@ export default function ClaudeReview2026() {
         <Link href="/tool/claude" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Claude tool page</Link>
       </div>
     </div>
+    </>
   );
 }

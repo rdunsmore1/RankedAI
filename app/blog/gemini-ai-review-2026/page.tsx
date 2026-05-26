@@ -100,9 +100,68 @@ const comparison = [
   },
 ];
 
+const faqItems = [
+  {
+    question: "What is Google Gemini?",
+    answer: "Google Gemini is Google DeepMind's flagship AI model family, integrated into Gmail, Docs, Sheets, Drive, and Search. Available at gemini.google.com, its main models are Gemini 1.5 Pro (highest capability), Gemini 1.5 Flash (fast and free), and Gemini 2.0 Flash (next generation).",
+  },
+  {
+    question: "Is Gemini free to use?",
+    answer: "Yes. Gemini offers a free tier at gemini.google.com with Gemini 1.5 Flash and real-time Google Search. Gemini Advanced costs $19.99/month as part of Google One AI Premium, adding Gemini 1.5 Pro, Workspace integration across Gmail and Docs, and 2TB Google Drive storage.",
+  },
+  {
+    question: "How does Gemini integrate with Google Workspace?",
+    answer: "With a Google One AI Premium subscription, Gemini is embedded in Gmail (summarising threads, drafting replies), Docs (generating documents), Sheets (analysing data), Slides (building presentations), and Meet (generating summaries). No other AI assistant has this depth of Workspace integration.",
+  },
+  {
+    question: "How does Gemini compare to ChatGPT?",
+    answer: "Gemini's key advantages are native Google Workspace integration and real-time Google Search on all tiers including free. ChatGPT leads on reasoning quality, image generation, and the GPT store ecosystem. On RankedAI™ benchmark scores, ChatGPT (85) edges Gemini (82).",
+  },
+  {
+    question: "What is Gemini's context window?",
+    answer: "Gemini 1.5 Pro supports a 1 million token context window — the largest of any generally available AI assistant, far exceeding Claude's 200K and ChatGPT's 128K. This makes it capable of processing extremely long documents in a single session.",
+  },
+  {
+    question: "Can Gemini generate images?",
+    answer: "Yes. Gemini Advanced generates images using Google's Imagen 3 model, available within the Gemini interface and inside Google Docs and Slides. For creative image quality, Midjourney and DALL-E 3 are generally considered superior, but Imagen 3 produces solid results for most practical use cases.",
+  },
+  {
+    question: "Is Gemini good for coding?",
+    answer: "Gemini is a capable coding assistant ranking #4 in RankedAI™'s Coding category. It is strongest within Google's developer tools — Android Studio and Firebase — and its 1M token context window helps with large codebases. Claude and GitHub Copilot rank above it on pure coding benchmarks.",
+  },
+];
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "Google Gemini Review 2026 — Google's Most Powerful AI Yet?",
+      description: "An independent review of Google Gemini for 2026, covering pricing, Workspace integration, use cases, and how it compares to ChatGPT and Claude.",
+      datePublished: "2026-05-25",
+      dateModified: "2026-05-25",
+      author: { "@type": "Organization", name: "RankedAI™" },
+      publisher: { "@type": "Organization", name: "RankedAI™" },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
+    },
+  ],
+};
+
 export default function GeminiReview2026() {
   return (
-    <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+      />
+      <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-20">
 
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-[#8888A0] font-mono mb-8">
@@ -441,6 +500,22 @@ export default function GeminiReview2026() {
         </div>
       </section>
 
+      {/* ── FAQ ──────────────────────────────────────────── */}
+      <section className="mb-20">
+        <div className="flex items-baseline gap-3 mb-4">
+          <span className="font-mono text-xs text-[#A855F7]">08</span>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">Frequently asked questions</h2>
+        </div>
+        <div className="pl-6 border-l border-[#1E1E2E] space-y-4">
+          {faqItems.map((item) => (
+            <div key={item.question} className="bg-[#13131A] border border-[#1E1E2E] rounded-card p-5">
+              <h3 className="font-syne font-bold text-sm text-[#F0F0F5] mb-3">{item.question}</h3>
+              <p className="text-sm text-[#8888A0] leading-relaxed">{item.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <div
         className="rounded-card p-8 text-center relative overflow-hidden border border-[#A855F7]/20 mb-12"
@@ -498,5 +573,6 @@ export default function GeminiReview2026() {
         <Link href="/tool/gemini" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Gemini tool page</Link>
       </div>
     </div>
+    </>
   );
 }

@@ -119,9 +119,68 @@ const idealUsers = [
   },
 ];
 
+const faqItems = [
+  {
+    question: "What is Perplexity AI?",
+    answer: "Perplexity AI is an AI-powered answer engine that combines real-time web search with large language model synthesis to deliver direct, cited answers. Unlike Google, which returns a list of links, Perplexity synthesises current web sources into a structured answer with numbered citations you can verify in one click.",
+  },
+  {
+    question: "Is Perplexity better than Google for research?",
+    answer: "For complex questions that benefit from synthesis, Perplexity is faster and more useful than Google — you get a structured answer with citations rather than ten links to evaluate manually. For simple queries and general browsing, Google remains faster. Perplexity is best used as a complement to Google, not a replacement.",
+  },
+  {
+    question: "Is Perplexity AI free?",
+    answer: "Yes. Perplexity offers a free tier with unlimited standard searches and approximately 5 Pro searches per day. Pro costs $17/month and unlocks unlimited Pro searches, access to GPT-4o and Claude models within Perplexity, and file upload capabilities.",
+  },
+  {
+    question: "How does Perplexity cite its sources?",
+    answer: "Perplexity embeds numbered citations inline within answers — every factual claim is followed by a superscript number linking to the original source page. A full source list appears below the answer. This makes every statement in a Perplexity response directly traceable to its origin.",
+  },
+  {
+    question: "Does Perplexity hallucinate?",
+    answer: "Perplexity is significantly less prone to hallucination than standalone LLMs because responses are grounded in live web sources. It can still misinterpret a source, so critical evaluation of citations remains worthwhile — but confident factual errors are far less common than with ChatGPT or Claude on the same queries.",
+  },
+  {
+    question: "Can Perplexity search academic papers?",
+    answer: "Yes. Perplexity has an Academic mode that prioritises peer-reviewed sources, academic papers, and arXiv pre-prints in search results. This is more useful for literature review than standard web search, which often surfaces SEO-optimised content above primary sources.",
+  },
+  {
+    question: "What makes Perplexity different from ChatGPT?",
+    answer: "The core difference is grounding: Perplexity searches the web in real time and cites every source; ChatGPT draws from training data with a knowledge cut-off. For current events, fact-checking, and research requiring verifiable sources, Perplexity is superior. For creative tasks, coding, and complex reasoning, ChatGPT leads.",
+  },
+];
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "Perplexity AI Review 2026 — The Google Killer?",
+      description: "An independent review of Perplexity AI for 2026, covering pricing, how its citation model works, and how it compares to Google and ChatGPT.",
+      datePublished: "2026-05-25",
+      dateModified: "2026-05-25",
+      author: { "@type": "Organization", name: "RankedAI™" },
+      publisher: { "@type": "Organization", name: "RankedAI™" },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
+    },
+  ],
+};
+
 export default function PerplexityReview2026() {
   return (
-    <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+      />
+      <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-20">
 
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-[#8888A0] font-mono mb-8">
@@ -505,6 +564,22 @@ export default function PerplexityReview2026() {
         </div>
       </section>
 
+      {/* ── FAQ ──────────────────────────────────────────── */}
+      <section className="mb-20">
+        <div className="flex items-baseline gap-3 mb-4">
+          <span className="font-mono text-xs text-[#14B8A6]">09</span>
+          <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">Frequently asked questions</h2>
+        </div>
+        <div className="pl-6 border-l border-[#1E1E2E] space-y-4">
+          {faqItems.map((item) => (
+            <div key={item.question} className="bg-[#13131A] border border-[#1E1E2E] rounded-card p-5">
+              <h3 className="font-syne font-bold text-sm text-[#F0F0F5] mb-3">{item.question}</h3>
+              <p className="text-sm text-[#8888A0] leading-relaxed">{item.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <div
         className="rounded-card p-8 text-center relative overflow-hidden border border-[#14B8A6]/20 mb-12"
@@ -562,5 +637,6 @@ export default function PerplexityReview2026() {
         <Link href="/tool/perplexity" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Perplexity tool page</Link>
       </div>
     </div>
+    </>
   );
 }
