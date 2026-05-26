@@ -624,7 +624,7 @@ export default function ElevenLabsReview2026() {
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a
-              href="https://elevenlabs.io"
+              href="https://elevenlabs.io/?pscd=try.elevenlabs.io&ps_partner_key=ZTg3ZTIzZjdkOTY0&ps_xid=J5izNJIF1qVA4n&gsxid=J5izNJIF1qVA4n&gspk=ZTg3ZTIzZjdkOTY0"
               target="_blank"
               rel="noopener noreferrer sponsored"
               className="px-6 py-2.5 bg-[#F97316] text-white font-syne font-bold text-sm rounded-lg hover:bg-[#ea6c0a] transition-colors"
