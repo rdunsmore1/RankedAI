@@ -58,6 +58,7 @@ export default function Footer() {
               <li><Link href="/blog/chatgpt-review-2026" className="text-xs text-[#8888A0] hover:text-[#F0F0F5] transition-colors">ChatGPT Review 2026</Link></li>
               <li><Link href="/blog/gemini-ai-review-2026" className="text-xs text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Gemini Review 2026</Link></li>
               <li><Link href="/blog/midjourney-review-2026" className="text-xs text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Midjourney Review 2026</Link></li>
+              <li><Link href="/blog/perplexity-ai-review-2026" className="text-xs text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Perplexity AI Review 2026</Link></li>
             </ul>
           </div>
 
