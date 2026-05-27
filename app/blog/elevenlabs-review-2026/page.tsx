@@ -227,6 +227,17 @@ export default function ElevenLabsReview2026() {
             <span className="font-mono text-[11px] text-[#8888A0]">RankedAI™ Editorial</span>
           </div>
 
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <div className="inline-flex items-center bg-white rounded-xl px-5 py-3 mb-6">
+            <img
+              src="/logos/elevenlabs-black.png"
+              alt="ElevenLabs"
+              width={160}
+              height={40}
+              className="h-8 w-auto object-contain"
+            />
+          </div>
+
           <h1 className="font-syne font-black text-5xl sm:text-6xl leading-[1.05] tracking-tight text-[#F0F0F5] mb-6">
             ElevenLabs Review 2026 —{" "}
             <span
