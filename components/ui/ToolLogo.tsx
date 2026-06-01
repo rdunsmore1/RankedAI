@@ -39,6 +39,7 @@ const TOOL_ICONS: Record<string, string> = {
   "copyai":              "/logos/copyai-logo.png",        // no icon file — using logo
 };
 
+
 // Logo versions — symbol + wordmark, auto width at fixed 40px height
 const TOOL_LOGOS: Record<string, string> = {
   "claude":              "/logos/Claude-logo.png",
@@ -61,7 +62,7 @@ const TOOL_LOGOS: Record<string, string> = {
   "wolfram-alpha":       "/logos/WolframAlpha-logo.png",
   "runway-ml":           "/logos/RunWay-logo.png",
   "kling-ai":            "/logos/Kling-logo.png",
-  "elevenlabs":          "/logos/ElevenLabs-logo.png",
+  "elevenlabs":          "/logos/ElevenLabs-icon.png",    // icon (white) works on dark bg
   "heygen":              "/logos/HeyGen-logo.jpeg",
 };
 
@@ -118,7 +119,7 @@ export default function ToolLogo({
           <img
             src={resolvedUrl}
             alt={`${name} logo`}
-            style={{ height: "100%", width: "auto", objectFit: "contain" }}
+            style={{ height: "100%", width: "auto", objectFit: "contain", mixBlendMode: "screen" }}
             loading="lazy"
             onError={handleError}
           />
@@ -165,6 +166,7 @@ export default function ToolLogo({
           width={innerSize}
           height={innerSize}
           className="object-contain"
+          style={{ mixBlendMode: "screen" }}
           onError={handleError}
         />
       </div>
