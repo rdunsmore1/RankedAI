@@ -165,7 +165,7 @@ export default function ToolDetailClient({
           <div>
             {/* Header */}
             <div className="flex items-start gap-4 mb-6">
-              <ToolLogo name={tool.name} slug={tool.slug} logoUrl={tool.logo_url} size={64} />
+              <ToolLogo name={tool.name} slug={tool.slug} logoUrl={tool.logo_url} size={64} variant="logo" />
               <div className="flex-1">
                 <div className="flex items-center gap-2 flex-wrap mb-1">
                   <h1 className="font-syne font-bold text-2xl text-[#F0F0F5]">{tool.name}</h1>
