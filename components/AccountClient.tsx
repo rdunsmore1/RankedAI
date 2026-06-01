@@ -85,15 +85,6 @@ export default function AccountClient({ user, profile, savedTools, votes, review
           </div>
         </div>
 
-        {!profile?.is_pro && (
-          <div className="ml-auto bg-[#13131A] border border-[#F59E0B]/20 rounded-card p-4 text-right hidden sm:block">
-            <div className="text-xs text-[#8888A0] mb-1">Upgrade to Pro</div>
-            <div className="font-syne font-bold text-sm text-[#F0F0F5] mb-2">Save unlimited tools &amp; more</div>
-            <button className="text-xs font-semibold bg-[#F59E0B] text-[#0A0A0F] px-3 py-1.5 rounded-lg hover:bg-amber-400 transition-colors">
-              Upgrade — $9/mo
-            </button>
-          </div>
-        )}
       </div>
 
       <div className="grid lg:grid-cols-[240px_1fr] gap-8">
