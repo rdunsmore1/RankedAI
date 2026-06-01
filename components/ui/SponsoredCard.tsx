@@ -31,7 +31,7 @@ export default function SponsoredCard({ tool, userId, onAuthRequired }: Sponsore
         <span className="text-[#F59E0B] text-xs font-bold">★</span>
       </div>
 
-      <ToolLogo name={tool.name} logoUrl={tool.logo_url} size={48} />
+      <ToolLogo name={tool.name} slug={tool.slug} logoUrl={tool.logo_url} size={48} />
 
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 flex-wrap">

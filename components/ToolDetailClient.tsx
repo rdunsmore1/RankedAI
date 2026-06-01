@@ -53,6 +53,31 @@ interface ToolDetailClientProps {
   firstCategoryId: string | null;
 }
 
+const PRICING_URLS: Record<string, string> = {
+  "claude":               "https://claude.ai/upgrade",
+  "chatgpt":              "https://chatgpt.com/pricing/",
+  "chatgpt-o3":           "https://chatgpt.com/pricing/",
+  "gemini":               "https://one.google.com/about/plans",
+  "grok":                 "https://x.ai/grok",
+  "github-copilot":       "https://github.com/features/copilot",
+  "cursor":               "https://cursor.com/pricing",
+  "jasper":               "https://jasper.ai/pricing",
+  "copyai":               "https://copy.ai/pricing",
+  "grammarly":            "https://grammarly.com/upgrade",
+  "midjourney":           "https://midjourney.com/account",
+  "dalle-3":              "https://chatgpt.com/pricing/",
+  "stable-diffusion-xl":  "https://stability.ai/pricing",
+  "adobe-firefly":        "https://firefly.adobe.com/pricing",
+  "ideogram":             "https://ideogram.ai/pricing",
+  "perplexity":           "https://perplexity.ai/pro",
+  "consensus":            "https://consensus.app/home/pricing/",
+  "wolfram-alpha":        "https://wolframalpha.com/pro",
+  "runway-ml":            "https://runwayml.com/pricing",
+  "kling-ai":             "https://kling.ai/pricing",
+  "heygen":               "https://heygen.com/pricing",
+  "meta-ai":              "https://ai.meta.com",
+};
+
 function renderMarkdown(text: string): string {
   return text
     .replace(/^### (.+)$/gm, '<h3 class="font-syne font-bold text-base text-[#F0F0F5] mt-5 mb-2">$1</h3>')
@@ -140,7 +165,7 @@ export default function ToolDetailClient({
           <div>
             {/* Header */}
             <div className="flex items-start gap-4 mb-6">
-              <ToolLogo name={tool.name} logoUrl={tool.logo_url} size={64} />
+              <ToolLogo name={tool.name} slug={tool.slug} logoUrl={tool.logo_url} size={64} />
               <div className="flex-1">
                 <div className="flex items-center gap-2 flex-wrap mb-1">
                   <h1 className="font-syne font-bold text-2xl text-[#F0F0F5]">{tool.name}</h1>
@@ -211,22 +236,25 @@ export default function ToolDetailClient({
             {/* Pricing */}
             <div className="bg-[#13131A] border border-[#1E1E2E] rounded-card p-5 mb-6">
               <h2 className="font-syne font-bold text-base text-[#F0F0F5] mb-3">Pricing</h2>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 mb-4">
                 <PricingPill model={tool.pricing_model} size="md" />
                 {tool.price_details && (
                   <span className="text-sm text-[#8888A0]">{tool.price_details}</span>
                 )}
               </div>
-              {tool.website_url && (
+              {PRICING_URLS[tool.slug] && (
                 <a
-                  href={tool.website_url}
+                  href={PRICING_URLS[tool.slug]}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 mt-3 text-xs text-[#8888A0] hover:text-[#00D4FF] transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#00D4FF] text-[#0A0A0F] font-syne font-bold text-sm rounded-lg hover:bg-[#00c4ef] transition-colors mb-3"
                 >
-                  View pricing page ↗
+                  View Current Pricing →
                 </a>
               )}
+              <p className="text-[11px] text-[#8888A0] leading-relaxed">
+                Pricing may change. Always check the official pricing page for the latest rates.
+              </p>
             </div>
 
             {/* Vote in context */}

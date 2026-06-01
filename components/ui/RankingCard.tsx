@@ -37,7 +37,7 @@ export default function RankingCard({
       </div>
 
       {/* Logo */}
-      <ToolLogo name={tool.name} logoUrl={tool.logo_url} size={compact ? 40 : 48} />
+      <ToolLogo name={tool.name} slug={tool.slug} logoUrl={tool.logo_url} size={compact ? 40 : 48} />
 
       {/* Main info */}
       <div className="flex-1 min-w-0">

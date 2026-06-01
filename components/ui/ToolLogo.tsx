@@ -1,50 +1,64 @@
 "use client";
 
 /* eslint-disable @next/next/no-img-element */
+import { useState } from "react";
+
 interface ToolLogoProps {
   name: string;
-  logoUrl: string | null;
+  slug?: string;
+  logoUrl?: string | null;
   size?: number;
 }
 
-const INITIALS_COLORS: Record<string, string> = {
-  C: "#00D4FF",
-  G: "#F59E0B",
-  J: "#A855F7",
-  M: "#22C55E",
-  P: "#F97316",
-  W: "#3B82F6",
-  S: "#EC4899",
-  E: "#10B981",
-  R: "#8B5CF6",
-  H: "#EF4444",
+const TOOL_FAVICONS: Record<string, string> = {
+  "claude":              "https://claude.ai/favicon.ico",
+  "chatgpt":             "https://chat.openai.com/favicon.ico",
+  "chatgpt-o3":          "https://chat.openai.com/favicon.ico",
+  "dalle-3":             "https://chat.openai.com/favicon.ico",
+  "gemini":              "https://www.gstatic.com/lamda/images/favicon_v1_150160cddff7f294ce30.svg",
+  "grok":                "https://x.ai/favicon.ico",
+  "github-copilot":      "https://github.com/favicon.ico",
+  "cursor":              "https://cursor.com/favicon.ico",
+  "jasper":              "https://jasper.ai/favicon.ico",
+  "copyai":              "https://copy.ai/favicon.ico",
+  "grammarly":           "https://grammarly.com/favicon.ico",
+  "midjourney":          "https://midjourney.com/favicon.ico",
+  "stable-diffusion-xl": "https://stability.ai/favicon.ico",
+  "adobe-firefly":       "https://www.adobe.com/favicon.ico",
+  "ideogram":            "https://ideogram.ai/favicon.ico",
+  "perplexity":          "https://perplexity.ai/favicon.ico",
+  "consensus":           "https://consensus.app/favicon.ico",
+  "wolfram-alpha":       "https://wolframalpha.com/favicon.ico",
+  "runway-ml":           "https://runwayml.com/favicon.ico",
+  "kling-ai":            "https://kling.ai/favicon.ico",
+  "elevenlabs":          "https://elevenlabs.io/favicon.ico",
+  "heygen":              "https://heygen.com/favicon.ico",
+  "meta-ai":             "https://ai.meta.com/favicon.ico",
 };
 
-export default function ToolLogo({ name, logoUrl, size = 48 }: ToolLogoProps) {
-  const initial = name.charAt(0).toUpperCase();
-  const color = INITIALS_COLORS[initial] ?? "#8888A0";
+export default function ToolLogo({ name, slug, logoUrl, size = 48 }: ToolLogoProps) {
+  const [imgFailed, setImgFailed] = useState(false);
 
-  if (logoUrl) {
-    const needsLightBg = logoUrl.includes("elevenlabs");
+  const resolvedUrl = logoUrl ?? (slug ? TOOL_FAVICONS[slug] : null);
+  const showImage = !!resolvedUrl && !imgFailed;
+
+  const padding = Math.round(size * 0.14);
+  const initials = name.slice(0, 2).toUpperCase();
+
+  if (showImage) {
     return (
       <div
         className="rounded-lg shrink-0 flex items-center justify-center overflow-hidden"
-        style={{
-          width: size,
-          height: size,
-          background: needsLightBg ? "#ffffff" : "transparent",
-          padding: needsLightBg ? size * 0.1 : 0,
-        }}
+        style={{ width: size, height: size, background: "#13131A", padding }}
       >
         <img
-          src={logoUrl}
-          alt={name}
-          width={size}
-          height={size}
+          src={resolvedUrl}
+          alt={`${name} logo`}
+          width={size - padding * 2}
+          height={size - padding * 2}
+          loading="lazy"
           className="object-contain w-full h-full"
-          onError={(e) => {
-            (e.target as HTMLImageElement).style.display = "none";
-          }}
+          onError={() => setImgFailed(true)}
         />
       </div>
     );
@@ -52,15 +66,17 @@ export default function ToolLogo({ name, logoUrl, size = 48 }: ToolLogoProps) {
 
   return (
     <div
-      className="rounded-lg flex items-center justify-center font-syne font-bold text-[#0A0A0F] select-none shrink-0"
+      className="rounded-lg flex items-center justify-center font-syne font-bold select-none shrink-0"
       style={{
         width: size,
         height: size,
-        backgroundColor: color,
-        fontSize: size * 0.4,
+        background: "#13131A",
+        color: "#00D4FF",
+        fontSize: size * 0.33,
+        border: "1px solid rgba(0, 212, 255, 0.2)",
       }}
     >
-      {initial}
+      {initials}
     </div>
   );
 }
