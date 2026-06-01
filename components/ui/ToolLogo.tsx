@@ -36,7 +36,7 @@ const TOOL_ICONS: Record<string, string> = {
   "kling-ai":            "/logos/Kling-icon.png",
   "elevenlabs":          "/logos/ElevenLabs-icon.png",
   "heygen":              "/logos/HeyGen-icon.jpeg",
-  // meta-ai: no file — falls through to letter fallback
+  "copyai":              "/logos/copyai-logo.png",        // no icon file — using logo
 };
 
 // Logo versions — symbol + wordmark, auto width at fixed 40px height
@@ -63,7 +63,6 @@ const TOOL_LOGOS: Record<string, string> = {
   "kling-ai":            "/logos/Kling-logo.png",
   "elevenlabs":          "/logos/ElevenLabs-logo.png",
   "heygen":              "/logos/HeyGen-logo.jpeg",
-  // meta-ai: no file — falls through to letter fallback
 };
 
 // Add slugs here for any logos whose image is black/dark and needs a white pill
