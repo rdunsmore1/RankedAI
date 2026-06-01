@@ -164,48 +164,52 @@ export default function ToolDetailClient({
           {/* Left: Main content */}
           <div>
             {/* Header */}
-            <div className="flex items-start gap-4 mb-6">
-              <ToolLogo name={tool.name} slug={tool.slug} logoUrl={tool.logo_url} size={64} variant="logo" />
-              <div className="flex-1">
-                <div className="flex items-center gap-2 flex-wrap mb-1">
-                  <h1 className="font-syne font-bold text-2xl text-[#F0F0F5]">{tool.name}</h1>
+            <div className="mb-6">
+              {/* Logo row — branded wordmark as primary identity */}
+              <div className="flex items-center justify-between gap-4 mb-3">
+                <div className="flex items-center gap-3 min-w-0">
+                  <ToolLogo name={tool.name} slug={tool.slug} logoUrl={tool.logo_url} variant="logo" />
                   {tool.is_sponsored && (
-                    <span className="text-[10px] font-mono font-semibold bg-[#F59E0B]/15 text-[#F59E0B] border border-[#F59E0B]/30 px-2 py-0.5 rounded-pill">
+                    <span className="text-[10px] font-mono font-semibold bg-[#F59E0B]/15 text-[#F59E0B] border border-[#F59E0B]/30 px-2 py-0.5 rounded-pill shrink-0">
                       {tool.sponsored_label ?? "Sponsored"}
                     </span>
                   )}
                 </div>
-                {tool.tagline && (
-                  <p className="text-sm text-[#8888A0] mb-2">{tool.tagline}</p>
-                )}
-                <div className="flex items-center gap-2 flex-wrap">
-                  <PricingPill model={tool.pricing_model} size="md" />
-                  {toolCategories.map((tc) => {
-                    const cat = tc.categories as { name: string; slug: string } | null;
-                    if (!cat) return null;
-                    return (
-                      <Link
-                        key={tc.category_id}
-                        href={`/${cat.slug}`}
-                        className="text-xs bg-[#1E1E2E] text-[#8888A0] hover:text-[#F0F0F5] px-2 py-0.5 rounded-pill transition-colors"
-                      >
-                        {cat.name}
-                      </Link>
-                    );
-                  })}
-                </div>
+                <button
+                  onClick={handleSave}
+                  title={saved ? "Remove from saved" : "Save tool"}
+                  className={`shrink-0 p-2.5 rounded-lg border transition-colors ${
+                    saved
+                      ? "bg-[#00D4FF]/15 border-[#00D4FF]/30 text-[#00D4FF]"
+                      : "bg-[#13131A] border-[#1E1E2E] text-[#8888A0] hover:border-[#8888A0]"
+                  }`}
+                >
+                  {saved ? "★" : "☆"}
+                </button>
               </div>
-              <button
-                onClick={handleSave}
-                title={saved ? "Remove from saved" : "Save tool"}
-                className={`shrink-0 p-2.5 rounded-lg border transition-colors ${
-                  saved
-                    ? "bg-[#00D4FF]/15 border-[#00D4FF]/30 text-[#00D4FF]"
-                    : "bg-[#13131A] border-[#1E1E2E] text-[#8888A0] hover:border-[#8888A0]"
-                }`}
-              >
-                {saved ? "★" : "☆"}
-              </button>
+
+              {/* h1 kept for SEO and screen readers */}
+              <h1 className="sr-only">{tool.name}</h1>
+
+              {tool.tagline && (
+                <p className="text-sm text-[#8888A0] mb-3">{tool.tagline}</p>
+              )}
+              <div className="flex items-center gap-2 flex-wrap">
+                <PricingPill model={tool.pricing_model} size="md" />
+                {toolCategories.map((tc) => {
+                  const cat = tc.categories as { name: string; slug: string } | null;
+                  if (!cat) return null;
+                  return (
+                    <Link
+                      key={tc.category_id}
+                      href={`/${cat.slug}`}
+                      className="text-xs bg-[#1E1E2E] text-[#8888A0] hover:text-[#F0F0F5] px-2 py-0.5 rounded-pill transition-colors"
+                    >
+                      {cat.name}
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
 
             {/* CTA Button */}

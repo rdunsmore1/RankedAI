@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import { useState } from "react";
 
@@ -7,11 +8,11 @@ interface ToolLogoProps {
   name: string;
   slug?: string;
   logoUrl?: string | null;
-  size?: number;
+  size?: number;           // applies to icon variant only
   variant?: "icon" | "logo";
 }
 
-// Icon versions — symbol only, used on ranking cards and category pages
+// Icon versions — symbol only, fixed square on cards and category pages
 const TOOL_ICONS: Record<string, string> = {
   "claude":              "/logos/claude-icon.png",
   "chatgpt":             "/logos/chatgpt-icon.png",
@@ -38,7 +39,7 @@ const TOOL_ICONS: Record<string, string> = {
   "meta-ai":             "/logos/metaai-icon.png",
 };
 
-// Logo versions — symbol + wordmark, used on tool detail page headers
+// Logo versions — symbol + wordmark, auto width at fixed 40px height
 const TOOL_LOGOS: Record<string, string> = {
   "claude":              "/logos/claude-logo.png",
   "chatgpt":             "/logos/chatgpt-logo.png",
@@ -65,8 +66,8 @@ const TOOL_LOGOS: Record<string, string> = {
   "meta-ai":             "/logos/metaai-logo.png",
 };
 
-// Logos whose images are dark/black — need white background on the dark theme
-const NEEDS_WHITE_BG = new Set(["github-copilot", "elevenlabs"]);
+// Add slugs here for any logos whose image is black/dark and needs a white pill
+const NEEDS_WHITE_BG = new Set<string>([]);
 
 // Custom initials for tools where name.slice(0,2) isn't ideal
 const CUSTOM_INITIALS: Record<string, string> = {
@@ -74,7 +75,7 @@ const CUSTOM_INITIALS: Record<string, string> = {
   "midjourney": "MJ",
 };
 
-// Module-level set of URLs known to fail — survives remounts and auth state changes
+// Module-level: URLs known to fail — survives remounts and auth state changes
 const failedUrls = new Set<string>();
 
 export default function ToolLogo({
@@ -84,7 +85,6 @@ export default function ToolLogo({
   size = 48,
   variant = "icon",
 }: ToolLogoProps) {
-  // Local maps take priority over DB logo_url
   const localMap = variant === "logo" ? TOOL_LOGOS : TOOL_ICONS;
   const resolvedUrl = (slug ? localMap[slug] : null) ?? logoUrl ?? null;
 
@@ -95,10 +95,60 @@ export default function ToolLogo({
 
   const showImage = !!resolvedUrl && !imgFailed;
   const needsWhiteBg = !!slug && NEEDS_WHITE_BG.has(slug);
-  const padding = Math.round(size * 0.14);
-  const innerSize = size - padding * 2;
   const initials =
     (slug ? CUSTOM_INITIALS[slug] : null) ?? name.slice(0, 2).toUpperCase();
+
+  const handleError = () => {
+    if (resolvedUrl) failedUrls.add(resolvedUrl);
+    setImgFailed(true);
+  };
+
+  // ── Logo variant: auto-width, fixed 40px height ───────────────────────────
+  if (variant === "logo") {
+    if (showImage) {
+      return (
+        <div
+          className="rounded-lg shrink-0 inline-flex items-center justify-center overflow-hidden"
+          style={{
+            height: 40,
+            padding: "6px 10px",
+            background: needsWhiteBg ? "#ffffff" : "#1E1E2E",
+            maxWidth: 220,
+          }}
+        >
+          <img
+            src={resolvedUrl}
+            alt={`${name} logo`}
+            style={{ height: "100%", width: "auto", objectFit: "contain" }}
+            loading="lazy"
+            onError={handleError}
+          />
+        </div>
+      );
+    }
+
+    // Logo fallback — pill shape showing initials
+    return (
+      <div
+        className="rounded-lg inline-flex items-center justify-center font-syne font-bold select-none shrink-0"
+        style={{
+          height: 40,
+          padding: "0 14px",
+          background: "#1E1E2E",
+          color: "#00D4FF",
+          fontSize: 15,
+          border: "1px solid rgba(0, 212, 255, 0.2)",
+          letterSpacing: "0.05em",
+        }}
+      >
+        {initials}
+      </div>
+    );
+  }
+
+  // ── Icon variant: fixed square ────────────────────────────────────────────
+  const padding = Math.round(size * 0.14);
+  const innerSize = size - padding * 2;
 
   if (showImage) {
     return (
@@ -107,7 +157,7 @@ export default function ToolLogo({
         style={{
           width: size,
           height: size,
-          background: needsWhiteBg ? "#ffffff" : "#13131A",
+          background: needsWhiteBg ? "#ffffff" : "#1E1E2E",
         }}
       >
         <Image
@@ -116,10 +166,7 @@ export default function ToolLogo({
           width={innerSize}
           height={innerSize}
           className="object-contain"
-          onError={() => {
-            failedUrls.add(resolvedUrl);
-            setImgFailed(true);
-          }}
+          onError={handleError}
         />
       </div>
     );
