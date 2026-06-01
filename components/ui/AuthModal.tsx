@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
 interface AuthModalProps {
@@ -11,6 +12,7 @@ interface AuthModalProps {
 }
 
 export default function AuthModal({ open, onClose, defaultMode = "signin", message }: AuthModalProps) {
+  const router = useRouter();
   const [mode, setMode] = useState<"signin" | "signup">(defaultMode);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -47,7 +49,7 @@ export default function AuthModal({ open, onClose, defaultMode = "signin", messa
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
         onClose();
-        window.location.reload();
+        router.refresh();
       }
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Something went wrong");

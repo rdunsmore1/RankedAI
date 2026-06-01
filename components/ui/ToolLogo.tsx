@@ -45,12 +45,18 @@ const CUSTOM_INITIALS: Record<string, string> = {
   "copyai":     "CP",
 };
 
-export default function ToolLogo({ name, slug, logoUrl, size = 48 }: ToolLogoProps) {
-  const [imgFailed, setImgFailed] = useState(false);
+// Module-level cache of URLs known to fail — persists across remounts and auth state changes
+const failedUrls = new Set<string>();
 
+export default function ToolLogo({ name, slug, logoUrl, size = 48 }: ToolLogoProps) {
   // Midjourney always uses letter fallback — no public favicon available
   const resolvedUrl =
     slug === "midjourney" ? null : (logoUrl ?? (slug ? TOOL_FAVICONS[slug] : null));
+
+  // Initialise from module-level cache so remounts never retry known-broken URLs
+  const [imgFailed, setImgFailed] = useState(() =>
+    !!resolvedUrl && failedUrls.has(resolvedUrl)
+  );
 
   const showImage = !!resolvedUrl && !imgFailed;
   const needsWhiteBg = !!slug && NEEDS_WHITE_BG.has(slug);
@@ -75,7 +81,7 @@ export default function ToolLogo({ name, slug, logoUrl, size = 48 }: ToolLogoPro
           height={size - padding * 2}
           loading="lazy"
           className="object-contain w-full h-full"
-          onError={() => setImgFailed(true)}
+          onError={() => { if (resolvedUrl) failedUrls.add(resolvedUrl); setImgFailed(true); }}
         />
       </div>
     );
