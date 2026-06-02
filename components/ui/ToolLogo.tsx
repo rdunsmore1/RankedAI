@@ -73,6 +73,8 @@ const NEEDS_WHITE_BG = new Set<string>([]);
 const CUSTOM_INITIALS: Record<string, string> = {
   "copyai":     "CP",
   "midjourney": "MJ",
+  "fish-audio": "FA",
+  "speechma":   "SM",
 };
 
 // Module-level: URLs known to fail — survives remounts and auth state changes

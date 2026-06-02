@@ -9,6 +9,7 @@ import AuthModal from "@/components/ui/AuthModal";
 import PricingPill from "@/components/ui/PricingPill";
 import AffiliateBanner from "@/components/ui/AffiliateBanner";
 import { Category, RankedTool } from "@/types/database";
+import BenchmarkDisclaimerTooltip from "@/components/ui/BenchmarkDisclaimerTooltip";
 
 const PRICING_FILTERS = ["All", "Free", "Freemium", "Paid", "API"] as const;
 type PricingFilter = (typeof PRICING_FILTERS)[number];
@@ -71,9 +72,10 @@ export default function CategoryPageClient({
                 <p className="text-xs text-[#8888A0] mt-0.5">{category.description}</p>
               )}
             </div>
-            <span className="ml-auto font-mono text-sm text-[#8888A0]">
-              {organic.length} tools
-            </span>
+            <div className="ml-auto flex items-center gap-2">
+              {category.slug === "speech-generation" && <BenchmarkDisclaimerTooltip />}
+              <span className="font-mono text-sm text-[#8888A0]">{organic.length} tools</span>
+            </div>
           </div>
 
           {/* Category tabs navigation */}

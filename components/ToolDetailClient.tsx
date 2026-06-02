@@ -10,6 +10,7 @@ import ReviewForm from "@/components/ui/ReviewForm";
 import VoteButtons from "@/components/ui/VoteButtons";
 import AuthModal from "@/components/ui/AuthModal";
 import { createClient } from "@/lib/supabase/client";
+import BenchmarkDisclaimerTooltip from "@/components/ui/BenchmarkDisclaimerTooltip";
 
 interface ToolDetailClientProps {
   tool: {
@@ -75,7 +76,8 @@ const PRICING_URLS: Record<string, string> = {
   "runway-ml":            "https://runwayml.com/pricing",
   "kling-ai":             "https://kling.ai/pricing",
   "heygen":               "https://heygen.com/pricing",
-  "meta-ai":              "https://ai.meta.com",
+  "fish-audio":           "https://fish.audio/pricing",
+  "speechma":             "https://speechma.com",
 };
 
 function renderMarkdown(text: string): string {
@@ -104,6 +106,9 @@ export default function ToolDetailClient({
   const [saved, setSaved] = useState(isSaved);
   const primaryRank = rankData[0];
   const ctaUrl = tool.affiliate_url || tool.website_url || "#";
+  const isSpeechGen = toolCategories.some(
+    (tc) => (tc.categories as { slug: string } | null)?.slug === "speech-generation"
+  );
 
   const handleSave = async () => {
     if (!userId) { setAuthOpen(true); return; }
@@ -336,7 +341,10 @@ export default function ToolDetailClient({
                   <div className="font-mono font-black text-5xl text-[#00D4FF] leading-none mb-1">
                     {primaryRank.composite_score.toFixed(1)}
                   </div>
-                  <div className="text-xs text-[#8888A0]">Composite Score</div>
+                  <div className="text-xs text-[#8888A0] flex items-center justify-center gap-1">
+                    Composite Score
+                    {isSpeechGen && <BenchmarkDisclaimerTooltip />}
+                  </div>
                 </div>
 
                 <div className="space-y-2.5">
