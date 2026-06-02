@@ -27,8 +27,30 @@ const nextConfig = {
       { protocol: "https", hostname: "claude.ai" },
     ],
   },
-  experimental: {
-    serverComponentsExternalPackages: [],
+  // Prevent browsers from caching HTML pages so they always fetch
+  // the latest version (which references the correct content-hashed CSS)
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "no-cache, no-store, must-revalidate",
+          },
+        ],
+      },
+      // Re-allow long-term caching for static assets (Next.js manages their hashes)
+      {
+        source: "/_next/static/(.*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
   },
 };
 
