@@ -2,7 +2,16 @@
 
 import { useState } from "react";
 
-export default function BenchmarkDisclaimerTooltip() {
+interface BenchmarkDisclaimerTooltipProps {
+  message?: string;
+}
+
+const DEFAULT_MESSAGE =
+  "Benchmark scores for speech generation tools are estimated from independent reviews and MOS scoring rather than a single public benchmark source. Community votes carry extra weight in this category as a result.";
+
+export default function BenchmarkDisclaimerTooltip({
+  message = DEFAULT_MESSAGE,
+}: BenchmarkDisclaimerTooltipProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -21,9 +30,7 @@ export default function BenchmarkDisclaimerTooltip() {
 
       {open && (
         <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 w-72 bg-[#13131A] border border-[#1E1E2E] rounded-card shadow-2xl p-3 animate-fadeIn pointer-events-none">
-          <p className="text-[11px] text-[#8888A0] leading-relaxed">
-            Benchmark scores for speech generation tools are estimated from independent reviews and MOS scoring rather than a single public benchmark source. Community votes carry extra weight in this category as a result.
-          </p>
+          <p className="text-[11px] text-[#8888A0] leading-relaxed">{message}</p>
           <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1E1E2E]" />
         </div>
       )}

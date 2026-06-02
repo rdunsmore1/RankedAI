@@ -10,6 +10,7 @@ import PricingPill from "@/components/ui/PricingPill";
 import AffiliateBanner from "@/components/ui/AffiliateBanner";
 import { Category, RankedTool } from "@/types/database";
 import BenchmarkDisclaimerTooltip from "@/components/ui/BenchmarkDisclaimerTooltip";
+import { TOOL_COMPLIANCE } from "@/lib/compliance";
 
 const PRICING_FILTERS = ["All", "Free", "Freemium", "Paid", "API"] as const;
 type PricingFilter = (typeof PRICING_FILTERS)[number];
@@ -30,6 +31,7 @@ export default function CategoryPageClient({
 }: CategoryPageClientProps) {
   const [pricingFilter, setPricingFilter] = useState<PricingFilter>("All");
   const [sortMode, setSortMode] = useState<SortMode>("top");
+  const [hipaaOnly, setHipaaOnly] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
   const [page, setPage] = useState(1);
   const PAGE_SIZE = 20;
@@ -40,6 +42,9 @@ export default function CategoryPageClient({
   // Filter
   if (pricingFilter !== "All") {
     organic = organic.filter((t) => t.pricing_model === pricingFilter);
+  }
+  if (hipaaOnly) {
+    organic = organic.filter((t) => TOOL_COMPLIANCE[t.slug]?.includes("hipaa"));
   }
 
   // Sort
@@ -74,6 +79,9 @@ export default function CategoryPageClient({
             </div>
             <div className="ml-auto flex items-center gap-2">
               {category.slug === "speech-generation" && <BenchmarkDisclaimerTooltip />}
+              {category.slug === "ai-meeting-notes" && (
+                <BenchmarkDisclaimerTooltip message="Benchmark scores for AI meeting tools are estimated from independent reviews and head-to-head comparisons rather than a single public benchmark source. Compliance badges are based on publicly documented certifications from each vendor. Community votes carry extra weight in this category as a result." />
+              )}
               <span className="font-mono text-sm text-[#8888A0]">{organic.length} tools</span>
             </div>
           </div>
@@ -100,6 +108,18 @@ export default function CategoryPageClient({
                 {f === "All" ? "All Pricing" : <PricingPill model={f} />}
               </button>
             ))}
+            {category.slug === "ai-meeting-notes" && (
+              <button
+                onClick={() => { setHipaaOnly((v) => !v); setPage(1); }}
+                className={`text-xs px-3 py-1.5 rounded-pill font-semibold transition-colors border ${
+                  hipaaOnly
+                    ? "bg-[#22C55E]/15 text-[#22C55E] border-[#22C55E]/30"
+                    : "text-[#8888A0] hover:text-[#F0F0F5] border-[#1E1E2E] hover:border-[#8888A0]"
+                }`}
+              >
+                🏥 HIPAA Only
+              </button>
+            )}
           </div>
           <div className="ml-auto flex items-center gap-2">
             <span className="text-xs text-[#8888A0] hidden sm:block">Sort:</span>
@@ -122,6 +142,15 @@ export default function CategoryPageClient({
 
       {/* Tool list */}
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-6">
+        {category.slug === "ai-meeting-notes" && (
+          <div className="flex items-start gap-3 bg-[#22C55E]/5 border border-[#22C55E]/20 rounded-lg px-4 py-3 mb-4">
+            <span className="text-base shrink-0 mt-0.5">🏥</span>
+            <p className="text-xs text-[#8888A0] leading-relaxed">
+              <strong className="text-[#22C55E]">Healthcare teams:</strong>{" "}
+              Filter by the <span className="text-[#22C55E] font-semibold">HIPAA</span> badge to find tools safe for clinical conversations involving patient health information (PHI). Only HIPAA compliant tools should be used in patient-facing environments.
+            </p>
+          </div>
+        )}
         <AffiliateBanner />
         <div className="space-y-2">
           {sponsored && pricingFilter === "All" && (

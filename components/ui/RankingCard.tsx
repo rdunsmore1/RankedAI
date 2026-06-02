@@ -6,6 +6,7 @@ import PricingPill from "./PricingPill";
 import ScoreBar from "./ScoreBar";
 import ScoreBreakdownTooltip from "./ScoreBreakdownTooltip";
 import VoteButtons from "./VoteButtons";
+import ComplianceBadges from "./ComplianceBadges";
 import { RankedTool } from "@/types/database";
 
 interface RankingCardProps {
@@ -50,6 +51,7 @@ export default function RankingCard({
           </Link>
           <PricingPill model={tool.pricing_model} />
         </div>
+        <ComplianceBadges slug={tool.slug} size="sm" />
         {tool.tagline && (
           <p className="text-xs text-[#8888A0] mt-0.5 line-clamp-1">{tool.tagline}</p>
         )}

@@ -11,6 +11,7 @@ import VoteButtons from "@/components/ui/VoteButtons";
 import AuthModal from "@/components/ui/AuthModal";
 import { createClient } from "@/lib/supabase/client";
 import BenchmarkDisclaimerTooltip from "@/components/ui/BenchmarkDisclaimerTooltip";
+import ComplianceBadges from "@/components/ui/ComplianceBadges";
 
 interface ToolDetailClientProps {
   tool: {
@@ -78,6 +79,12 @@ const PRICING_URLS: Record<string, string> = {
   "heygen":               "https://heygen.com/pricing",
   "fish-audio":           "https://fish.audio/pricing",
   "speechma":             "https://speechma.com",
+  "fellow-ai":            "https://fellow.ai/pricing",
+  "fathom":               "https://fathom.ai/pricing",
+  "fireflies-ai":         "https://fireflies.ai/pricing",
+  "otter-ai":             "https://otter.ai/pricing",
+  "jamie":                "https://meetjamie.ai/pricing",
+  "granola":              "https://granola.ai/pricing",
 };
 
 function renderMarkdown(text: string): string {
@@ -108,6 +115,9 @@ export default function ToolDetailClient({
   const ctaUrl = tool.affiliate_url || tool.website_url || "#";
   const isSpeechGen = toolCategories.some(
     (tc) => (tc.categories as { slug: string } | null)?.slug === "speech-generation"
+  );
+  const isMeetingNotes = toolCategories.some(
+    (tc) => (tc.categories as { slug: string } | null)?.slug === "ai-meeting-notes"
   );
 
   const handleSave = async () => {
@@ -199,7 +209,8 @@ export default function ToolDetailClient({
               {tool.tagline && (
                 <p className="text-sm text-[#8888A0] mb-3">{tool.tagline}</p>
               )}
-              <div className="flex items-center gap-2 flex-wrap">
+              <ComplianceBadges slug={tool.slug} size="md" />
+              <div className="flex items-center gap-2 flex-wrap mt-2">
                 <PricingPill model={tool.pricing_model} size="md" />
                 {toolCategories.map((tc) => {
                   const cat = tc.categories as { name: string; slug: string } | null;
@@ -344,6 +355,9 @@ export default function ToolDetailClient({
                   <div className="text-xs text-[#8888A0] flex items-center justify-center gap-1">
                     Composite Score
                     {isSpeechGen && <BenchmarkDisclaimerTooltip />}
+                    {isMeetingNotes && (
+                      <BenchmarkDisclaimerTooltip message="Benchmark scores for AI meeting tools are estimated from independent reviews and head-to-head comparisons rather than a single public benchmark source. Compliance badges are based on publicly documented certifications from each vendor. Community votes carry extra weight in this category as a result." />
+                    )}
                   </div>
                 </div>
 

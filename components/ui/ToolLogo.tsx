@@ -71,10 +71,12 @@ const NEEDS_WHITE_BG = new Set<string>([]);
 
 // Custom initials for tools where name.slice(0,2) isn't ideal
 const CUSTOM_INITIALS: Record<string, string> = {
-  "copyai":     "CP",
-  "midjourney": "MJ",
-  "fish-audio": "FA",
-  "speechma":   "SM",
+  "copyai":        "CP",
+  "midjourney":    "MJ",
+  "fish-audio":    "FA",
+  "speechma":      "SM",
+  "fireflies-ai":  "FF",
+  "jamie":         "JM",
 };
 
 // Module-level: URLs known to fail — survives remounts and auth state changes
