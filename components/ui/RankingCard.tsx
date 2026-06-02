@@ -51,9 +51,9 @@ export default function RankingCard({
           </Link>
           <PricingPill model={tool.pricing_model} />
         </div>
-        <ComplianceBadges slug={tool.slug} size="sm" />
+        <ComplianceBadges slug={tool.slug} size="sm" className="mt-1.5" />
         {tool.tagline && (
-          <p className="text-xs text-[#8888A0] mt-0.5 line-clamp-1">{tool.tagline}</p>
+          <p className="text-xs text-[#8888A0] mt-1 line-clamp-1">{tool.tagline}</p>
         )}
         {!compact && (
           <div className="mt-2">

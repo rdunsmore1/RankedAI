@@ -209,8 +209,8 @@ export default function ToolDetailClient({
               {tool.tagline && (
                 <p className="text-sm text-[#8888A0] mb-3">{tool.tagline}</p>
               )}
-              <ComplianceBadges slug={tool.slug} size="md" />
-              <div className="flex items-center gap-2 flex-wrap mt-2">
+              <ComplianceBadges slug={tool.slug} size="md" className="mt-1 mb-3" />
+              <div className="flex items-center gap-2 flex-wrap">
                 <PricingPill model={tool.pricing_model} size="md" />
                 {toolCategories.map((tc) => {
                   const cat = tc.categories as { name: string; slug: string } | null;
