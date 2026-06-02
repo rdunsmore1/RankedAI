@@ -1,12 +1,15 @@
 import Link from "next/link";
-import { getCategories, getRankedTools } from "@/lib/data";
+import { getCategories, getRankedTools, getToolCount } from "@/lib/data";
 import { createClient } from "@/lib/supabase/server";
 import HomepageTabs from "@/components/HomepageTabs";
 
 export const revalidate = 60;
 
 export default async function HomePage() {
-  const categories = await getCategories();
+  const [categories, toolCount] = await Promise.all([
+    getCategories(),
+    getToolCount(),
+  ]);
 
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
@@ -89,8 +92,8 @@ export default async function HomePage() {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4 pt-4 border-t border-[#1E1E2E]">
                 {[
-                  { value: "22+", label: "AI tools ranked" },
-                  { value: "6", label: "Categories" },
+                  { value: `${toolCount}+`, label: "AI tools ranked" },
+                  { value: `${categories.length}`, label: "Categories" },
                   { value: "100%", label: "Transparent scoring" },
                 ].map((stat) => (
                   <div key={stat.label}>

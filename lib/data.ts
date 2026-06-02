@@ -1,6 +1,14 @@
 import { createClient } from "@/lib/supabase/server";
 import { RankedTool, Category } from "@/types/database";
 
+export async function getToolCount(): Promise<number> {
+  const supabase = await createClient();
+  const { count } = await supabase
+    .from("tools")
+    .select("*", { count: "exact", head: true });
+  return count ?? 0;
+}
+
 export async function getCategories(): Promise<Category[]> {
   const supabase = await createClient();
   const { data, error } = await supabase
