@@ -9,12 +9,7 @@ interface StarRatingProps {
   size?: "sm" | "md" | "lg";
 }
 
-export default function StarRating({
-  value,
-  onChange,
-  readonly = false,
-  size = "md",
-}: StarRatingProps) {
+export default function StarRating({ value, onChange, readonly = false, size = "md" }: StarRatingProps) {
   const [hover, setHover] = useState(0);
   const sizes = { sm: "text-sm", md: "text-lg", lg: "text-2xl" };
 
@@ -23,17 +18,13 @@ export default function StarRating({
       {[1, 2, 3, 4, 5].map((star) => {
         const filled = star <= (hover || value);
         return (
-          <button
-            key={star}
-            type="button"
-            disabled={readonly}
-            className={`transition-colors ${
-              readonly ? "cursor-default" : "cursor-pointer"
-            } ${filled ? "text-[#F59E0B]" : "text-[#2a2a3e]"}`}
+          <button key={star} type="button" disabled={readonly}
+            className={`transition-colors ${readonly ? "cursor-default" : "cursor-pointer"} ${
+              filled ? "text-[#B8963C]" : "text-[#D9CFC4]"
+            }`}
             onMouseEnter={() => !readonly && setHover(star)}
             onMouseLeave={() => !readonly && setHover(0)}
-            onClick={() => onChange?.(star)}
-          >
+            onClick={() => onChange?.(star)}>
             ★
           </button>
         );

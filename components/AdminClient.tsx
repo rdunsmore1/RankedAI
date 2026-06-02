@@ -88,8 +88,8 @@ export default function AdminClient({ tools: initialTools, categories, clickStat
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-8">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="font-syne font-bold text-2xl text-[#F0F0F5]">Admin Panel</h1>
-        <Link href="/" className="text-sm text-[#8888A0] hover:text-[#F0F0F5] transition-colors">← Back to site</Link>
+        <h1 className="font-semibold text-2xl text-[#1A1A1A]">Admin Panel</h1>
+        <Link href="/" className="text-sm text-[#8A7F74] hover:text-[#1A1A1A] transition-colors">← Back to site</Link>
       </div>
 
       {msg && (
@@ -106,8 +106,8 @@ export default function AdminClient({ tools: initialTools, categories, clickStat
             onClick={() => setTab(t)}
             className={`px-4 py-2 rounded-lg text-sm font-semibold capitalize transition-colors ${
               tab === t
-                ? "bg-[#00D4FF]/15 text-[#00D4FF] border border-[#00D4FF]/30"
-                : "text-[#8888A0] border border-[#1E1E2E] hover:text-[#F0F0F5]"
+                ? "bg-[#6B1E2E]/15 text-[#6B1E2E] border border-[#6B1E2E]/30"
+                : "text-[#8A7F74] border border-[#D9CFC4] hover:text-[#1A1A1A]"
             }`}
           >
             {t} {t === "tools" ? `(${tools.length})` : t === "clicks" ? `(${clickStats.reduce((s, c) => s + c.count, 0)})` : `(${categories.length})`}
@@ -120,7 +120,7 @@ export default function AdminClient({ tools: initialTools, categories, clickStat
         <div className="space-y-2">
           {tools.map((tool) =>
             editingTool === tool.id ? (
-              <div key={tool.id} className="bg-[#13131A] border border-[#00D4FF]/30 rounded-card p-4">
+              <div key={tool.id} className="bg-[#F0EBE1] border border-[#6B1E2E]/30 rounded-card p-4">
                 <div className="grid sm:grid-cols-2 gap-3 mb-3">
                   {[
                     { key: "name", label: "Name", type: "text" },
@@ -131,21 +131,21 @@ export default function AdminClient({ tools: initialTools, categories, clickStat
                     { key: "affiliate_url", label: "Affiliate URL", type: "url" },
                   ].map((f) => (
                     <div key={f.key}>
-                      <label className="text-[10px] text-[#8888A0] mb-1 block">{f.label}</label>
+                      <label className="text-[10px] text-[#8A7F74] mb-1 block">{f.label}</label>
                       <input
                         type={f.type}
                         value={String(editData[f.key] ?? "")}
                         onChange={(e) => setEditData((d) => ({ ...d, [f.key]: e.target.value }))}
-                        className="w-full bg-[#0A0A0F] border border-[#1E1E2E] rounded px-2.5 py-1.5 text-xs text-[#F0F0F5] focus:border-[#00D4FF]/50 focus:outline-none"
+                        className="w-full bg-[#FAF7F2] border border-[#D9CFC4] rounded px-2.5 py-1.5 text-xs text-[#1A1A1A] focus:border-[#6B1E2E]/50 focus:outline-none"
                       />
                     </div>
                   ))}
                   <div>
-                    <label className="text-[10px] text-[#8888A0] mb-1 block">Pricing Model</label>
+                    <label className="text-[10px] text-[#8A7F74] mb-1 block">Pricing Model</label>
                     <select
                       value={String(editData.pricing_model ?? "")}
                       onChange={(e) => setEditData((d) => ({ ...d, pricing_model: e.target.value }))}
-                      className="w-full bg-[#0A0A0F] border border-[#1E1E2E] rounded px-2.5 py-1.5 text-xs text-[#F0F0F5] focus:outline-none"
+                      className="w-full bg-[#FAF7F2] border border-[#D9CFC4] rounded px-2.5 py-1.5 text-xs text-[#1A1A1A] focus:outline-none"
                     >
                       {["Free", "Freemium", "Paid", "API"].map((m) => (
                         <option key={m} value={m}>{m}</option>
@@ -160,7 +160,7 @@ export default function AdminClient({ tools: initialTools, categories, clickStat
                       onChange={(e) => setEditData((d) => ({ ...d, is_sponsored: e.target.checked }))}
                       className="w-4 h-4"
                     />
-                    <label htmlFor={`sponsored-${tool.id}`} className="text-xs text-[#F0F0F5]">
+                    <label htmlFor={`sponsored-${tool.id}`} className="text-xs text-[#1A1A1A]">
                       Sponsored
                     </label>
                   </div>
@@ -169,38 +169,38 @@ export default function AdminClient({ tools: initialTools, categories, clickStat
                   <button
                     onClick={() => saveEdit(tool.id)}
                     disabled={saving}
-                    className="px-4 py-1.5 bg-[#00D4FF] text-[#0A0A0F] font-bold text-xs rounded-lg hover:bg-[#00c4ef] disabled:opacity-60"
+                    className="px-4 py-1.5 bg-[#6B1E2E] text-[#FAF7F2] font-bold text-xs rounded-lg hover:bg-[#8B2438] disabled:opacity-60"
                   >
                     {saving ? "Saving..." : "Save"}
                   </button>
                   <button
                     onClick={() => setEditingTool(null)}
-                    className="px-4 py-1.5 text-[#8888A0] text-xs border border-[#1E1E2E] rounded-lg hover:text-[#F0F0F5]"
+                    className="px-4 py-1.5 text-[#8A7F74] text-xs border border-[#D9CFC4] rounded-lg hover:text-[#1A1A1A]"
                   >
                     Cancel
                   </button>
                 </div>
               </div>
             ) : (
-              <div key={tool.id} className="flex items-center gap-3 bg-[#13131A] border border-[#1E1E2E] rounded-card p-3">
+              <div key={tool.id} className="flex items-center gap-3 bg-[#F0EBE1] border border-[#D9CFC4] rounded-card p-3">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold text-sm text-[#F0F0F5]">{tool.name}</span>
+                    <span className="font-semibold text-sm text-[#1A1A1A]">{tool.name}</span>
                     <PricingPill model={tool.pricing_model} />
                     {tool.is_sponsored && (
-                      <span className="text-[10px] font-mono bg-[#F59E0B]/15 text-[#F59E0B] border border-[#F59E0B]/30 px-1.5 py-0.5 rounded-pill">
+                      <span className="text-[10px] tabular-nums bg-[#B8963C]/15 text-[#B8963C] border border-[#B8963C]/30 px-1.5 py-0.5 rounded-pill">
                         Sponsored
                       </span>
                     )}
                   </div>
-                  {tool.tagline && <p className="text-xs text-[#8888A0] mt-0.5 truncate">{tool.tagline}</p>}
+                  {tool.tagline && <p className="text-xs text-[#8A7F74] mt-0.5 truncate">{tool.tagline}</p>}
                 </div>
-                <div className="font-mono text-sm text-[#8888A0] hidden sm:block">
+                <div className="tabular-nums text-sm text-[#8A7F74] hidden sm:block">
                   {tool.benchmark_score?.toFixed(0) ?? "—"}/100
                 </div>
                 <button
                   onClick={() => startEdit(tool)}
-                  className="text-xs font-semibold text-[#8888A0] hover:text-[#00D4FF] transition-colors px-2 py-1"
+                  className="text-xs font-semibold text-[#8A7F74] hover:text-[#6B1E2E] transition-colors px-2 py-1"
                 >
                   Edit
                 </button>
@@ -214,16 +214,16 @@ export default function AdminClient({ tools: initialTools, categories, clickStat
       {tab === "categories" && (
         <div className="space-y-2">
           {categories.map((cat) => (
-            <div key={cat.id} className="flex items-center gap-3 bg-[#13131A] border border-[#1E1E2E] rounded-card p-3">
+            <div key={cat.id} className="flex items-center gap-3 bg-[#F0EBE1] border border-[#D9CFC4] rounded-card p-3">
               <span className="text-xl">{cat.icon}</span>
               <div className="flex-1">
-                <span className="font-semibold text-sm text-[#F0F0F5]">{cat.name}</span>
-                <span className="text-xs text-[#8888A0] ml-2">/{cat.slug}</span>
+                <span className="font-semibold text-sm text-[#1A1A1A]">{cat.name}</span>
+                <span className="text-xs text-[#8A7F74] ml-2">/{cat.slug}</span>
               </div>
-              <span className="font-mono text-xs text-[#8888A0]">order: {cat.sort_order}</span>
+              <span className="tabular-nums text-xs text-[#8A7F74]">order: {cat.sort_order}</span>
               <Link
                 href={`/${cat.slug}`}
-                className="text-xs text-[#8888A0] hover:text-[#00D4FF] transition-colors"
+                className="text-xs text-[#8A7F74] hover:text-[#6B1E2E] transition-colors"
               >
                 View →
               </Link>
@@ -235,28 +235,28 @@ export default function AdminClient({ tools: initialTools, categories, clickStat
       {/* Clicks tab */}
       {tab === "clicks" && (
         <div>
-          <h2 className="font-syne font-bold text-base text-[#F0F0F5] mb-4">
+          <h2 className="font-semibold text-base text-[#1A1A1A] mb-4">
             Affiliate Click Totals (last 1000 events)
           </h2>
           <div className="space-y-2">
             {clickStats.length === 0 && (
-              <p className="text-sm text-[#8888A0]">No clicks tracked yet.</p>
+              <p className="text-sm text-[#8A7F74]">No clicks tracked yet.</p>
             )}
             {clickStats.map((c) => (
-              <div key={c.slug} className="flex items-center gap-3 bg-[#13131A] border border-[#1E1E2E] rounded-card p-3">
-                <Link href={`/tool/${c.slug}`} className="font-semibold text-sm text-[#F0F0F5] hover:text-[#00D4FF] flex-1 transition-colors">
+              <div key={c.slug} className="flex items-center gap-3 bg-[#F0EBE1] border border-[#D9CFC4] rounded-card p-3">
+                <Link href={`/tool/${c.slug}`} className="font-semibold text-sm text-[#1A1A1A] hover:text-[#6B1E2E] flex-1 transition-colors">
                   {c.name}
                 </Link>
                 <div className="flex-1 hidden sm:block">
-                  <div className="h-1.5 bg-[#1E1E2E] rounded-pill overflow-hidden">
+                  <div className="h-1.5 bg-[#D9CFC4] rounded-pill overflow-hidden">
                     <div
-                      className="h-full bg-[#00D4FF] rounded-pill"
+                      className="h-full bg-[#6B1E2E] rounded-pill"
                       style={{ width: `${Math.min(100, (c.count / (clickStats[0]?.count || 1)) * 100)}%` }}
                     />
                   </div>
                 </div>
-                <span className="font-mono font-bold text-sm text-[#00D4FF]">{c.count}</span>
-                <span className="text-xs text-[#8888A0]">clicks</span>
+                <span className="tabular-nums font-bold text-sm text-[#6B1E2E]">{c.count}</span>
+                <span className="text-xs text-[#8A7F74]">clicks</span>
               </div>
             ))}
           </div>

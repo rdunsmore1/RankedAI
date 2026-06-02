@@ -168,25 +168,25 @@ const idealUsers = [
   },
   {
     icon: "📺",
-    color: "#F59E0B",
+    color: "#B8963C",
     title: "YouTubers & Video Creators",
     body: "Content creators use ElevenLabs for voiceovers on explainer videos, documentary-style narration, and faceless YouTube channels where the creator produces content without appearing on camera. The ability to create a consistent branded voice — or clone their own — means creators can produce video content faster without being limited by their recording setup or schedule.",
   },
   {
     icon: "📚",
-    color: "#00D4FF",
+    color: "#6B1E2E",
     title: "Audiobook Narrators & Publishers",
     body: "Audiobook production is one of the highest-value use cases for ElevenLabs. A 100,000-word book at roughly 5 characters per word comes to around 500,000 characters — covered by the Pro plan. Publishers are using ElevenLabs for backlist titles that don't justify a full human narrator recording session, and independent authors are self-publishing audio editions at near-zero production cost.",
   },
   {
     icon: "🎮",
-    color: "#22C55E",
+    color: "#2D6A4F",
     title: "Game Developers",
     body: "Indie studios and solo developers use ElevenLabs to voice NPCs, narrators, and cinematic dialogue at a fraction of professional voice actor session costs. API integration means voice lines can be generated programmatically during development. Some studios use ElevenLabs audio as final shipped product; others use it for high-quality placeholder audio during production before commissioning human recordings.",
   },
   {
     icon: "🌍",
-    color: "#A855F7",
+    color: "#6B1E2E",
     title: "Businesses Needing Multilingual Content",
     body: "ElevenLabs' Dubbing feature produces translated versions of existing video or audio content that preserve the original speaker's voice characteristics — not a generic translated voice, but a cross-lingual clone of the original speaker. For companies producing training videos, product demos, or marketing content for international markets, this eliminates the cost of re-recording content with native-language speakers.",
   },
@@ -209,22 +209,22 @@ export default function ElevenLabsReview2026() {
       <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-20">
 
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs text-[#8888A0] font-mono mb-8">
-          <Link href="/" className="hover:text-[#F0F0F5] transition-colors">Home</Link>
+        <div className="flex items-center gap-2 text-xs text-[#8A7F74] tabular-nums mb-8">
+          <Link href="/" className="hover:text-[#1A1A1A] transition-colors">Home</Link>
           <span>/</span>
-          <Link href="/blog/claude-ai-review-2026" className="hover:text-[#F0F0F5] transition-colors">Guides</Link>
+          <Link href="/blog/claude-ai-review-2026" className="hover:text-[#1A1A1A] transition-colors">Guides</Link>
           <span>/</span>
-          <span className="text-[#F0F0F5]">ElevenLabs Review 2026</span>
+          <span className="text-[#1A1A1A]">ElevenLabs Review 2026</span>
         </div>
 
         {/* ── HERO ─────────────────────────────────────────── */}
         <section className="mb-8">
           <div className="flex flex-wrap items-center gap-3 mb-5">
-            <span className="font-mono text-[11px] font-semibold tracking-widest uppercase text-[#F97316]">Independent Review</span>
-            <span className="w-1 h-1 rounded-full bg-[#1E1E2E]" />
-            <span className="font-mono text-[11px] text-[#8888A0]">May 2026</span>
-            <span className="w-1 h-1 rounded-full bg-[#1E1E2E]" />
-            <span className="font-mono text-[11px] text-[#8888A0]">RankedAI™ Editorial</span>
+            <span className="tabular-nums text-[11px] font-semibold tracking-widest uppercase text-[#F97316]">Independent Review</span>
+            <span className="w-1 h-1 rounded-full bg-[#D9CFC4]" />
+            <span className="tabular-nums text-[11px] text-[#8A7F74]">May 2026</span>
+            <span className="w-1 h-1 rounded-full bg-[#D9CFC4]" />
+            <span className="tabular-nums text-[11px] text-[#8A7F74]">RankedAI™ Editorial</span>
           </div>
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -238,17 +238,17 @@ export default function ElevenLabsReview2026() {
             />
           </div>
 
-          <h1 className="font-syne font-black text-5xl sm:text-6xl leading-[1.05] tracking-tight text-[#F0F0F5] mb-6">
+          <h1 className="font-semibold font-black text-5xl sm:text-6xl leading-[1.05] tracking-tight text-[#1A1A1A] mb-6">
             ElevenLabs Review 2026 —{" "}
             <span
               className="text-transparent bg-clip-text"
-              style={{ backgroundImage: "linear-gradient(100deg, #F97316 0%, #F59E0B 100%)" }}
+              style={{ backgroundImage: "linear-gradient(100deg, #F97316 0%, #B8963C 100%)" }}
             >
               The Best AI Voice Generator?
             </span>
           </h1>
 
-          <p className="text-lg text-[#8888A0] leading-relaxed border-l-2 border-[#F97316]/40 pl-4 max-w-[680px]">
+          <p className="text-lg text-[#8A7F74] leading-relaxed border-l-2 border-[#F97316]/40 pl-4 max-w-[680px]">
             In three years, ElevenLabs has gone from a well-funded startup to the tool that virtually every professional who works with voice audio reaches for first. Podcasters, audiobook publishers, game studios, and content creators across 30 languages have made it the de facto standard for AI voice generation. But in a market that has never moved faster, does it still deserve that position in 2026? We tested it across every major use case to find out.
           </p>
 
@@ -256,7 +256,7 @@ export default function ElevenLabsReview2026() {
             {["Text-to-Speech", "Voice Cloning", "Podcasting", "Audiobooks", "Multilingual"].map((tag) => (
               <span
                 key={tag}
-                className="text-[11px] font-mono font-semibold px-2.5 py-1 rounded-pill border border-[#1E1E2E] text-[#8888A0]"
+                className="text-[11px] tabular-nums font-semibold px-2.5 py-1 rounded-pill border border-[#D9CFC4] text-[#8A7F74]"
               >
                 {tag}
               </span>
@@ -266,41 +266,41 @@ export default function ElevenLabsReview2026() {
 
         {/* ── QUICK ANSWER ─────────────────────────────────── */}
         <div className="bg-[#F97316]/5 border border-[#F97316]/20 rounded-card p-5 mb-12">
-          <div className="font-mono text-[10px] font-semibold tracking-widest uppercase text-[#F97316] mb-3">Quick Answer</div>
-          <p className="text-sm text-[#F0F0F5] leading-relaxed">
+          <div className="tabular-nums text-[10px] font-semibold tracking-widest uppercase text-[#F97316] mb-3">Quick Answer</div>
+          <p className="text-sm text-[#1A1A1A] leading-relaxed">
             <strong>ElevenLabs is an AI audio platform</strong> that converts text to ultra-realistic speech, clones voices from short audio samples, and dubs video content across 29+ languages. It is best suited to content creators, podcasters, audiobook publishers, and businesses that need broadcast-quality AI voice audio at scale. The free tier offers 10,000 characters per month; paid plans start at $5/month.
           </p>
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-[#F97316]/30 via-[#F59E0B]/20 to-transparent mb-20" />
+        <div className="h-px bg-gradient-to-r from-[#F97316]/30 via-[#B8963C]/20 to-transparent mb-20" />
 
         {/* ── WHAT IS ELEVENLABS ───────────────────────────── */}
         <section className="mb-20">
           <div className="flex items-baseline gap-3 mb-4">
-            <span className="font-mono text-xs text-[#F97316]">01</span>
-            <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">What is ElevenLabs?</h2>
+            <span className="tabular-nums text-xs text-[#F97316]">01</span>
+            <h2 className="font-semibold text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">What is ElevenLabs?</h2>
           </div>
-          <div className="pl-6 border-l border-[#1E1E2E] space-y-4 text-[#8888A0] leading-relaxed">
+          <div className="pl-6 border-l border-[#D9CFC4] space-y-4 text-[#8A7F74] leading-relaxed">
             <p>
-              ElevenLabs is an <strong className="text-[#F0F0F5]">AI audio platform</strong> specialising in text-to-speech synthesis, voice cloning, and multilingual dubbing. Founded in 2022 by Piotr Dabkowski and Mati Staniszewski — engineers with backgrounds at Google Brain and Palantir — ElevenLabs was built from the ground up to produce AI voice audio that is indistinguishable from human speech. That singular focus on audio quality is what has made it the industry standard in a crowded market.
+              ElevenLabs is an <strong className="text-[#1A1A1A]">AI audio platform</strong> specialising in text-to-speech synthesis, voice cloning, and multilingual dubbing. Founded in 2022 by Piotr Dabkowski and Mati Staniszewski — engineers with backgrounds at Google Brain and Palantir — ElevenLabs was built from the ground up to produce AI voice audio that is indistinguishable from human speech. That singular focus on audio quality is what has made it the industry standard in a crowded market.
             </p>
             <p>
-              The platform&apos;s core product is its <strong className="text-[#F0F0F5]">text-to-speech engine</strong>, which converts written text into natural-sounding audio in 29+ languages using a library of pre-built voices or custom cloned voices. Its <strong className="text-[#F0F0F5]">Voice Cloning</strong> feature allows users to replicate the characteristics of a specific voice from an audio sample — making it possible to produce content in a consistent branded voice or to narrate a book in the author&apos;s own voice without them recording every word.
+              The platform&apos;s core product is its <strong className="text-[#1A1A1A]">text-to-speech engine</strong>, which converts written text into natural-sounding audio in 29+ languages using a library of pre-built voices or custom cloned voices. Its <strong className="text-[#1A1A1A]">Voice Cloning</strong> feature allows users to replicate the characteristics of a specific voice from an audio sample — making it possible to produce content in a consistent branded voice or to narrate a book in the author&apos;s own voice without them recording every word.
             </p>
             <p>
-              Its <strong className="text-[#F0F0F5]">Dubbing</strong> product takes this further: upload a video in one language and ElevenLabs produces a dubbed version in another, preserving the original speaker&apos;s voice characteristics across the language transition. For global content distribution, this is a capability that previously required specialist studios and budgets inaccessible to most creators and small businesses.
+              Its <strong className="text-[#1A1A1A]">Dubbing</strong> product takes this further: upload a video in one language and ElevenLabs produces a dubbed version in another, preserving the original speaker&apos;s voice characteristics across the language transition. For global content distribution, this is a capability that previously required specialist studios and budgets inaccessible to most creators and small businesses.
             </p>
-            <div className="bg-[#13131A] border border-[#1E1E2E] rounded-lg p-4 mt-2">
-              <div className="font-mono text-xs text-[#8888A0] mb-1">RankedAI™ Benchmark Score</div>
+            <div className="bg-[#F0EBE1] border border-[#D9CFC4] rounded-lg p-4 mt-2">
+              <div className="tabular-nums text-xs text-[#8A7F74] mb-1">RankedAI™ Benchmark Score</div>
               <div className="flex items-center gap-3">
-                <span className="font-mono font-bold text-3xl text-[#F97316]">89</span>
-                <div className="flex-1 h-2 bg-[#1E1E2E] rounded-full overflow-hidden">
+                <span className="tabular-nums font-bold text-3xl text-[#F97316]">89</span>
+                <div className="flex-1 h-2 bg-[#D9CFC4] rounded-full overflow-hidden">
                   <div className="h-full rounded-full bg-[#F97316]" style={{ width: "89%" }} />
                 </div>
-                <span className="text-xs text-[#8888A0]">/ 100</span>
+                <span className="text-xs text-[#8A7F74]">/ 100</span>
               </div>
-              <p className="text-xs text-[#8888A0] mt-2">#1 in RankedAI™ Video &amp; Audio Creation. Derived from audio quality benchmarks and community voting.</p>
+              <p className="text-xs text-[#8A7F74] mt-2">#1 in RankedAI™ Video &amp; Audio Creation. Derived from audio quality benchmarks and community voting.</p>
             </div>
           </div>
         </section>
@@ -308,10 +308,10 @@ export default function ElevenLabsReview2026() {
         {/* ── WHAT IS ELEVENLABS BEST AT ───────────────────── */}
         <section className="mb-20">
           <div className="flex items-baseline gap-3 mb-4">
-            <span className="font-mono text-xs text-[#F97316]">02</span>
-            <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">What is ElevenLabs best at?</h2>
+            <span className="tabular-nums text-xs text-[#F97316]">02</span>
+            <h2 className="font-semibold text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">What is ElevenLabs best at?</h2>
           </div>
-          <div className="pl-6 border-l border-[#1E1E2E] space-y-6 text-[#8888A0] leading-relaxed">
+          <div className="pl-6 border-l border-[#D9CFC4] space-y-6 text-[#8A7F74] leading-relaxed">
             <p>ElevenLabs leads the market across seven audio production use cases. Each benefits from the same underlying quality advantage: audio that sounds genuinely human.</p>
 
             {[
@@ -323,25 +323,25 @@ export default function ElevenLabsReview2026() {
               },
               {
                 icon: "🎙️",
-                color: "#F59E0B",
+                color: "#B8963C",
                 title: "Podcast Production",
                 body: "Podcasters use ElevenLabs for everything from AI-generated co-host voices to cloned versions of their own voice for scaling content output. Ad reads, episode intros, show trailers, and even full AI-hosted podcast series have been produced using ElevenLabs. The audio quality on Creator tier and above is broadcast-ready with no post-processing required.",
               },
               {
                 icon: "📚",
-                color: "#00D4FF",
+                color: "#6B1E2E",
                 title: "Audiobook Creation",
                 body: "ElevenLabs is transforming audiobook production economics. A full-length non-fiction book of 80,000–100,000 words can be narrated for $99/month on the Pro plan, compared to thousands of dollars for a professional narrator recording session. Publishers use it for backlist titles; independent authors use it to produce audio editions of their work at near-zero cost. The quality is indistinguishable from professional narration on well-formatted source text.",
               },
               {
                 icon: "🎭",
-                color: "#22C55E",
+                color: "#2D6A4F",
                 title: "Voice Cloning",
                 body: "ElevenLabs offers two levels of voice cloning: Instant Voice Cloning (IVC), which captures voice characteristics from as little as 60 seconds of audio and is available from the Starter plan, and Professional Voice Cloning (PVC), which produces higher-fidelity results from more extensive samples and is available on Pro and above. Both require the voice owner's consent. The output quality of PVC is the closest thing available to a digital replica of a human voice.",
               },
               {
                 icon: "🌍",
-                color: "#A855F7",
+                color: "#6B1E2E",
                 title: "Video Dubbing & Translation",
                 body: "The Dubbing Studio allows creators and businesses to translate video content into 29+ languages while preserving the original speaker&apos;s voice characteristics. Rather than replacing a speaker's voice with a generic translated voice, ElevenLabs maintains the original speaker's tone, energy, and acoustic identity in the new language. For global content distribution, this is a capability that was previously cost-prohibitive outside large media organisations.",
               },
@@ -358,10 +358,10 @@ export default function ElevenLabsReview2026() {
                 body: "ElevenLabs makes written content genuinely accessible for people with visual impairments, dyslexia, or other reading difficulties. The reading experience is dramatically more natural than legacy screen reader technology — making articles, documents, books, and educational materials more usable for a significant population that benefits from audio delivery. Educational publishers and accessibility-focused organisations are among ElevenLabs' fastest-growing customer segments.",
               },
             ].map((item) => (
-              <div key={item.title} className="bg-[#13131A] border border-[#1E1E2E] rounded-card p-5">
+              <div key={item.title} className="bg-[#F0EBE1] border border-[#D9CFC4] rounded-card p-5">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-2xl">{item.icon}</span>
-                  <h3 className="font-syne font-bold text-base" style={{ color: item.color }}>{item.title}</h3>
+                  <h3 className="font-semibold text-base" style={{ color: item.color }}>{item.title}</h3>
                 </div>
                 <p className="text-sm leading-relaxed">{item.body}</p>
               </div>
@@ -372,10 +372,10 @@ export default function ElevenLabsReview2026() {
         {/* ── PRICING ──────────────────────────────────────── */}
         <section className="mb-20">
           <div className="flex items-baseline gap-3 mb-4">
-            <span className="font-mono text-xs text-[#F97316]">03</span>
-            <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">ElevenLabs pricing</h2>
+            <span className="tabular-nums text-xs text-[#F97316]">03</span>
+            <h2 className="font-semibold text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">ElevenLabs pricing</h2>
           </div>
-          <div className="pl-6 border-l border-[#1E1E2E] space-y-4 text-[#8888A0] leading-relaxed">
+          <div className="pl-6 border-l border-[#D9CFC4] space-y-4 text-[#8A7F74] leading-relaxed">
             <p>ElevenLabs pricing is based on character volume — each character of text you convert costs against your monthly allowance. The free tier is genuinely useful for small projects and evaluation.</p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-2">
@@ -384,7 +384,7 @@ export default function ElevenLabsReview2026() {
                   tier: "Free",
                   price: "$0",
                   period: "forever",
-                  color: "#8888A0",
+                  color: "#8A7F74",
                   chars: "10,000 chars/mo",
                   features: ["10K characters/month", "Access to standard voices", "Real-time voice conversion", "Personal use only"],
                 },
@@ -401,7 +401,7 @@ export default function ElevenLabsReview2026() {
                   tier: "Creator",
                   price: "$22",
                   period: "/month",
-                  color: "#F59E0B",
+                  color: "#B8963C",
                   chars: "100,000 chars/mo",
                   features: ["100K characters/month", "Professional Voice Cloning", "Higher quality audio", "Projects & folders"],
                 },
@@ -409,25 +409,25 @@ export default function ElevenLabsReview2026() {
                   tier: "Pro",
                   price: "$99",
                   period: "/month",
-                  color: "#A855F7",
+                  color: "#6B1E2E",
                   chars: "500,000 chars/mo",
                   features: ["500K characters/month", "Highest priority processing", "Usage analytics dashboard", "Full dubbing studio access"],
                 },
               ].map((plan) => (
                 <div
                   key={plan.tier}
-                  className={`rounded-card p-5 border overflow-hidden ${plan.highlight ? "border-[#F97316]/40 bg-[#F97316]/5" : "border-[#1E1E2E] bg-[#13131A]"}`}
+                  className={`rounded-card p-5 border overflow-hidden ${plan.highlight ? "border-[#F97316]/40 bg-[#F97316]/5" : "border-[#D9CFC4] bg-[#F0EBE1]"}`}
                 >
-                  <div className="font-mono text-xs text-[#8888A0] mb-1">{plan.tier}</div>
+                  <div className="tabular-nums text-xs text-[#8A7F74] mb-1">{plan.tier}</div>
                   <div className="flex items-baseline gap-1 mb-1 flex-wrap">
-                    <span className="font-syne font-black text-3xl" style={{ color: plan.color }}>{plan.price}</span>
-                    <span className="text-xs text-[#8888A0]">{plan.period}</span>
+                    <span className="font-semibold font-black text-3xl" style={{ color: plan.color }}>{plan.price}</span>
+                    <span className="text-xs text-[#8A7F74]">{plan.period}</span>
                   </div>
-                  <div className="font-mono text-[10px] text-[#14B8A6] mb-3">{plan.chars}</div>
+                  <div className="tabular-nums text-[10px] text-[#14B8A6] mb-3">{plan.chars}</div>
                   <ul className="space-y-1.5">
                     {plan.features.map((f) => (
                       <li key={f} className="flex gap-2 text-xs">
-                        <span className="text-[#22C55E] shrink-0">✓</span>
+                        <span className="text-[#2D6A4F] shrink-0">✓</span>
                         <span>{f}</span>
                       </li>
                     ))}
@@ -436,15 +436,15 @@ export default function ElevenLabsReview2026() {
               ))}
             </div>
 
-            <div className="bg-[#13131A] border border-[#1E1E2E] rounded-card p-4 mt-2">
-              <div className="font-mono text-xs text-[#8888A0] mb-2 uppercase tracking-wider">Scale & Enterprise</div>
+            <div className="bg-[#F0EBE1] border border-[#D9CFC4] rounded-card p-4 mt-2">
+              <div className="tabular-nums text-xs text-[#8A7F74] mb-2 uppercase tracking-wider">Scale & Enterprise</div>
               <p className="text-sm leading-relaxed">
-                For organisations needing 2M+ characters per month, ElevenLabs offers <strong className="text-[#F0F0F5]">Scale</strong> and <strong className="text-[#F0F0F5]">Enterprise</strong> tiers with custom pricing, dedicated support, SLA guarantees, SSO, and advanced API rate limits. Contact ElevenLabs directly for enterprise quotes.
+                For organisations needing 2M+ characters per month, ElevenLabs offers <strong className="text-[#1A1A1A]">Scale</strong> and <strong className="text-[#1A1A1A]">Enterprise</strong> tiers with custom pricing, dedicated support, SLA guarantees, SSO, and advanced API rate limits. Contact ElevenLabs directly for enterprise quotes.
               </p>
             </div>
 
             <p className="text-sm mt-2">
-              For most individual creators, <strong className="text-[#F0F0F5]">Starter at $5/month</strong> is the right entry point — 30,000 characters covers roughly 20–25 minutes of narration, and Instant Voice Cloning unlocks the platform&apos;s most compelling feature. Creator at $22/month is the sweet spot for serious production work. Pro at $99/month is worth it for audiobook narrators and podcasters producing at volume.
+              For most individual creators, <strong className="text-[#1A1A1A]">Starter at $5/month</strong> is the right entry point — 30,000 characters covers roughly 20–25 minutes of narration, and Instant Voice Cloning unlocks the platform&apos;s most compelling feature. Creator at $22/month is the sweet spot for serious production work. Pro at $99/month is worth it for audiobook narrators and podcasters producing at volume.
             </p>
           </div>
         </section>
@@ -452,27 +452,27 @@ export default function ElevenLabsReview2026() {
         {/* ── PROS & CONS ──────────────────────────────────── */}
         <section className="mb-20">
           <div className="flex items-baseline gap-3 mb-4">
-            <span className="font-mono text-xs text-[#F97316]">04</span>
-            <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">ElevenLabs pros and cons</h2>
+            <span className="tabular-nums text-xs text-[#F97316]">04</span>
+            <h2 className="font-semibold text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">ElevenLabs pros and cons</h2>
           </div>
-          <div className="pl-6 border-l border-[#1E1E2E]">
+          <div className="pl-6 border-l border-[#D9CFC4]">
             <div className="grid sm:grid-cols-2 gap-4">
-              <div className="bg-[#13131A] border border-[#22C55E]/20 rounded-card p-5">
-                <h3 className="font-syne font-bold text-[#22C55E] text-sm mb-4 uppercase tracking-wider">Pros</h3>
+              <div className="bg-[#F0EBE1] border border-[#2D6A4F]/20 rounded-card p-5">
+                <h3 className="font-semibold text-[#2D6A4F] text-sm mb-4 uppercase tracking-wider">Pros</h3>
                 <ul className="space-y-2.5">
                   {pros.map((pro) => (
-                    <li key={pro} className="flex gap-2.5 text-sm text-[#8888A0]">
-                      <span className="text-[#22C55E] shrink-0 mt-0.5">✓</span>
+                    <li key={pro} className="flex gap-2.5 text-sm text-[#8A7F74]">
+                      <span className="text-[#2D6A4F] shrink-0 mt-0.5">✓</span>
                       <span>{pro}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="bg-[#13131A] border border-[#EF4444]/20 rounded-card p-5">
-                <h3 className="font-syne font-bold text-[#EF4444] text-sm mb-4 uppercase tracking-wider">Cons</h3>
+              <div className="bg-[#F0EBE1] border border-[#EF4444]/20 rounded-card p-5">
+                <h3 className="font-semibold text-[#EF4444] text-sm mb-4 uppercase tracking-wider">Cons</h3>
                 <ul className="space-y-2.5">
                   {cons.map((con) => (
-                    <li key={con} className="flex gap-2.5 text-sm text-[#8888A0]">
+                    <li key={con} className="flex gap-2.5 text-sm text-[#8A7F74]">
                       <span className="text-[#EF4444] shrink-0 mt-0.5">✕</span>
                       <span>{con}</span>
                     </li>
@@ -486,13 +486,13 @@ export default function ElevenLabsReview2026() {
         {/* ── HOW ELEVENLABS RANKS ─────────────────────────── */}
         <section className="mb-20">
           <div className="flex items-baseline gap-3 mb-4">
-            <span className="font-mono text-xs text-[#F97316]">05</span>
-            <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">How ElevenLabs ranks on RankedAI™</h2>
+            <span className="tabular-nums text-xs text-[#F97316]">05</span>
+            <h2 className="font-semibold text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">How ElevenLabs ranks on RankedAI™</h2>
           </div>
-          <div className="pl-6 border-l border-[#1E1E2E] space-y-4 text-[#8888A0] leading-relaxed">
+          <div className="pl-6 border-l border-[#D9CFC4] space-y-4 text-[#8A7F74] leading-relaxed">
             <p>
               ElevenLabs holds the <strong className="text-[#F97316]">#1 position</strong> in RankedAI™&apos;s Video &amp; Audio Creation category. Scores are calculated using our{" "}
-              <Link href="/#how-it-works" className="text-[#00D4FF] hover:underline">hybrid algorithm</Link>
+              <Link href="/#how-it-works" className="text-[#6B1E2E] hover:underline">hybrid algorithm</Link>
               {" "}combining public benchmarks (40%), community votes (45%), and editorial assessment (15%).
             </p>
             <div className="mt-2">
@@ -500,19 +500,19 @@ export default function ElevenLabsReview2026() {
                 <Link
                   key={r.category}
                   href={r.href}
-                  className="group bg-[#13131A] border border-[#1E1E2E] hover:border-[#F97316]/30 rounded-card p-4 transition-colors block max-w-sm"
+                  className="group bg-[#F0EBE1] border border-[#D9CFC4] hover:border-[#F97316]/30 rounded-card p-4 transition-colors block max-w-sm"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-mono text-[#8888A0]">{r.category}</span>
-                    <span className="text-xs font-mono font-bold" style={{ color: r.color }}>{r.position}</span>
+                    <span className="text-xs tabular-nums text-[#8A7F74]">{r.category}</span>
+                    <span className="text-xs tabular-nums font-bold" style={{ color: r.color }}>{r.position}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="flex-1 h-1.5 bg-[#1E1E2E] rounded-full overflow-hidden">
+                    <div className="flex-1 h-1.5 bg-[#D9CFC4] rounded-full overflow-hidden">
                       <div className="h-full rounded-full transition-all" style={{ width: `${r.score}%`, backgroundColor: r.color }} />
                     </div>
-                    <span className="font-mono font-bold text-lg text-[#F0F0F5]">{r.score}</span>
+                    <span className="tabular-nums font-bold text-lg text-[#1A1A1A]">{r.score}</span>
                   </div>
-                  <div className="text-[10px] text-[#8888A0] mt-2 group-hover:text-[#F97316] transition-colors">
+                  <div className="text-[10px] text-[#8A7F74] mt-2 group-hover:text-[#F97316] transition-colors">
                     View full rankings →
                   </div>
                 </Link>
@@ -527,33 +527,33 @@ export default function ElevenLabsReview2026() {
         {/* ── COMPARISON TABLE ─────────────────────────────── */}
         <section className="mb-20">
           <div className="flex items-baseline gap-3 mb-4">
-            <span className="font-mono text-xs text-[#F97316]">06</span>
-            <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">ElevenLabs vs Runway ML vs HeyGen</h2>
+            <span className="tabular-nums text-xs text-[#F97316]">06</span>
+            <h2 className="font-semibold text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">ElevenLabs vs Runway ML vs HeyGen</h2>
           </div>
-          <div className="pl-6 border-l border-[#1E1E2E]">
-            <p className="text-sm text-[#8888A0] leading-relaxed mb-5">
+          <div className="pl-6 border-l border-[#D9CFC4]">
+            <p className="text-sm text-[#8A7F74] leading-relaxed mb-5">
               ElevenLabs, Runway ML, and HeyGen each occupy a different position in the AI audio and video landscape. Understanding the difference helps clarify when ElevenLabs is the right choice and when a different tool serves the need better.
             </p>
-            <div className="overflow-x-auto rounded-card border border-[#1E1E2E]">
+            <div className="overflow-x-auto rounded-card border border-[#D9CFC4]">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-[#1E1E2E] bg-[#13131A]">
-                    <th className="text-left px-4 py-3 font-syne font-semibold text-[#8888A0] text-xs uppercase tracking-wider">Feature</th>
-                    <th className="text-left px-4 py-3 font-syne font-semibold text-[#F97316] text-xs uppercase tracking-wider">ElevenLabs</th>
-                    <th className="text-left px-4 py-3 font-syne font-semibold text-[#8888A0] text-xs uppercase tracking-wider">Runway ML</th>
-                    <th className="text-left px-4 py-3 font-syne font-semibold text-[#8888A0] text-xs uppercase tracking-wider">HeyGen</th>
+                  <tr className="border-b border-[#D9CFC4] bg-[#F0EBE1]">
+                    <th className="text-left px-4 py-3 font-semibold font-semibold text-[#8A7F74] text-xs uppercase tracking-wider">Feature</th>
+                    <th className="text-left px-4 py-3 font-semibold font-semibold text-[#F97316] text-xs uppercase tracking-wider">ElevenLabs</th>
+                    <th className="text-left px-4 py-3 font-semibold font-semibold text-[#8A7F74] text-xs uppercase tracking-wider">Runway ML</th>
+                    <th className="text-left px-4 py-3 font-semibold font-semibold text-[#8A7F74] text-xs uppercase tracking-wider">HeyGen</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparison.map((row, i) => (
                     <tr
                       key={row.feature}
-                      className={`border-b border-[#1E1E2E] last:border-0 ${i % 2 === 0 ? "bg-[#0A0A0F]" : "bg-[#13131A]/50"}`}
+                      className={`border-b border-[#D9CFC4] last:border-0 ${i % 2 === 0 ? "bg-[#FAF7F2]" : "bg-[#F0EBE1]/50"}`}
                     >
-                      <td className="px-4 py-3 text-[#8888A0] font-mono text-xs">{row.feature}</td>
-                      <td className="px-4 py-3 text-[#F0F0F5] font-semibold text-xs">{row.elevenlabs}</td>
-                      <td className="px-4 py-3 text-[#8888A0] text-xs">{row.runway}</td>
-                      <td className="px-4 py-3 text-[#8888A0] text-xs">{row.heygen}</td>
+                      <td className="px-4 py-3 text-[#8A7F74] tabular-nums text-xs">{row.feature}</td>
+                      <td className="px-4 py-3 text-[#1A1A1A] font-semibold text-xs">{row.elevenlabs}</td>
+                      <td className="px-4 py-3 text-[#8A7F74] text-xs">{row.runway}</td>
+                      <td className="px-4 py-3 text-[#8A7F74] text-xs">{row.heygen}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -565,16 +565,16 @@ export default function ElevenLabsReview2026() {
         {/* ── WHO SHOULD USE ELEVENLABS ────────────────────── */}
         <section className="mb-20">
           <div className="flex items-baseline gap-3 mb-4">
-            <span className="font-mono text-xs text-[#F97316]">07</span>
-            <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">Who should use ElevenLabs?</h2>
+            <span className="tabular-nums text-xs text-[#F97316]">07</span>
+            <h2 className="font-semibold text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">Who should use ElevenLabs?</h2>
           </div>
-          <div className="pl-6 border-l border-[#1E1E2E] space-y-6 text-[#8888A0] leading-relaxed">
+          <div className="pl-6 border-l border-[#D9CFC4] space-y-6 text-[#8A7F74] leading-relaxed">
             <p>ElevenLabs is purpose-built for audio production at professional quality. Its ideal users are those who need voice audio that can stand alongside — or replace — human-recorded content.</p>
             {idealUsers.map((item) => (
-              <div key={item.title} className="bg-[#13131A] border border-[#1E1E2E] rounded-card p-5">
+              <div key={item.title} className="bg-[#F0EBE1] border border-[#D9CFC4] rounded-card p-5">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-2xl">{item.icon}</span>
-                  <h3 className="font-syne font-bold text-base" style={{ color: item.color }}>{item.title}</h3>
+                  <h3 className="font-semibold text-base" style={{ color: item.color }}>{item.title}</h3>
                 </div>
                 <p className="text-sm leading-relaxed">{item.body}</p>
               </div>
@@ -585,14 +585,14 @@ export default function ElevenLabsReview2026() {
         {/* ── FAQ ──────────────────────────────────────────── */}
         <section className="mb-20">
           <div className="flex items-baseline gap-3 mb-4">
-            <span className="font-mono text-xs text-[#F97316]">08</span>
-            <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">Frequently asked questions</h2>
+            <span className="tabular-nums text-xs text-[#F97316]">08</span>
+            <h2 className="font-semibold text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">Frequently asked questions</h2>
           </div>
-          <div className="pl-6 border-l border-[#1E1E2E] space-y-4">
+          <div className="pl-6 border-l border-[#D9CFC4] space-y-4">
             {faqItems.map((item) => (
-              <div key={item.question} className="bg-[#13131A] border border-[#1E1E2E] rounded-card p-5">
-                <h3 className="font-syne font-bold text-sm text-[#F0F0F5] mb-3">{item.question}</h3>
-                <p className="text-sm text-[#8888A0] leading-relaxed">{item.answer}</p>
+              <div key={item.question} className="bg-[#F0EBE1] border border-[#D9CFC4] rounded-card p-5">
+                <h3 className="font-semibold text-sm text-[#1A1A1A] mb-3">{item.question}</h3>
+                <p className="text-sm text-[#8A7F74] leading-relaxed">{item.answer}</p>
               </div>
             ))}
           </div>
@@ -601,12 +601,12 @@ export default function ElevenLabsReview2026() {
         {/* ── VERDICT ──────────────────────────────────────── */}
         <section className="mb-20">
           <div className="flex items-baseline gap-3 mb-4">
-            <span className="font-mono text-xs text-[#F97316]">09</span>
-            <h2 className="font-syne font-bold text-2xl sm:text-3xl leading-tight text-[#F0F0F5]">Verdict</h2>
+            <span className="tabular-nums text-xs text-[#F97316]">09</span>
+            <h2 className="font-semibold text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">Verdict</h2>
           </div>
-          <div className="pl-6 border-l border-[#1E1E2E] space-y-4 text-[#8888A0] leading-relaxed">
+          <div className="pl-6 border-l border-[#D9CFC4] space-y-4 text-[#8A7F74] leading-relaxed">
             <p>
-              ElevenLabs is the <strong className="text-[#F0F0F5]">gold standard for AI voice generation in 2026</strong>. The audio quality at its best settings is genuinely remarkable — nuanced, natural, and consistently production-ready in a way that no competitor currently matches at scale. If your work involves voice audio in any form, ElevenLabs is almost certainly the right tool.
+              ElevenLabs is the <strong className="text-[#1A1A1A]">gold standard for AI voice generation in 2026</strong>. The audio quality at its best settings is genuinely remarkable — nuanced, natural, and consistently production-ready in a way that no competitor currently matches at scale. If your work involves voice audio in any form, ElevenLabs is almost certainly the right tool.
             </p>
             <p>
               The pricing structure is well-calibrated. The free tier is a genuine product; Starter at $5/month is accessible to anyone serious about audio production; and Creator at $22/month is the sweet spot for professional content creators. The Pro plan at $99/month pays for itself quickly for audiobook publishers and high-volume podcasters. On RankedAI™, it holds the #1 position in Video &amp; Audio Creation with a score of 89 — a lead it has held consistently as the category has grown.
@@ -620,31 +620,31 @@ export default function ElevenLabsReview2026() {
         {/* ── AFFILIATE CTA ────────────────────────────────── */}
         <div
           className="rounded-card p-8 text-center relative overflow-hidden border border-[#F97316]/20 mb-12"
-          style={{ background: "linear-gradient(135deg, #F9731608 0%, #F59E0B08 50%, #A855F708 100%)" }}
+          style={{ background: "linear-gradient(135deg, #F9731608 0%, #B8963C08 50%, #6B1E2E08 100%)" }}
         >
-          <div className="font-mono text-xs text-[#F97316] mb-3 uppercase tracking-widest">Affiliate Partnership</div>
-          <h3 className="font-syne font-bold text-2xl text-[#F0F0F5] mb-3">
+          <div className="tabular-nums text-xs text-[#F97316] mb-3 uppercase tracking-widest">Affiliate Partnership</div>
+          <h3 className="font-semibold text-2xl text-[#1A1A1A] mb-3">
             Try ElevenLabs — and support RankedAI™
           </h3>
-          <p className="text-sm text-[#8888A0] mb-2 max-w-lg mx-auto">
+          <p className="text-sm text-[#8A7F74] mb-2 max-w-lg mx-auto">
             RankedAI™ has an active affiliate partnership with ElevenLabs. If you sign up through our link, we earn a small commission at no extra cost to you — which directly supports the cost of running this site.
           </p>
-          <p className="text-xs text-[#8888A0]/70 mb-6 max-w-md mx-auto">
+          <p className="text-xs text-[#8A7F74]/70 mb-6 max-w-md mx-auto">
             Our editorial rankings and review content are independent of commercial relationships. See our{" "}
-            <Link href="/affiliate-disclosure" className="text-[#00D4FF] hover:underline">affiliate disclosure</Link> for full details.
+            <Link href="/affiliate-disclosure" className="text-[#6B1E2E] hover:underline">affiliate disclosure</Link> for full details.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a
               href="https://elevenlabs.io/?pscd=try.elevenlabs.io&ps_partner_key=ZTg3ZTIzZjdkOTY0&ps_xid=J5izNJIF1qVA4n&gsxid=J5izNJIF1qVA4n&gspk=ZTg3ZTIzZjdkOTY0"
               target="_blank"
               rel="noopener noreferrer sponsored"
-              className="px-6 py-2.5 bg-[#F97316] text-white font-syne font-bold text-sm rounded-lg hover:bg-[#ea6c0a] transition-colors"
+              className="px-6 py-2.5 bg-[#F97316] text-white font-semibold text-sm rounded-lg hover:bg-[#ea6c0a] transition-colors"
             >
               Try ElevenLabs free →
             </a>
             <Link
               href="/video-audio"
-              className="px-6 py-2.5 bg-transparent text-[#F0F0F5] font-syne font-semibold text-sm rounded-lg border border-[#1E1E2E] hover:border-[#8888A0] transition-colors"
+              className="px-6 py-2.5 bg-transparent text-[#1A1A1A] font-semibold font-semibold text-sm rounded-lg border border-[#D9CFC4] hover:border-[#8A7F74] transition-colors"
             >
               View Video &amp; Audio rankings
             </Link>
@@ -652,21 +652,21 @@ export default function ElevenLabsReview2026() {
         </div>
 
         {/* Also read */}
-        <div className="bg-[#13131A] border border-[#1E1E2E] rounded-card p-5 mb-12">
-          <div className="font-mono text-xs text-[#8888A0] mb-4 uppercase tracking-wider">Also on RankedAI™</div>
+        <div className="bg-[#F0EBE1] border border-[#D9CFC4] rounded-card p-5 mb-12">
+          <div className="tabular-nums text-xs text-[#8A7F74] mb-4 uppercase tracking-wider">Also on RankedAI™</div>
           <div className="space-y-3">
             {[
               { href: "/blog/midjourney-review-2026", label: "Midjourney Review 2026 — Still the Best AI Image Generator?", color: "#EC4899" },
-              { href: "/blog/claude-ai-review-2026", label: "Claude AI Review 2026 — Is It the Best AI Available?", color: "#00D4FF" },
-              { href: "/blog/chatgpt-review-2026", label: "ChatGPT Review 2026 — Still the King of AI?", color: "#F59E0B" },
+              { href: "/blog/claude-ai-review-2026", label: "Claude AI Review 2026 — Is It the Best AI Available?", color: "#6B1E2E" },
+              { href: "/blog/chatgpt-review-2026", label: "ChatGPT Review 2026 — Still the King of AI?", color: "#B8963C" },
               { href: "/blog/perplexity-ai-review-2026", label: "Perplexity AI Review 2026 — The Google Killer?", color: "#14B8A6" },
             ].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="flex items-center justify-between group hover:text-[#F0F0F5] transition-colors"
+                className="flex items-center justify-between group hover:text-[#1A1A1A] transition-colors"
               >
-                <span className="text-sm text-[#8888A0] group-hover:text-[#F0F0F5]">{link.label}</span>
+                <span className="text-sm text-[#8A7F74] group-hover:text-[#1A1A1A]">{link.label}</span>
                 <span className="text-sm shrink-0 ml-4 transition-colors" style={{ color: link.color }}>→</span>
               </Link>
             ))}
@@ -674,10 +674,10 @@ export default function ElevenLabsReview2026() {
         </div>
 
         {/* Nav */}
-        <div className="pt-6 border-t border-[#1E1E2E] flex flex-wrap gap-4 text-xs">
-          <Link href="/" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">← Home</Link>
-          <Link href="/video-audio" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Video &amp; Audio Rankings</Link>
-          <Link href="/tool/elevenlabs" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">ElevenLabs tool page</Link>
+        <div className="pt-6 border-t border-[#D9CFC4] flex flex-wrap gap-4 text-xs">
+          <Link href="/" className="text-[#8A7F74] hover:text-[#1A1A1A] transition-colors">← Home</Link>
+          <Link href="/video-audio" className="text-[#8A7F74] hover:text-[#1A1A1A] transition-colors">Video &amp; Audio Rankings</Link>
+          <Link href="/tool/elevenlabs" className="text-[#8A7F74] hover:text-[#1A1A1A] transition-colors">ElevenLabs tool page</Link>
         </div>
       </div>
     </>

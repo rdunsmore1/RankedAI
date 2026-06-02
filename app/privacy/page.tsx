@@ -23,18 +23,18 @@ const sections = [
     content: (
       <div className="space-y-4">
         <div>
-          <h3 className="text-sm font-semibold text-[#F0F0F5] mb-2">2.1 Information You Provide Directly</h3>
+          <h3 className="text-sm font-semibold text-[#1A1A1A] mb-2">2.1 Information You Provide Directly</h3>
           <ul className="space-y-2 list-none">
-            <li className="flex gap-2"><span className="text-[#00D4FF] shrink-0">—</span><span><strong className="text-[#F0F0F5]">Account registration:</strong> When you create an account, we collect your email address and a hashed password. We never store your password in plain text.</span></li>
-            <li className="flex gap-2"><span className="text-[#00D4FF] shrink-0">—</span><span><strong className="text-[#F0F0F5]">Votes and reviews:</strong> When you upvote, downvote, or submit a written review for an AI tool, we store that vote or review along with your user ID and the date submitted.</span></li>
+            <li className="flex gap-2"><span className="text-[#6B1E2E] shrink-0">—</span><span><strong className="text-[#1A1A1A]">Account registration:</strong> When you create an account, we collect your email address and a hashed password. We never store your password in plain text.</span></li>
+            <li className="flex gap-2"><span className="text-[#6B1E2E] shrink-0">—</span><span><strong className="text-[#1A1A1A]">Votes and reviews:</strong> When you upvote, downvote, or submit a written review for an AI tool, we store that vote or review along with your user ID and the date submitted.</span></li>
           </ul>
         </div>
         <div>
-          <h3 className="text-sm font-semibold text-[#F0F0F5] mb-2">2.2 Information We Collect Automatically</h3>
+          <h3 className="text-sm font-semibold text-[#1A1A1A] mb-2">2.2 Information We Collect Automatically</h3>
           <ul className="space-y-2 list-none">
-            <li className="flex gap-2"><span className="text-[#00D4FF] shrink-0">—</span><span><strong className="text-[#F0F0F5]">Click tracking:</strong> When you click an outbound affiliate link on our Site, we log the tool clicked, the category page you were on, a timestamp, and an anonymized session identifier. This data is used solely for measuring affiliate performance and improving our rankings. We do not sell this data.</span></li>
-            <li className="flex gap-2"><span className="text-[#00D4FF] shrink-0">—</span><span><strong className="text-[#F0F0F5]">Usage data:</strong> We may collect standard web analytics data such as pages visited, time on page, browser type, and general geographic region (country/state level only) through privacy-respecting analytics tools.</span></li>
-            <li className="flex gap-2"><span className="text-[#00D4FF] shrink-0">—</span><span><strong className="text-[#F0F0F5]">Cookies:</strong> We use essential cookies to keep you logged in and maintain your session. We do not use third-party advertising cookies.</span></li>
+            <li className="flex gap-2"><span className="text-[#6B1E2E] shrink-0">—</span><span><strong className="text-[#1A1A1A]">Click tracking:</strong> When you click an outbound affiliate link on our Site, we log the tool clicked, the category page you were on, a timestamp, and an anonymized session identifier. This data is used solely for measuring affiliate performance and improving our rankings. We do not sell this data.</span></li>
+            <li className="flex gap-2"><span className="text-[#6B1E2E] shrink-0">—</span><span><strong className="text-[#1A1A1A]">Usage data:</strong> We may collect standard web analytics data such as pages visited, time on page, browser type, and general geographic region (country/state level only) through privacy-respecting analytics tools.</span></li>
+            <li className="flex gap-2"><span className="text-[#6B1E2E] shrink-0">—</span><span><strong className="text-[#1A1A1A]">Cookies:</strong> We use essential cookies to keep you logged in and maintain your session. We do not use third-party advertising cookies.</span></li>
           </ul>
         </div>
       </div>
@@ -59,7 +59,7 @@ const sections = [
             <li key={item} className="flex gap-2"><span className="text-[#22C55E] shrink-0">✓</span><span>{item}</span></li>
           ))}
         </ul>
-        <p className="mt-4">We do <strong className="text-[#F0F0F5]">not</strong> use your information to:</p>
+        <p className="mt-4">We do <strong className="text-[#1A1A1A]">not</strong> use your information to:</p>
         <ul className="space-y-1.5 list-none">
           {[
             "Sell your personal data to third parties",
@@ -79,7 +79,7 @@ const sections = [
       <p>
         RankedAI™ participates in affiliate programs with various AI tool providers. When you click an outbound link marked as an affiliate link and subsequently sign up for or purchase a product, we may earn a commission at no additional cost to you.
         <br /><br />
-        Affiliate relationships do <strong className="text-[#F0F0F5]">not</strong> influence our rankings. Rankings are determined by our hybrid scoring system (benchmark data, community votes, and editorial scores) and sponsored placements are clearly labeled as &ldquo;Sponsored&rdquo; and are separate from organic rankings.
+        Affiliate relationships do <strong className="text-[#1A1A1A]">not</strong> influence our rankings. Rankings are determined by our hybrid scoring system (benchmark data, community votes, and editorial scores) and sponsored placements are clearly labeled as &ldquo;Sponsored&rdquo; and are separate from organic rankings.
       </p>
     ),
   },
@@ -99,9 +99,9 @@ const sections = [
       <div className="space-y-3">
         <p>We do not sell your personal information. We may share your data only in the following limited circumstances:</p>
         <ul className="space-y-2 list-none">
-          <li className="flex gap-2"><span className="text-[#00D4FF] shrink-0">—</span><span><strong className="text-[#F0F0F5]">Service providers:</strong> We use Supabase (database and authentication) to operate the Site. These providers process your data on our behalf under strict data processing agreements.</span></li>
-          <li className="flex gap-2"><span className="text-[#00D4FF] shrink-0">—</span><span><strong className="text-[#F0F0F5]">Legal requirements:</strong> We may disclose your information if required by law, court order, or to protect the rights and safety of our users or the public.</span></li>
-          <li className="flex gap-2"><span className="text-[#00D4FF] shrink-0">—</span><span><strong className="text-[#F0F0F5]">Business transfers:</strong> If RankedAI™ is acquired or merges with another company, your data may be transferred as part of that transaction. We will notify you before your data becomes subject to a different privacy policy.</span></li>
+          <li className="flex gap-2"><span className="text-[#6B1E2E] shrink-0">—</span><span><strong className="text-[#1A1A1A]">Service providers:</strong> We use Supabase (database and authentication) to operate the Site. These providers process your data on our behalf under strict data processing agreements.</span></li>
+          <li className="flex gap-2"><span className="text-[#6B1E2E] shrink-0">—</span><span><strong className="text-[#1A1A1A]">Legal requirements:</strong> We may disclose your information if required by law, court order, or to protect the rights and safety of our users or the public.</span></li>
+          <li className="flex gap-2"><span className="text-[#6B1E2E] shrink-0">—</span><span><strong className="text-[#1A1A1A]">Business transfers:</strong> If RankedAI™ is acquired or merges with another company, your data may be transferred as part of that transaction. We will notify you before your data becomes subject to a different privacy policy.</span></li>
         </ul>
       </div>
     ),
@@ -130,7 +130,7 @@ const sections = [
             { label: "Deletion", desc: "You may request that we delete your account and associated personal data." },
             { label: "Opt-out", desc: "You may opt out of any non-essential communications from us at any time." },
           ].map((r) => (
-            <li key={r.label} className="flex gap-2"><span className="text-[#00D4FF] shrink-0">—</span><span><strong className="text-[#F0F0F5]">{r.label}:</strong> {r.desc}</span></li>
+            <li key={r.label} className="flex gap-2"><span className="text-[#6B1E2E] shrink-0">—</span><span><strong className="text-[#1A1A1A]">{r.label}:</strong> {r.desc}</span></li>
           ))}
         </ul>
         <p className="mt-2">
@@ -177,9 +177,9 @@ const sections = [
     content: (
       <div className="space-y-2">
         <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us at:</p>
-        <div className="mt-3 bg-[#13131A] border border-[#1E1E2E] rounded-lg p-4 inline-block">
-          <p className="font-semibold text-[#F0F0F5]">RankedAI™</p>
-          <p>Email: <a href="mailto:privacy@rankdai.com" className="text-[#00D4FF] hover:underline">privacy@rankdai.com</a></p>
+        <div className="mt-3 bg-[#F0EBE1] border border-[#D9CFC4] rounded-lg p-4 inline-block">
+          <p className="font-semibold text-[#1A1A1A]">RankedAI™</p>
+          <p>Email: <a href="mailto:privacy@rankdai.com" className="text-[#6B1E2E] hover:underline">privacy@rankdai.com</a></p>
           <p>Website: rankdai.com</p>
         </div>
       </div>
@@ -201,13 +201,13 @@ export default function PrivacyPage() {
     <div className="max-w-[760px] mx-auto px-4 sm:px-6 py-16">
       {/* Header */}
       <div className="mb-10">
-        <h1 className="font-syne font-bold text-3xl text-[#F0F0F5] mb-3">Privacy Policy</h1>
-        <div className="flex flex-wrap gap-4 text-xs text-[#8888A0] font-mono">
+        <h1 className="font-semibold text-3xl text-[#1A1A1A] mb-3">Privacy Policy</h1>
+        <div className="flex flex-wrap gap-4 text-xs text-[#8A7F74] font-mono">
           <span>RankedAI™</span>
           <span>Effective Date: May 19, 2026</span>
           <span>Last Updated: May 19, 2026</span>
         </div>
-        <div className="mt-4 h-px bg-gradient-to-r from-[#00D4FF]/40 via-[#A855F7]/20 to-transparent" />
+        <div className="mt-4 h-px bg-gradient-to-r from-[#6B1E2E]/40 via-[#A855F7]/20 to-transparent" />
       </div>
 
       {/* Sections */}
@@ -215,10 +215,10 @@ export default function PrivacyPage() {
         {sections.map((section) => (
           <div key={section.number} className="group">
             <div className="flex items-baseline gap-3 mb-3">
-              <span className="font-mono text-xs text-[#00D4FF] shrink-0">{section.number.padStart(2, "0")}</span>
-              <h2 className="font-syne font-bold text-lg text-[#F0F0F5]">{section.title}</h2>
+              <span className="text-xs text-[#6B1E2E] shrink-0">{section.number.padStart(2, "0")}</span>
+              <h2 className="font-semibold text-lg text-[#1A1A1A]">{section.title}</h2>
             </div>
-            <div className="pl-6 text-sm text-[#8888A0] leading-relaxed border-l border-[#1E1E2E] group-hover:border-[#00D4FF]/30 transition-colors">
+            <div className="pl-6 text-sm text-[#8A7F74] leading-relaxed border-l border-[#D9CFC4] group-hover:border-[#6B1E2E]/30 transition-colors">
               {section.content}
             </div>
           </div>
@@ -226,15 +226,15 @@ export default function PrivacyPage() {
       </div>
 
       {/* Footer note */}
-      <div className="mt-12 pt-6 border-t border-[#1E1E2E] text-xs text-[#8888A0] italic">
+      <div className="mt-12 pt-6 border-t border-[#D9CFC4] text-xs text-[#8A7F74] italic">
         This privacy policy was prepared for informational purposes. For legal advice specific to your situation, consult a qualified attorney.
       </div>
 
       {/* Nav */}
       <div className="mt-8 flex gap-4 text-xs">
-        <Link href="/" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">← Home</Link>
-        <Link href="/affiliate-disclosure" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Affiliate Disclosure</Link>
-        <Link href="/contact" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Contact</Link>
+        <Link href="/" className="text-[#8A7F74] hover:text-[#1A1A1A] transition-colors">← Home</Link>
+        <Link href="/affiliate-disclosure" className="text-[#8A7F74] hover:text-[#1A1A1A] transition-colors">Affiliate Disclosure</Link>
+        <Link href="/contact" className="text-[#8A7F74] hover:text-[#1A1A1A] transition-colors">Contact</Link>
       </div>
     </div>
   );

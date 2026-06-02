@@ -12,9 +12,9 @@ interface ScoreBarProps {
 }
 
 const COLOR_MAP = {
-  accent: "bg-[#00D4FF]",
-  amber: "bg-[#F59E0B]",
-  green: "bg-[#22C55E]",
+  accent: "#6B1E2E",
+  amber:  "#B8963C",
+  green:  "#2D6A4F",
 };
 
 export default function ScoreBar({
@@ -38,25 +38,25 @@ export default function ScoreBar({
     return () => observer.disconnect();
   }, [animated]);
 
-  const heights = { sm: "h-1", md: "h-1.5", lg: "h-2" };
+  const heights = { sm: "h-[2px]", md: "h-[3px]", lg: "h-1" };
   const clampedScore = Math.max(0, Math.min(100, score));
 
   return (
     <div ref={ref} className="w-full">
       {(showLabel || label) && (
         <div className="flex justify-between items-center mb-1">
-          {label && <span className="text-[11px] text-[#8888A0]">{label}</span>}
+          {label && <span className="text-[11px] text-[#8A7F74]">{label}</span>}
           {showLabel && (
-            <span className="text-[11px] font-mono font-semibold text-[#F0F0F5]">
+            <span className="text-[11px] font-medium tabular-nums text-[#1A1A1A]">
               {clampedScore.toFixed(0)}
             </span>
           )}
         </div>
       )}
-      <div className={`w-full bg-[#1E1E2E] rounded-pill overflow-hidden ${heights[size]}`}>
+      <div className={`w-full bg-[#D9CFC4] rounded-full overflow-hidden ${heights[size]}`}>
         <div
-          className={`${heights[size]} rounded-pill ${COLOR_MAP[color]} transition-all duration-1000 ease-out`}
-          style={{ width: visible ? `${clampedScore}%` : "0%" }}
+          className={`${heights[size]} rounded-full transition-all duration-1000 ease-out`}
+          style={{ width: visible ? `${clampedScore}%` : "0%", background: COLOR_MAP[color] }}
         />
       </div>
     </div>

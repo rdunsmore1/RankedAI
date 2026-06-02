@@ -27,22 +27,11 @@ export default function AuthModal({ open, onClose, defaultMode = "signin", messa
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError(null);
-    setSuccess(null);
-    setLoading(true);
-
+    setError(null); setSuccess(null); setLoading(true);
     try {
-      if (mode === "signup" && !ageConfirmed) {
-        setError("You must confirm you are 13 or older to create an account.");
-        setLoading(false);
-        return;
-      }
+      if (mode === "signup" && !ageConfirmed) { setError("You must confirm you are 13 or older."); setLoading(false); return; }
       if (mode === "signup") {
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: { emailRedirectTo: `${window.location.origin}/auth/callback` },
-        });
+        const { error } = await supabase.auth.signUp({ email, password, options: { emailRedirectTo: `${window.location.origin}/auth/callback` } });
         if (error) throw error;
         setSuccess("Check your email for a confirmation link!");
       } else {
@@ -59,36 +48,27 @@ export default function AuthModal({ open, onClose, defaultMode = "signin", messa
   };
 
   const handleGoogle = async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: { redirectTo: `${window.location.origin}/auth/callback` },
-    });
+    await supabase.auth.signInWithOAuth({ provider: "google", options: { redirectTo: `${window.location.origin}/auth/callback` } });
   };
 
+  const inputClass = "w-full bg-[#FAF7F2] border border-[#D9CFC4] rounded-lg px-3 py-2.5 text-sm text-[#1A1A1A] placeholder-[#B5A898] focus:border-[#6B1E2E] focus:outline-none transition-colors";
+
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn"
-      onClick={(e) => e.target === e.currentTarget && onClose()}
-    >
-      <div className="bg-[#13131A] border border-[#1E1E2E] rounded-card w-full max-w-sm p-6 shadow-2xl animate-fadeInUp">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/20 backdrop-blur-sm animate-fadeIn"
+      onClick={(e) => e.target === e.currentTarget && onClose()}>
+      <div className="bg-[#F0EBE1] border border-[#D9CFC4] rounded-card w-full max-w-sm p-6 shadow-xl animate-fadeInUp">
         <div className="flex justify-between items-center mb-5">
-          <h2 className="font-syne font-bold text-xl text-[#F0F0F5]">
-            {mode === "signin" ? "Sign in" : "Create account"}
+          <h2 className="font-semibold text-xl text-[#1A1A1A] tracking-tight">
+            {mode === "signin" ? "Welcome back" : "Create account"}
           </h2>
-          <button onClick={onClose} className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors text-xl leading-none">
-            ×
-          </button>
+          <button onClick={onClose} className="text-[#8A7F74] hover:text-[#1A1A1A] transition-colors text-xl leading-none">×</button>
         </div>
 
-        {message && (
-          <p className="text-sm text-[#8888A0] bg-[#1E1E2E] rounded-lg p-3 mb-4">{message}</p>
-        )}
+        {message && <p className="text-sm text-[#8A7F74] bg-[#FAF7F2] border border-[#D9CFC4] rounded-lg p-3 mb-4">{message}</p>}
 
-        <button
-          onClick={handleGoogle}
-          className="w-full flex items-center justify-center gap-2 bg-white text-[#0A0A0F] rounded-lg py-2.5 font-semibold text-sm hover:bg-gray-100 transition-colors mb-4"
-        >
-          <svg className="w-4 h-4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <button onClick={handleGoogle}
+          className="w-full flex items-center justify-center gap-2 bg-white text-[#1A1A1A] border border-[#D9CFC4] rounded-lg py-2.5 font-medium text-sm hover:bg-[#FAF7F2] transition-colors mb-4">
+          <svg className="w-4 h-4" viewBox="0 0 24 24">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
             <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
             <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
@@ -98,67 +78,39 @@ export default function AuthModal({ open, onClose, defaultMode = "signin", messa
         </button>
 
         <div className="relative flex items-center gap-3 mb-4">
-          <div className="flex-1 h-px bg-[#1E1E2E]" />
-          <span className="text-xs text-[#8888A0]">or</span>
-          <div className="flex-1 h-px bg-[#1E1E2E]" />
+          <div className="flex-1 h-px bg-[#D9CFC4]" />
+          <span className="text-xs text-[#B5A898]">or</span>
+          <div className="flex-1 h-px bg-[#D9CFC4]" />
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-3">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            required
-            className="w-full bg-[#0A0A0F] border border-[#1E1E2E] rounded-lg px-3 py-2.5 text-sm text-[#F0F0F5] placeholder-[#8888A0] focus:border-[#00D4FF]/50 focus:outline-none transition-colors"
-          />
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            required
-            minLength={6}
-            className="w-full bg-[#0A0A0F] border border-[#1E1E2E] rounded-lg px-3 py-2.5 text-sm text-[#F0F0F5] placeholder-[#8888A0] focus:border-[#00D4FF]/50 focus:outline-none transition-colors"
-          />
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required className={inputClass} />
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required minLength={6} className={inputClass} />
           {mode === "signup" && (
-            <label className="flex items-start gap-2.5 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={ageConfirmed}
-                onChange={(e) => setAgeConfirmed(e.target.checked)}
-                className="mt-0.5 accent-[#00D4FF] shrink-0"
-              />
-              <span className="text-xs text-[#8888A0] leading-relaxed">
-                I confirm I am 13 years of age or older
-              </span>
-            </label>
+            <>
+              <label className="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked={ageConfirmed} onChange={(e) => setAgeConfirmed(e.target.checked)} className="mt-0.5 shrink-0" style={{ accentColor: "#6B1E2E" }} />
+                <span className="text-xs text-[#8A7F74] leading-relaxed">I confirm I am 13 years of age or older</span>
+              </label>
+              <p className="text-xs text-[#8A7F74] leading-relaxed">
+                By creating an account you agree to our{" "}
+                <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-[#6B1E2E] hover:underline">Terms</a>{" "}and{" "}
+                <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-[#6B1E2E] hover:underline">Privacy Policy</a>.
+              </p>
+            </>
           )}
-          {mode === "signup" && (
-            <p className="text-xs text-[#8888A0] leading-relaxed">
-              By creating an account you agree to our{" "}
-              <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-[#00D4FF] hover:underline">Terms of Service</a>
-              {" "}and{" "}
-              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-[#00D4FF] hover:underline">Privacy Policy</a>.
-            </p>
-          )}
-          {error && <p className="text-red-400 text-xs">{error}</p>}
-          {success && <p className="text-green-400 text-xs">{success}</p>}
-          <button
-            type="submit"
-            disabled={loading || (mode === "signup" && !ageConfirmed)}
-            className="w-full bg-[#00D4FF] text-[#0A0A0F] font-syne font-bold rounded-lg py-2.5 text-sm hover:bg-[#00c4ef] transition-colors disabled:opacity-60"
-          >
+          {error   && <p className="text-red-600 text-xs">{error}</p>}
+          {success && <p className="text-[#2D6A4F] text-xs">{success}</p>}
+          <button type="submit" disabled={loading || (mode === "signup" && !ageConfirmed)}
+            className="w-full bg-[#6B1E2E] text-[#FAF7F2] font-semibold rounded-lg py-2.5 text-sm hover:bg-[#8B2438] transition-colors disabled:opacity-60">
             {loading ? "..." : mode === "signin" ? "Sign in" : "Create account"}
           </button>
         </form>
 
-        <p className="text-center text-xs text-[#8888A0] mt-4">
+        <p className="text-center text-xs text-[#8A7F74] mt-4">
           {mode === "signin" ? "Don't have an account? " : "Already have an account? "}
-          <button
-            onClick={() => { setMode(mode === "signin" ? "signup" : "signin"); setError(null); }}
-            className="text-[#00D4FF] hover:underline"
-          >
+          <button onClick={() => { setMode(mode === "signin" ? "signup" : "signin"); setError(null); }}
+            className="text-[#6B1E2E] hover:underline">
             {mode === "signin" ? "Sign up" : "Sign in"}
           </button>
         </p>

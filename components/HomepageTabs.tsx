@@ -7,6 +7,7 @@ import RankingCard from "@/components/ui/RankingCard";
 import SponsoredCard from "@/components/ui/SponsoredCard";
 import AuthModal from "@/components/ui/AuthModal";
 import AffiliateBanner from "@/components/ui/AffiliateBanner";
+import WeeklyMovers from "@/components/ui/WeeklyMovers";
 import { Category, RankedTool } from "@/types/database";
 
 interface HomepageTabsProps {
@@ -16,36 +17,26 @@ interface HomepageTabsProps {
   userId?: string;
 }
 
-export default function HomepageTabs({
-  categories,
-  initialTools,
-  initialCategorySlug,
-  userId,
-}: HomepageTabsProps) {
+export default function HomepageTabs({ categories, initialTools, initialCategorySlug, userId }: HomepageTabsProps) {
   const [activeSlug, setActiveSlug] = useState(initialCategorySlug);
-  const [toolsCache, setToolsCache] = useState<Record<string, RankedTool[]>>({
-    [initialCategorySlug]: initialTools,
-  });
+  const [toolsCache, setToolsCache] = useState<Record<string, RankedTool[]>>({ [initialCategorySlug]: initialTools });
   const [loading, setLoading] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
 
-  const handleTabChange = useCallback(
-    async (slug: string) => {
-      setActiveSlug(slug);
-      if (toolsCache[slug]) return;
-      setLoading(true);
-      try {
-        const res = await fetch(`/api/tools?category=${slug}`);
-        const data = await res.json();
-        setToolsCache((prev) => ({ ...prev, [slug]: data }));
-      } catch {
-        setToolsCache((prev) => ({ ...prev, [slug]: [] }));
-      } finally {
-        setLoading(false);
-      }
-    },
-    [toolsCache]
-  );
+  const handleTabChange = useCallback(async (slug: string) => {
+    setActiveSlug(slug);
+    if (toolsCache[slug]) return;
+    setLoading(true);
+    try {
+      const res = await fetch(`/api/tools?category=${slug}`);
+      const data = await res.json();
+      setToolsCache((prev) => ({ ...prev, [slug]: data }));
+    } catch {
+      setToolsCache((prev) => ({ ...prev, [slug]: [] }));
+    } finally {
+      setLoading(false);
+    }
+  }, [toolsCache]);
 
   const currentTools = toolsCache[activeSlug] ?? [];
   const sponsored = currentTools.find((t) => t.is_sponsored);
@@ -55,12 +46,8 @@ export default function HomepageTabs({
   return (
     <>
       {/* Tab bar */}
-      <div className="mb-6">
-        <CategoryTabs
-          categories={categories}
-          activeSlug={activeSlug}
-          onTabChange={handleTabChange}
-        />
+      <div className="mb-5" style={{ borderBottom: "0.5px solid #D9CFC4" }}>
+        <CategoryTabs categories={categories} activeSlug={activeSlug} onTabChange={handleTabChange} />
       </div>
 
       <AffiliateBanner />
@@ -68,54 +55,37 @@ export default function HomepageTabs({
       {/* Tool list */}
       <div className="space-y-2">
         {loading ? (
-          Array.from({ length: 5 }).map((_, i) => (
-            <div key={i} className="skeleton h-20 rounded-card" />
-          ))
+          Array.from({ length: 5 }).map((_, i) => <div key={i} className="skeleton h-20 rounded-card" />)
         ) : (
           <>
-            {sponsored && (
-              <SponsoredCard
-                tool={sponsored}
-                userId={userId}
-                onAuthRequired={() => setAuthOpen(true)}
-              />
-            )}
+            {sponsored && <SponsoredCard tool={sponsored} userId={userId} onAuthRequired={() => setAuthOpen(true)} />}
             {organic.map((tool, i) => (
-              <RankingCard
-                key={tool.id}
-                tool={tool}
-                rank={tool.rank}
-                staggerIndex={i}
-                userId={userId}
-                onAuthRequired={() => setAuthOpen(true)}
-              />
+              <RankingCard key={tool.id} tool={tool} rank={tool.rank} staggerIndex={i}
+                userId={userId} onAuthRequired={() => setAuthOpen(true)} />
             ))}
             {organic.length === 0 && !loading && (
-              <div className="text-center py-12 text-[#8888A0] text-sm">
-                No tools yet in this category.
-              </div>
+              <div className="text-center py-12 text-[#8A7F74] text-sm">No tools yet in this category.</div>
             )}
           </>
         )}
       </div>
 
-      {/* See all link */}
+      {/* See all */}
       {organic.length > 0 && (
         <div className="mt-4 text-center">
-          <Link
-            href={`/${activeSlug}`}
-            className="inline-flex items-center gap-1 text-sm font-semibold text-[#8888A0] hover:text-[#00D4FF] transition-colors"
-          >
+          <Link href={`/${activeSlug}`}
+            className="inline-flex items-center gap-1 text-sm font-medium text-[#8A7F74] hover:text-[#6B1E2E] transition-colors">
             See all in {activeCategory?.name ?? activeSlug} →
           </Link>
         </div>
       )}
 
-      <AuthModal
-        open={authOpen}
-        onClose={() => setAuthOpen(false)}
-        message="Sign in to vote for your favorite AI tools."
-      />
+      {/* Weekly movers */}
+      <div className="mt-8">
+        <WeeklyMovers />
+      </div>
+
+      <AuthModal open={authOpen} onClose={() => setAuthOpen(false)} message="Sign in to vote for your favorite AI tools." />
     </>
   );
 }

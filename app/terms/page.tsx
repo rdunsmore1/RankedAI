@@ -38,7 +38,7 @@ const sections = [
             "Clearly labelled sponsored placements for tools that pay for featured positioning",
           ].map((item) => (
             <li key={item} className="flex gap-2">
-              <span className="text-[#00D4FF] shrink-0">—</span>
+              <span className="text-[#6B1E2E] shrink-0">—</span>
               <span>{item}</span>
             </li>
           ))}
@@ -55,13 +55,13 @@ const sections = [
     content: (
       <div className="space-y-4">
         <div>
-          <h3 className="text-sm font-semibold text-[#F0F0F5] mb-2">3.1 Registration</h3>
+          <h3 className="text-sm font-semibold text-[#1A1A1A] mb-2">3.1 Registration</h3>
           <p>
             Certain features of the Site — including voting, submitting reviews, and saving tools — require you to create an account. When registering, you agree to provide accurate, current, and complete information. You must be at least 13 years of age to create an account. By creating an account, you represent that all information you provide is truthful.
           </p>
         </div>
         <div>
-          <h3 className="text-sm font-semibold text-[#F0F0F5] mb-2">3.2 Account Responsibilities</h3>
+          <h3 className="text-sm font-semibold text-[#1A1A1A] mb-2">3.2 Account Responsibilities</h3>
           <p>You are solely responsible for:</p>
           <ul className="space-y-1.5 list-none mt-2">
             {[
@@ -71,7 +71,7 @@ const sections = [
               "Ensuring your account is not used in violation of these Terms",
             ].map((item) => (
               <li key={item} className="flex gap-2">
-                <span className="text-[#00D4FF] shrink-0">—</span>
+                <span className="text-[#6B1E2E] shrink-0">—</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -81,10 +81,10 @@ const sections = [
           </p>
         </div>
         <div>
-          <h3 className="text-sm font-semibold text-[#F0F0F5] mb-2">3.3 Account Termination</h3>
+          <h3 className="text-sm font-semibold text-[#1A1A1A] mb-2">3.3 Account Termination</h3>
           <p>
             You may delete your account at any time via the Account page. Upon deletion, your personal data will be removed in accordance with our{" "}
-            <Link href="/privacy" className="text-[#00D4FF] hover:underline">Privacy Policy</Link>. Aggregated and anonymised voting data may be retained to preserve ranking integrity. We may terminate or suspend your account immediately, without prior notice, if you breach these Terms.
+            <Link href="/privacy" className="text-[#6B1E2E] hover:underline">Privacy Policy</Link>. Aggregated and anonymised voting data may be retained to preserve ranking integrity. We may terminate or suspend your account immediately, without prior notice, if you breach these Terms.
           </p>
         </div>
       </div>
@@ -99,7 +99,7 @@ const sections = [
           By using the Site, you agree not to engage in any of the following prohibited activities:
         </p>
         <div>
-          <h3 className="text-sm font-semibold text-[#F0F0F5] mb-2">4.1 Vote and Review Integrity</h3>
+          <h3 className="text-sm font-semibold text-[#1A1A1A] mb-2">4.1 Vote and Review Integrity</h3>
           <ul className="space-y-2 list-none">
             {[
               "Submitting false, misleading, or fabricated reviews about any AI tool",
@@ -116,7 +116,7 @@ const sections = [
           </ul>
         </div>
         <div>
-          <h3 className="text-sm font-semibold text-[#F0F0F5] mb-2">4.2 Content and Data</h3>
+          <h3 className="text-sm font-semibold text-[#1A1A1A] mb-2">4.2 Content and Data</h3>
           <ul className="space-y-2 list-none">
             {[
               "Scraping, crawling, or harvesting any content, rankings, scores, or data from the Site by automated means",
@@ -132,7 +132,7 @@ const sections = [
           </ul>
         </div>
         <div>
-          <h3 className="text-sm font-semibold text-[#F0F0F5] mb-2">4.3 General Conduct</h3>
+          <h3 className="text-sm font-semibold text-[#1A1A1A] mb-2">4.3 General Conduct</h3>
           <ul className="space-y-2 list-none">
             {[
               "Uploading or transmitting viruses, malware, or any code designed to disrupt the Site",
@@ -182,11 +182,11 @@ const sections = [
         </ul>
         <p>
           To request permission to reproduce any content from RankedAI™, contact us at{" "}
-          <a href="mailto:legal@rankdai.com" className="text-[#00D4FF] hover:underline">legal@rankdai.com</a>.
+          <a href="mailto:legal@rankdai.com" className="text-[#6B1E2E] hover:underline">legal@rankdai.com</a>.
         </p>
-        <div className="mt-2 bg-[#13131A] border border-[#1E1E2E] rounded-lg p-4">
-          <p className="text-xs text-[#8888A0]">
-            <strong className="text-[#F0F0F5]">User-submitted content:</strong> By submitting a review or any content to RankedAI™, you grant us a perpetual, royalty-free, worldwide licence to display, reproduce, and use that content on the Site and in promotional materials. You represent that you own or have the right to submit such content and that it does not infringe any third-party rights.
+        <div className="mt-2 bg-[#F0EBE1] border border-[#D9CFC4] rounded-lg p-4">
+          <p className="text-xs text-[#8A7F74]">
+            <strong className="text-[#1A1A1A]">User-submitted content:</strong> By submitting a review or any content to RankedAI™, you grant us a perpetual, royalty-free, worldwide licence to display, reproduce, and use that content on the Site and in promotional materials. You represent that you own or have the right to submit such content and that it does not infringe any third-party rights.
           </p>
         </div>
       </div>
@@ -211,7 +211,7 @@ const sections = [
           ].map((item) => (
             <li key={item.rule} className="flex gap-2">
               <span className="text-[#22C55E] shrink-0 mt-0.5">✓</span>
-              <span><strong className="text-[#F0F0F5]">{item.rule}</strong> {item.detail}</span>
+              <span><strong className="text-[#1A1A1A]">{item.rule}</strong> {item.detail}</span>
             </li>
           ))}
         </ul>
@@ -227,20 +227,20 @@ const sections = [
     content: (
       <div className="space-y-3">
         <div>
-          <h3 className="text-sm font-semibold text-[#F0F0F5] mb-2">7.1 Affiliate Links</h3>
+          <h3 className="text-sm font-semibold text-[#1A1A1A] mb-2">7.1 Affiliate Links</h3>
           <p>
             RankedAI™ participates in affiliate programmes with various AI tool providers. Some outbound links on the Site are affiliate links — when you click one and subsequently make a purchase or sign up for a service, we may earn a commission at no additional cost to you. Affiliate relationships are disclosed on our{" "}
-            <Link href="/affiliate-disclosure" className="text-[#00D4FF] hover:underline">Affiliate Disclosure</Link>{" "}page.
+            <Link href="/affiliate-disclosure" className="text-[#6B1E2E] hover:underline">Affiliate Disclosure</Link>{" "}page.
             <br /><br />
-            Affiliate status does <strong className="text-[#F0F0F5]">not</strong> influence a tool&apos;s composite ranking score. Rankings are determined solely by the hybrid scoring algorithm described in our public How It Works section.
+            Affiliate status does <strong className="text-[#1A1A1A]">not</strong> influence a tool&apos;s composite ranking score. Rankings are determined solely by the hybrid scoring algorithm described in our public How It Works section.
           </p>
         </div>
         <div>
-          <h3 className="text-sm font-semibold text-[#F0F0F5] mb-2">7.2 Sponsored Placements</h3>
+          <h3 className="text-sm font-semibold text-[#1A1A1A] mb-2">7.2 Sponsored Placements</h3>
           <p>
             Some AI tool providers pay RankedAI™ a fee for a sponsored or featured placement that positions their tool above the organic ranked results within one or more categories. All sponsored placements are clearly labelled with a &ldquo;Sponsored&rdquo; or &ldquo;Featured&rdquo; badge in the UI.
             <br /><br />
-            Sponsorship status does <strong className="text-[#F0F0F5]">not</strong> affect a tool&apos;s composite score. The composite score formula is applied identically to sponsored and organic tools. Sponsors pay for visibility, not for a higher ranking number.
+            Sponsorship status does <strong className="text-[#1A1A1A]">not</strong> affect a tool&apos;s composite score. The composite score formula is applied identically to sponsored and organic tools. Sponsors pay for visibility, not for a higher ranking number.
           </p>
         </div>
       </div>
@@ -252,7 +252,7 @@ const sections = [
     content: (
       <div className="space-y-3">
         <p>
-          The rankings, scores, reviews, and all other content on RankedAI™ are provided for <strong className="text-[#F0F0F5]">informational purposes only</strong>. They do not constitute professional, technical, financial, legal, or business advice. You should not rely solely on RankedAI™ rankings when making purchasing, licensing, or technology decisions.
+          The rankings, scores, reviews, and all other content on RankedAI™ are provided for <strong className="text-[#1A1A1A]">informational purposes only</strong>. They do not constitute professional, technical, financial, legal, or business advice. You should not rely solely on RankedAI™ rankings when making purchasing, licensing, or technology decisions.
         </p>
         <p>
           To the fullest extent permitted by applicable law, RankedAI™ and its founder Roanin Dunsmore shall not be liable for:
@@ -267,7 +267,7 @@ const sections = [
             "Interruptions to the Site's availability or errors in its content",
           ].map((item) => (
             <li key={item} className="flex gap-2">
-              <span className="text-[#00D4FF] shrink-0">—</span>
+              <span className="text-[#6B1E2E] shrink-0">—</span>
               <span>{item}</span>
             </li>
           ))}
@@ -299,7 +299,7 @@ const sections = [
     title: "Governing Law",
     content: (
       <p>
-        These Terms of Service and any dispute arising out of or related to your use of the Site shall be governed by and construed in accordance with the laws of the <strong className="text-[#F0F0F5]">State of Nebraska, United States</strong>, without regard to its conflict of law provisions.
+        These Terms of Service and any dispute arising out of or related to your use of the Site shall be governed by and construed in accordance with the laws of the <strong className="text-[#1A1A1A]">State of Nebraska, United States</strong>, without regard to its conflict of law provisions.
         <br /><br />
         You agree that any legal action or proceeding between you and RankedAI™ shall be brought exclusively in the state or federal courts of competent jurisdiction located in Nebraska, and you consent to the personal jurisdiction of those courts.
         <br /><br />
@@ -315,14 +315,14 @@ const sections = [
         <p>
           For questions, legal notices, intellectual property concerns, or requests relating to these Terms of Service, please contact us at:
         </p>
-        <div className="mt-3 bg-[#13131A] border border-[#1E1E2E] rounded-lg p-4 inline-block">
-          <p className="font-semibold text-[#F0F0F5]">RankedAI™</p>
-          <p>Legal enquiries: <a href="mailto:legal@rankdai.com" className="text-[#00D4FF] hover:underline">legal@rankdai.com</a></p>
+        <div className="mt-3 bg-[#F0EBE1] border border-[#D9CFC4] rounded-lg p-4 inline-block">
+          <p className="font-semibold text-[#1A1A1A]">RankedAI™</p>
+          <p>Legal enquiries: <a href="mailto:legal@rankdai.com" className="text-[#6B1E2E] hover:underline">legal@rankdai.com</a></p>
           <p>Website: rankdai.com</p>
         </div>
         <p className="mt-3">
           We will endeavour to respond to all legal enquiries within 10 business days. For general support questions, please use the{" "}
-          <Link href="/contact" className="text-[#00D4FF] hover:underline">Contact</Link>{" "}page.
+          <Link href="/contact" className="text-[#6B1E2E] hover:underline">Contact</Link>{" "}page.
         </p>
       </div>
     ),
@@ -334,13 +334,13 @@ export default function TermsPage() {
     <div className="max-w-[760px] mx-auto px-4 sm:px-6 py-16">
       {/* Header */}
       <div className="mb-10">
-        <h1 className="font-syne font-bold text-3xl text-[#F0F0F5] mb-3">Terms of Service</h1>
-        <div className="flex flex-wrap gap-4 text-xs text-[#8888A0] font-mono">
+        <h1 className="font-semibold text-3xl text-[#1A1A1A] mb-3">Terms of Service</h1>
+        <div className="flex flex-wrap gap-4 text-xs text-[#8A7F74] font-mono">
           <span>RankedAI™</span>
           <span>Effective Date: May 25, 2026</span>
           <span>Last Updated: May 25, 2026</span>
         </div>
-        <div className="mt-4 h-px bg-gradient-to-r from-[#00D4FF]/40 via-[#A855F7]/20 to-transparent" />
+        <div className="mt-4 h-px bg-gradient-to-r from-[#6B1E2E]/40 via-[#A855F7]/20 to-transparent" />
       </div>
 
       {/* Sections */}
@@ -348,10 +348,10 @@ export default function TermsPage() {
         {sections.map((section) => (
           <div key={section.number} className="group">
             <div className="flex items-baseline gap-3 mb-3">
-              <span className="font-mono text-xs text-[#00D4FF] shrink-0">{section.number.padStart(2, "0")}</span>
-              <h2 className="font-syne font-bold text-lg text-[#F0F0F5]">{section.title}</h2>
+              <span className="text-xs text-[#6B1E2E] shrink-0">{section.number.padStart(2, "0")}</span>
+              <h2 className="font-semibold text-lg text-[#1A1A1A]">{section.title}</h2>
             </div>
-            <div className="pl-6 text-sm text-[#8888A0] leading-relaxed border-l border-[#1E1E2E] group-hover:border-[#00D4FF]/30 transition-colors">
+            <div className="pl-6 text-sm text-[#8A7F74] leading-relaxed border-l border-[#D9CFC4] group-hover:border-[#6B1E2E]/30 transition-colors">
               {section.content}
             </div>
           </div>
@@ -359,16 +359,16 @@ export default function TermsPage() {
       </div>
 
       {/* Footer note */}
-      <div className="mt-12 pt-6 border-t border-[#1E1E2E] text-xs text-[#8888A0] italic">
+      <div className="mt-12 pt-6 border-t border-[#D9CFC4] text-xs text-[#8A7F74] italic">
         This Terms of Service document was prepared for informational purposes. For legal advice specific to your situation, consult a qualified attorney.
       </div>
 
       {/* Nav */}
       <div className="mt-8 flex gap-4 text-xs">
-        <Link href="/" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">← Home</Link>
-        <Link href="/privacy" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Privacy Policy</Link>
-        <Link href="/affiliate-disclosure" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Affiliate Disclosure</Link>
-        <Link href="/contact" className="text-[#8888A0] hover:text-[#F0F0F5] transition-colors">Contact</Link>
+        <Link href="/" className="text-[#8A7F74] hover:text-[#1A1A1A] transition-colors">← Home</Link>
+        <Link href="/privacy" className="text-[#8A7F74] hover:text-[#1A1A1A] transition-colors">Privacy Policy</Link>
+        <Link href="/affiliate-disclosure" className="text-[#8A7F74] hover:text-[#1A1A1A] transition-colors">Affiliate Disclosure</Link>
+        <Link href="/contact" className="text-[#8A7F74] hover:text-[#1A1A1A] transition-colors">Contact</Link>
       </div>
     </div>
   );

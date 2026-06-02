@@ -1,26 +1,14 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
 import "./globals.css";
 
-const syne = Syne({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-syne",
-  weight: ["400", "500", "600", "700", "800"],
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-  weight: ["300", "400", "500", "600"],
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -33,18 +21,18 @@ export const metadata: Metadata = {
     description: "Find the right AI for the job — ranked by benchmarks and community votes.",
     type: "website",
   },
+  other: {
+    "impact-site-verification": "5bd362c2-c2ee-4b68-89f7-6b55b768e154",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${syne.variable} ${dmSans.variable} ${jetbrains.variable} antialiased bg-[#0A0A0F] text-[#F0F0F5]`}
-      >
+      <body className={`${inter.variable} antialiased bg-[#FAF7F2] text-[#1A1A1A]`}
+            style={{ fontFamily: "var(--font-inter), Inter, -apple-system, sans-serif" }}>
         <Header />
         <main className="relative z-10">{children}</main>
         <Footer />
