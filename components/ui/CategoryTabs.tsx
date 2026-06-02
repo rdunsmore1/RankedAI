@@ -16,7 +16,7 @@ interface CategoryTabsProps {
   linkMode?: boolean;
 }
 
-const SLUG_ICON: Record<string, React.FC<{ size?: number; stroke?: number; color?: string }>> = {
+const SLUG_ICON: Record<string, React.FC<{ size?: string | number; stroke?: string | number; color?: string }>> = {
   "coding":            IconCode,
   "writing":           IconPencil,
   "image-gen":         IconPhoto,
