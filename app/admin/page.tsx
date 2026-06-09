@@ -4,11 +4,29 @@ import AdminClient from "@/components/AdminClient";
 
 export default async function AdminPage() {
   const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
+
+  const { data: { user }, error: userError } = await supabase.auth.getUser();
+  console.log("[admin] getUser result:", JSON.stringify({ user: user ? { id: user.id, email: user.email } : null, error: userError?.message }));
+
   if (!user) redirect("/login?redirect=/admin");
 
-  const { data: profile } = await supabase.from("profiles").select("is_admin").eq("id", user.id).single();
-  if (!profile?.is_admin) redirect("/");
+  const { data: profile, error: profileError } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .single();
+
+  console.log("[admin] profile query result:", JSON.stringify({ profile, error: profileError?.message, code: profileError?.code }));
+  console.log("[admin] is_admin value:", (profile as Record<string, unknown> | null)?.is_admin);
+  console.log("[admin] role value:", (profile as Record<string, unknown> | null)?.role);
+
+  const isAdmin =
+    (profile as Record<string, unknown> | null)?.is_admin === true ||
+    (profile as Record<string, unknown> | null)?.role === "admin";
+
+  console.log("[admin] isAdmin check result:", isAdmin, "— redirecting:", !isAdmin);
+
+  if (!isAdmin) redirect("/");
 
   const [toolsResult, categoriesResult, clicksResult] = await Promise.all([
     supabase.from("tools").select("*").order("name"),
