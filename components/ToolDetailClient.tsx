@@ -60,6 +60,7 @@ const PRICING_URLS: Record<string, string> = {
   "otter-ai":            "https://otter.ai/pricing",
   "jamie":               "https://meetjamie.ai/pricing",
   "granola":             "https://granola.ai/pricing",
+  "google-stitch":       "https://stitch.withgoogle.com",
 };
 
 function renderMarkdown(text: string): string {
@@ -79,6 +80,7 @@ export default function ToolDetailClient({
   const [authOpen, setAuthOpen] = useState(false);
   const [saved, setSaved] = useState(isSaved);
   const primaryRank = rankData[0];
+  // affiliate_url is intentionally public — users click it directly in the browser
   const ctaUrl = tool.affiliate_url || tool.website_url || "#";
   const isSpeechGen   = toolCategories.some((tc) => (tc.categories as { slug: string } | null)?.slug === "speech-generation");
   const isMeetingNotes = toolCategories.some((tc) => (tc.categories as { slug: string } | null)?.slug === "ai-meeting-notes");
