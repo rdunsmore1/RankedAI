@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getCategories, getRankedTools, getToolCount } from "@/lib/data";
 import { createClient } from "@/lib/supabase/server";
 import HomepageTabs from "@/components/HomepageTabs";
+import HeroNetwork from "@/components/HeroNetwork";
 
 export const revalidate = 60;
 
@@ -16,41 +17,52 @@ export default async function HomePage() {
     <>
       {/* Hero */}
       <section className="max-w-[1200px] mx-auto px-6 pt-20 pb-12">
-        {/* Eyebrow */}
-        <div className="flex items-center gap-2 mb-6">
-          <span className="w-1.5 h-1.5 rounded-full" style={{ background: "rgba(107,30,46,0.3)" }} />
-          <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[#6B1E2E]">
-            Benchmark-anchored · Community-voted · Always current
-          </span>
-        </div>
+        {/* Two-column hero: text left, network right */}
+        <div className="grid lg:grid-cols-[1fr_480px] gap-10 xl:gap-16 items-center mb-14">
+          {/* Left: text content */}
+          <div>
+            {/* Eyebrow */}
+            <div className="flex items-center gap-2 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: "rgba(107,30,46,0.3)" }} />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[#6B1E2E]">
+                Benchmark-anchored · Community-voted · Always current
+              </span>
+            </div>
 
-        {/* Headline */}
-        <h1 className="font-semibold leading-[1.08] tracking-[-0.03em] mb-7" style={{ fontSize: "clamp(36px, 6vw, 56px)" }}>
-          <span className="block text-[#1A1A1A]">The AI rankings</span>
-          <span className="block">
-            <span className="text-[#B5A898]">you can </span>
-            <span className="text-[#1A1A1A]">actually</span>
-          </span>
-          <span className="block text-[#6B1E2E]">trust.</span>
-        </h1>
+            {/* Headline */}
+            <h1 className="font-semibold leading-[1.08] tracking-[-0.03em] mb-7" style={{ fontSize: "clamp(36px, 6vw, 56px)" }}>
+              <span className="block text-[#1A1A1A]">The AI rankings</span>
+              <span className="block">
+                <span className="text-[#B5A898]">you can </span>
+                <span className="text-[#1A1A1A]">actually</span>
+              </span>
+              <span className="block text-[#6B1E2E]">trust.</span>
+            </h1>
 
-        {/* Subheadline */}
-        <p className="text-base text-[#8A7F74] leading-[1.6] max-w-[460px] mb-10">
-          Stop guessing which AI to use. We rank every major AI tool by subject — anchored by public benchmarks, fine-tuned by the people who use them daily.
-        </p>
+            {/* Subheadline */}
+            <p className="text-base text-[#8A7F74] leading-[1.6] max-w-[460px] mb-10">
+              Stop guessing which AI to use. We rank every major AI tool by subject — anchored by public benchmarks, fine-tuned by the people who use them daily.
+            </p>
 
-        {/* CTAs */}
-        <div className="flex items-center gap-4 mb-14">
-          <a href="#rankings"
-            className="px-6 py-3 font-medium text-[14px] rounded-lg hover:bg-[#8B2438] transition-colors"
-            style={{ background: "#6B1E2E", color: "#FAF7F2" }}>
-            Explore rankings →
-          </a>
-          <a href="#how-it-works"
-            className="px-6 py-3 font-medium text-[14px] rounded-lg transition-colors text-[#8A7F74] hover:text-[#1A1A1A]"
-            style={{ border: "0.5px solid #D9CFC4" }}>
-            How it works
-          </a>
+            {/* CTAs */}
+            <div className="flex items-center gap-4">
+              <a href="#rankings"
+                className="px-6 py-3 font-medium text-[14px] rounded-lg hover:bg-[#8B2438] transition-colors"
+                style={{ background: "#6B1E2E", color: "#FAF7F2" }}>
+                Explore rankings →
+              </a>
+              <a href="#how-it-works"
+                className="px-6 py-3 font-medium text-[14px] rounded-lg transition-colors text-[#8A7F74] hover:text-[#1A1A1A]"
+                style={{ border: "0.5px solid #D9CFC4" }}>
+                How it works
+              </a>
+            </div>
+          </div>
+
+          {/* Right: interactive particle network */}
+          <div className="hidden lg:block">
+            <HeroNetwork />
+          </div>
         </div>
 
         {/* Stats strip */}
