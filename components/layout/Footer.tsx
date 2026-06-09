@@ -54,6 +54,12 @@ export default function Footer() {
           <div>
             <h4 className="text-[11px] font-semibold text-[#1A1A1A] mb-3 uppercase tracking-widest">Guides</h4>
             <ul className="space-y-2">
+              <li>
+                <Link href="/blog/claude-fable-5-review-2026" className="text-xs text-[#8A7F74] hover:text-[#6B1E2E] transition-colors inline-flex items-center gap-1.5">
+                  Claude Fable 5 Review 2026
+                  <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded-pill" style={{ background: "rgba(107,30,46,0.1)", color: "#6B1E2E", border: "0.5px solid rgba(107,30,46,0.2)" }}>New</span>
+                </Link>
+              </li>
               {[
                 ["Claude AI Review 2026", "/blog/claude-ai-review-2026"],
                 ["ChatGPT Review 2026", "/blog/chatgpt-review-2026"],
