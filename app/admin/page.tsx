@@ -1,37 +1,32 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import AdminClient from "@/components/AdminClient";
 
 export default async function AdminPage() {
+  // Step 1: get the authenticated user via the cookie-based server client
   const supabase = await createClient();
-
-  const { data: { user }, error: userError } = await supabase.auth.getUser();
-  console.log("[admin] getUser result:", JSON.stringify({ user: user ? { id: user.id, email: user.email } : null, error: userError?.message }));
-
+  const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login?redirect=/admin");
 
-  const { data: profile, error: profileError } = await supabase
+  // Step 2: check admin role via service-role client (bypasses RLS)
+  const admin = createAdminClient();
+  const { data: profile } = await admin
     .from("profiles")
-    .select("*")
+    .select("role, is_admin")
     .eq("id", user.id)
     .single();
 
-  console.log("[admin] profile query result:", JSON.stringify({ profile, error: profileError?.message, code: profileError?.code }));
-  console.log("[admin] is_admin value:", (profile as Record<string, unknown> | null)?.is_admin);
-  console.log("[admin] role value:", (profile as Record<string, unknown> | null)?.role);
-
   const isAdmin =
-    (profile as Record<string, unknown> | null)?.is_admin === true ||
-    (profile as Record<string, unknown> | null)?.role === "admin";
-
-  console.log("[admin] isAdmin check result:", isAdmin, "— redirecting:", !isAdmin);
+    profile?.role === "admin" || profile?.is_admin === true;
 
   if (!isAdmin) redirect("/");
 
+  // Step 3: fetch admin data (also via service-role so RLS never blocks)
   const [toolsResult, categoriesResult, clicksResult] = await Promise.all([
-    supabase.from("tools").select("*").order("name"),
-    supabase.from("categories").select("*").order("sort_order"),
-    supabase
+    admin.from("tools").select("*").order("name"),
+    admin.from("categories").select("*").order("sort_order"),
+    admin
       .from("click_events")
       .select("tool_id, tools(name, slug)")
       .order("created_at", { ascending: false })
