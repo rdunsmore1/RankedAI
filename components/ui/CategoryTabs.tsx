@@ -28,6 +28,15 @@ const SLUG_ICON: Record<string, React.FC<{ size?: string | number; stroke?: stri
   "ai-automation":     IconBolt,
 };
 
+const SLUG_LABEL: Record<string, string> = {
+  "ai-meeting-notes":  "Meeting Notes",
+  "design-build":      "Design & Build",
+  "design-and-build":  "Design & Build",
+  "ai-automation":     "Automation",
+  "image-gen":         "Image Gen",
+  "speech-generation": "Speech Gen",
+};
+
 export default function CategoryTabs({ categories, activeSlug, onTabChange, linkMode = false }: CategoryTabsProps) {
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
@@ -61,7 +70,7 @@ export default function CategoryTabs({ categories, activeSlug, onTabChange, link
               <span className="text-sm">{cat.icon}</span>
             )}
             <span className={linkMode ? "hidden sm:inline" : undefined}>
-              {cat.name.split(" & ")[0].split(" ")[0]}
+              {SLUG_LABEL[cat.slug] ?? cat.name.split(" & ")[0].split(" ")[0]}
             </span>
           </>
         );
