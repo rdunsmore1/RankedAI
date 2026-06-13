@@ -69,6 +69,9 @@ export default function CategoryPageClient({ category, categories, tools, userId
               {category.slug === "ai-meeting-notes" && (
                 <BenchmarkDisclaimerTooltip message="Benchmark scores for AI meeting tools are estimated from independent reviews and head-to-head comparisons rather than a single public benchmark source. Compliance badges are based on publicly documented certifications from each vendor. Community votes carry extra weight in this category as a result." />
               )}
+              {category.slug === "ai-automation" && (
+                <BenchmarkDisclaimerTooltip message="Benchmark scores for AI automation tools are estimated from independent reviews, head-to-head comparisons, and community testing rather than a single public benchmark source. Community votes carry extra weight in this category." />
+              )}
               <span className="text-sm text-[#8A7F74] tabular-nums">{organic.length} tools</span>
             </div>
           </div>

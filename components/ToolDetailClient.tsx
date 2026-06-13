@@ -62,6 +62,13 @@ const PRICING_URLS: Record<string, string> = {
   "granola":             "https://granola.ai/pricing",
   "google-stitch":       "https://stitch.withgoogle.com",
   "wispr-flow":          "https://wisprflow.ai/pricing",
+  "zapier":              "https://zapier.com/pricing",
+  "make":                "https://make.com/en/pricing",
+  "n8n":                 "https://n8n.io/pricing",
+  "bardeen":             "https://bardeen.ai/pricing",
+  "notion-ai":           "https://notion.so/pricing",
+  "tinyfish":            "https://tinyfish.ai/pricing",
+  "makeform":            "https://makeform.ai/pricing",
 };
 
 function renderMarkdown(text: string): string {

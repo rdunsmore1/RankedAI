@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   IconCode, IconPencil, IconPhoto, IconMicroscope,
-  IconCalculator, IconVideo, IconMicrophone, IconNotes,
+  IconCalculator, IconVideo, IconMicrophone, IconNotes, IconBolt,
 } from "@tabler/icons-react";
 import { Category } from "@/types/database";
 
@@ -25,6 +25,7 @@ const SLUG_ICON: Record<string, React.FC<{ size?: string | number; stroke?: stri
   "video-audio":       IconVideo,
   "speech-generation": IconMicrophone,
   "ai-meeting-notes":  IconNotes,
+  "ai-automation":     IconBolt,
 };
 
 export default function CategoryTabs({ categories, activeSlug, onTabChange, linkMode = false }: CategoryTabsProps) {
