@@ -61,6 +61,7 @@ const PRICING_URLS: Record<string, string> = {
   "jamie":               "https://meetjamie.ai/pricing",
   "granola":             "https://granola.ai/pricing",
   "google-stitch":       "https://stitch.withgoogle.com",
+  "wispr-flow":          "https://wisprflow.ai/pricing",
 };
 
 function renderMarkdown(text: string): string {
